@@ -24,7 +24,7 @@ DBP="$(printf '%s' "$CREDS" | sed -n 3p)"
 DBN="$(printf '%s' "$CREDS" | sed -n 4p)"
 
 if [ -n "$DBN" ]; then
-    MYSQL_PWD="$DBP" mysql -h "$DBH" -u "$DBU" "$DBN" -e "
+    MYSQL_PWD="$DBP" /usr/bin/mysql -h "$DBH" -u "$DBU" "$DBN" -e "
         DELETE FROM sys_log     WHERE tstamp     < UNIX_TIMESTAMP(NOW() - INTERVAL 90 DAY);
         DELETE FROM sys_history WHERE tstamp     < UNIX_TIMESTAMP(NOW() - INTERVAL 30 DAY);
         DELETE FROM fe_sessions WHERE ses_tstamp < UNIX_TIMESTAMP(NOW() - INTERVAL 2 DAY);
