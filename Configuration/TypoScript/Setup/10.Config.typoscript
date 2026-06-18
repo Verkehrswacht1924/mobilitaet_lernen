@@ -49,6 +49,6 @@ config {
         30.header = X-Xss-Protection: 1; mode=block
         40.header = X-Content-Type-Options: nosniff
         50.header = Referrer-Policy:strict-origin
-        60.header = Content-Security-Policy: upgrade-insecure-requests; base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org *.soundcloud.com *.youtube.com *.youtube-nocookie.com; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline' https://www.youtube.com/ *.youtube-nocookie.com; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org *.soundcloud.com *.youtube.com *.youtube-nocookie.com; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
+        60.header = Content-Security-Policy: upgrade-insecure-requests; base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'report-sample' *.w3.org *.soundcloud.com *.youtube.com *.youtube-nocookie.com; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data:; media-src 'self' 'unsafe-inline' https://www.youtube.com/ *.youtube-nocookie.com; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org *.soundcloud.com *.youtube.com *.youtube-nocookie.com; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
     }
 }

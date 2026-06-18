@@ -7,6 +7,9 @@ config.additionalHeaders.209.header = Permissions-Policy: camera=(), microphone=
 # Generator-Meta entfernen (geringe Info-Disclosure)
 page.meta.generator >
 
+# CSP-Härtung: script-src 'unsafe-inline' wurde aus der aktiven CSP entfernt
+# (siehe 10.Config.typoscript additionalHeaders.60; verifiziert per Report-Only, 2026-06-18).
+
 # OpenGraph-Defaults (site-weit). Erscheinen nur, wenn Wert vorhanden
 # (z.B. og:description nur bei gepflegter Seiten-Beschreibung). Twitter liest og: als Fallback.
 page.meta {
