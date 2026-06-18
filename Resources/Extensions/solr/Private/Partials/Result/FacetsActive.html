@@ -1,0 +1,25 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:medpub="http://typo3.org/ns/DPX/DpxTemplate/ViewHelpers"
+      xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers">
+<f:section name="FacetsActive">
+    <f:if condition="{resultSet.facets.used -> f:count()} > 1">
+        <div class="test" id="tx-solr-facets-in-use">
+            <div class="filter">
+                <f:translate extensionName="vms_sitepackage" key="faceting_resultsNarrowedBy"/>
+            </div>
+            <div class="chips">
+                <f:for each="{resultSet.facets.used}" as="facet">
+                    <f:if condition="{facet.name} != 'typ'">
+                        <f:variable name="facetOptionUri">{s:uri.facet.removeFacet(facet: facet)}</f:variable>
+                    </f:if>
+                </f:for>
+                <a href="{facetOptionUri}#tx-solr-faceting" class="link link--small close facet remove-facet-option solr-ajaxified mt-3 mb-4 my-lg-0">
+                    <f:translate extensionName="vms_sitepackage" key="filter.download.resetFilter"/>
+                </a>
+            </div>
+        </div>
+    </f:if>
+</f:section>
+</html>

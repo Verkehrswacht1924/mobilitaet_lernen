@@ -1,0 +1,54 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:if condition="{kicker}">
+    <f:switch expression="{layout}">
+        <f:case value="1">
+            <p class="kicker {positionClass}">
+                <f:format.raw>{kicker}</f:format.raw>
+            </p>
+        </f:case>
+        <f:case value="2">
+            <p class="kicker {positionClass}">
+                <f:format.raw>{kicker}</f:format.raw>
+            </p>
+        </f:case>
+        <f:case value="3">
+            <p class="kicker {positionClass}">
+                <f:format.raw>{kicker}</f:format.raw>
+            </p>
+        </f:case>
+        <f:case value="4">
+            <p class="kicker {positionClass}">
+                <f:format.raw>{kicker}</f:format.raw>
+            </p>
+        </f:case>
+        <f:case value="5">
+            <p class="kicker {positionClass}">
+                <f:format.raw>{kicker}</f:format.raw>
+            </p>
+        </f:case>
+        <f:case value="6">
+            <p class="visually-hidden">
+                <f:format.raw>{kicker}</f:format.raw>
+            </p>
+        </f:case>
+        <f:case value="7">
+            <p class="visually-hidden">
+                <f:format.raw>{kicker}</f:format.raw>
+            </p>
+        </f:case>
+        <f:case value="8">
+            <p class="visually-hidden">
+                <f:format.raw>{kicker}</f:format.raw>
+            </p>
+        </f:case>
+        <f:defaultCase>
+            <f:if condition="{default}">
+                <f:render arguments="{
+					kicker: kicker,
+					positionClass: positionClass,
+					layout: default}" partial="Header/kicker" />
+            </f:if>
+        </f:defaultCase>
+    </f:switch>
+</f:if>
+</html>

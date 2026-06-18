@@ -1,0 +1,40 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:ff="http://www.w3.org/1999/html">
+
+    <f:if condition="{dimensions.width}">
+        <f:then>
+            <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+                <source media="(min-width: 1220px)" srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width)}">
+                <source media="(min-width: 992px)" srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: dimensions.width)}">
+                <source media="(min-width: 768px)" srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 688)}">
+                <source media="(min-width: 576px)" srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543)}">
+                <source media="(min-width: 0)" srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543)}">
+                <f:if condition="{data.image_zoom}">
+                    <f:then>
+                        <f:image src="{file.properties.uid}" maxWidth="{dimensions.width}" data="{bs-target: '#Carousel-{data.uid}'}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                    </f:then>
+                    <f:else>
+                        <f:image src="{file.properties.uid}" maxWidth="{dimensions.width}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                    </f:else>
+                </f:if>
+            </picture>
+        </f:then>
+        <f:else>
+            <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+                <source media="(min-width: 1220px)" srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920)}">
+                <source media="(min-width: 992px)" srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220)}">
+                <source media="(min-width: 768px)" srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 992)}">
+                <source media="(min-width: 576px)" srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 768)}">
+                <source media="(min-width: 0)" srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 576)}">
+                <f:if condition="{data.image_zoom}">
+                    <f:then>
+                        <f:image src="{file.properties.uid}" maxWidth="1920" data="{bs-target: '#Carousel-{data.uid}'}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                    </f:then>
+                    <f:else>
+                        <f:image src="{file.properties.uid}" maxWidth="1920" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                    </f:else>
+                </f:if>
+            </picture>
+        </f:else>
+    </f:if>
+</html>

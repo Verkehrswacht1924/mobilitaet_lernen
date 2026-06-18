@@ -1,0 +1,38 @@
+mod.web_layout.BackendLayouts {
+    OneCol {
+        title = OneCol
+        icon = EXT:vms_sitepackage/Resources/Public/BackendLayouts/OneCol.svg
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 3
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Top
+                                colPos = 0
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Main
+                                colPos = 1
+                            }
+                        }
+                    }
+                    3 {
+                        columns {
+                            1 {
+                                name = Bottom
+                                colPos = 2
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

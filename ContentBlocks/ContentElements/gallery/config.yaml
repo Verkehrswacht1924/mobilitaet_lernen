@@ -1,0 +1,66 @@
+name: dpxgallery/dpx-gallery
+typeName: dpxgallery_dpx_gallery
+prefixFields: false
+fields:
+  - identifier: header
+    useExistingField: true
+  - identifier: subheader
+    useExistingField: true
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+  - identifier: tx_dpxgallery_file
+    type: File
+    maxitems: 100
+    allowed: png,jpg,jpeg,gif,svg,mp4
+  - identifier: tx_dpxgallery_gallery_layout
+    type: Select
+    renderType: selectSingle
+    items:
+      - label: 'Einzelbild'
+        value: gallery-single
+      - label: 'Kacheln'
+        value: gallery-tiles
+      - label: 'Slider'
+        value: gallery-slider
+      - label: 'Kacheln (mobil Slider)'
+        value: gallery-tiles-mobile-slider
+  - identifier: tx_dpxgallery_gallery_bg
+    type: Checkbox
+  - identifier: tx_dpxgallery_gallery_textcolor
+    type: Checkbox
+  - identifier: tx_dpxgallery_gallery_image_style
+    type: Select
+    renderType: selectSingle
+    items:
+      - label: 'Standard'
+        value: '0'
+      - label: 'Abgerundet'
+        value: '1'
+  - identifier: tx_dpxgallery_gallery_slider_style
+    type: Select
+    renderType: selectSingle
+    displayCond: 'FIELD:tx_dpxgallery_gallery_layout:=:gallery-slider'
+    items:
+      - label: 'Punkte'
+        value: slider-style-dots
+      - label: 'Zahlen'
+        value: slider-style-numbers
+  - identifier: tx_dpxgallery_gallery_slider_navigation
+    type: Select
+    renderType: selectSingle
+    displayCond: 'FIELD:tx_dpxgallery_gallery_layout:=:gallery-slider'
+    items:
+      - label: 'Unten'
+        value: slider-navigation-bottom
+      - label: 'Oben'
+        value: slider-navigation-top
+  - identifier: tx_dpxgallery_gallery_slider_arrows
+    type: Select
+    renderType: selectSingle
+    displayCond: 'FIELD:tx_dpxgallery_gallery_layout:=:gallery-slider'
+    items:
+      - label: 'Innen'
+        value: slider-arrow-inside
+      - label: 'Außen'
+        value: slider-arrow-outside

@@ -1,0 +1,19 @@
+name: vms/audio
+typeName: audio
+prefixFields: false
+fields:
+  - identifier: header
+    useExistingField: true
+  - identifier: subheader
+    useExistingField: true
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+  - identifier: tx_audio_audio
+    type: Link
+  - identifier: tx_audio_audiourl
+    type: Link
+  - identifier: tx_audio_poster
+    type: File
+    maxitems: 1
+    allowed: jpg,jpeg,svg,png,gif

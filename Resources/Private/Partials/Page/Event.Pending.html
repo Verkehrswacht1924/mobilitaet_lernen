@@ -1,0 +1,80 @@
+<html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+    <div class="container">
+
+        <p class="roofline">
+            <f:if condition="{data.event_category}">
+                <f:then>
+                    {data.event_category}
+                </f:then>
+                <f:else>
+                    {f:cObject(typoscriptObjectPath: 'lib.categories', data:'{recordUid: data.uid}')}
+                </f:else>
+            </f:if>
+        </p>
+
+        <h2>{data.title}</h2>
+
+        <div class="row g-0">
+            <div class="col-12 col-lg-4">
+                <div class="event-info">
+                    <f:if condition="{data.event_startdate}">
+                        <div class="event-date">
+                            <h3 class="event-date-title">{f:translate(key: 'event.when', extensionName: 'vms_sitepackage')}</h3>
+                            <p class="event-date-time">
+                                <f:if condition="{f:format.date(date: data.event_startdate, format: 'd-m-y')} == {f:format.date(date: data.event_enddate, format: 'd-m-y')}">
+                                    <f:then>
+                                        {data.event_startdate -> f:format.date(format: '%A')}, {data.event_startdate -> f:format.date(format: 'j.')}
+                                        <f:translate extensionName="vms_sitepackage" key="event.month.{data.event_startdate -> f:format.date(format: 'n')}"/>
+                                        {data.event_startdate -> f:format.date(format: 'Y,')}
+                                        <span>{data.event_startdate -> f:format.date(format: 'G:i')} - {data.event_enddate -> f:format.date(format: 'G:i')} {f:translate(key: 'event.time', extensionName: 'vms_sitepackage')}</span>
+                                    </f:then>
+                                    <f:else>
+                                        {data.event_startdate -> f:format.date(format: '%A')}, {data.event_startdate -> f:format.date(format: 'j.')}
+                                        <f:translate extensionName="vms_sitepackage" key="event.month.{data.event_startdate -> f:format.date(format: 'n')}"/>
+                                        {data.event_startdate -> f:format.date(format: 'Y G:i')} - {data.event_startdate -> f:format.date(format: '%A')}, {data.event_enddate -> f:format.date(format: 'j.')}
+                                        <f:translate extensionName="vms_sitepackage" key="event.month.{data.event_enddate -> f:format.date(format: 'n')}"/>
+                                        {data.event_enddate -> f:format.date(format: 'Y G:i')}
+                                    </f:else>
+                                </f:if>
+                            </p>
+                            <f:if condition="{f:format.date(date: 'now', format: 'Ymd')} < {data.event_startdate -> f:format.date(format: 'Ymd')}">
+                                <p class="event-date-ics">
+                                    <f:link.action action="ics" arguments="{uid: data.uid}" class="internal-link btn-download" controller="Articles" extensionName="DpxTemplate" pageType="333444" pluginName="articles">
+                                        {f:translate(key: 'event.calendar', extensionName: 'vms_sitepackage')}
+                                    </f:link.action>
+                                </p>
+                            </f:if>
+                        </div>
+                    </f:if>
+                    <f:if condition="{data.event_address}">
+                        <div class="event-location">
+                            <h3 class="event-location-title">{f:translate(key: 'event.where', extensionName: 'vms_sitepackage')}</h3>
+                            <p class="event-location-address">{data.event_address}</p>
+                        </div>
+                    </f:if>
+                    <f:if condition="{data.event_signup_link_label} && {f:format.date(date: 'now', format: 'Ymd')} < {data.event_startdate -> f:format.date(format: 'Ymd')}">
+                        <div class="event-signup">
+                            <f:link.typolink class="btn btn-primary" parameter="{data.event_signup_link}" target="_blank">
+                                <span>{data.event_signup_link_label}</span>
+                            </f:link.typolink>
+                        </div>
+                    </f:if>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-8">
+                <figure class="figure">
+                    <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+                        <source media="(min-width: 1220px)" srcset="{f:uri.image(image: media.0, cropVariant: 'default', maxWidth: 874)}">
+                        <source media="(min-width: 992px)" srcset="{f:uri.image(image: media.0, cropVariant: 'large', maxWidth: 874)}">
+                        <source media="(min-width: 768px)" srcset="{f:uri.image(image: media.0, cropVariant: 'medium', maxWidth: 874)}">
+                        <source media="(min-width: 576px)" srcset="{f:uri.image(image: media.0, cropVariant: 'small', maxWidth: 768)}">
+                        <source media="(min-width: 0)" srcset="{f:uri.image(image: media.0, cropVariant: 'xsmall', maxWidth: 576)}">
+                        <f:image src="{media.0.properties.uid}" maxWidth="850" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                    </picture>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+</html>

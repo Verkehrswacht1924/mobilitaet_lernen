@@ -1,0 +1,15 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+.idea/
+.vscode/
+
+# Sicherungs-/Temporärdateien (sollen nicht ins Repo)
+*.bak
+*.bak-*
+*.orig
+*.orig-*
+*.eu-staging

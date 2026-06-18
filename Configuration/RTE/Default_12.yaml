@@ -1,0 +1,72 @@
+# Load default processing options
+imports:
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Processing.yaml' }
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml' }
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml' }
+
+# Add configuration for the editor
+# For complete documentation see https://ckeditor.com/docs/ckeditor5/latest/features/index.html
+editor:
+  config:
+    contentsCss: "EXT:vms_sitepackage/Resources/Public/StyleSheets/ckeditor.css"
+
+    toolbar:
+      items:
+        - style
+        - heading
+        - '|'
+        - bold
+        - italic
+        - softhyphen
+        - '|'
+        - bulletedList
+        - numberedList
+        - blockQuote
+        - alignment
+        - '|'
+        - findAndReplace
+        - link
+        - '|'
+        - removeFormat
+        - undo
+        - redo
+        - '|'
+        - insertTable
+        - '|'
+        - sourceEditing
+
+    heading:
+      options:
+        - { model: 'paragraph', title: 'Paragraph' }
+        - { model: 'heading1', view: 'h1', title: 'Heading 1' }
+        - { model: 'heading2', view: 'h2', title: 'Heading 2' }
+        - { model: 'heading3', view: 'h3', title: 'Heading 3' }
+        - { model: 'heading4', view: 'h4', title: 'Heading 4' }
+        - { model: 'heading5', view: 'h5', title: 'Heading 5' }
+        - { model: 'heading6', view: 'h6', title: 'Heading 6' }
+
+    style:
+      definitions:
+        - { name: "Fett", element: "span", classes: [ 'bold' ] }
+        - { name: "Kursiv", element: "span", classes: [ 'em' ] }
+        - { name: "Visually hidden", element: "span", classes: [ 'visually-hidden hide' ] }
+        - { name: "Kicker", element: "span", classes: [ 'kicker' ] }
+        - { name: "Small", element: "small", classes: [ 'small' ] }
+
+    alignment:
+      options:
+        - { name: 'left', className: 'text-left' }
+        - { name: 'center', className: 'text-center' }
+        - { name: 'right', className: 'text-right' }
+        - { name: 'justify', className: 'text-justify' }
+
+    table:
+      defaultHeadings: { rows: 1 }
+      contentToolbar:
+        - tableColumn
+        - tableRow
+        - mergeTableCells
+        - tableProperties
+        - tableCellProperties
+
+    extraPlugins:

@@ -1,0 +1,37 @@
+####################
+#### PAGE CLASS ####
+####################
+lib.page.class = COA
+lib.page.class {
+    // Page alias or id as fallback
+    10 = TEXT
+    10 {
+        field = alias // uid
+        noTrimWrap = |page-||
+    }
+    // Language
+    20 = TEXT
+    20 {
+        data = sitelanguage:hreflang
+        noTrimWrap = | lang-||
+    }
+    // Backend layout
+    30 = TEXT
+    30 {
+        data = pagelayout
+        case = lower
+        replacement.10 {
+            search = pagets__
+            replace =
+        }
+        ifEmpty = default
+        noTrimWrap = | ||
+    }
+    // Layout
+    40 = TEXT
+    40 {
+        field = layout
+        noTrimWrap = | layout-||
+        ifEmpty = default
+    }
+}

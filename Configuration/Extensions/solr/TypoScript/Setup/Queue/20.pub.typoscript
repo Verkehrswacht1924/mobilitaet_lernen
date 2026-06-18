@@ -1,0 +1,75 @@
+[siteLanguage("languageId") == 0]
+    plugin.tx_solr {
+        enabled = 1
+        solr.path = /solr/core_de/
+    }
+[siteLanguage("languageId") == 1]
+    plugin.tx_solr {
+        enabled = 1
+        solr.path = /solr/core_en/
+    }
+[END]
+
+
+plugin.tx_solr {
+    index {
+        fieldProcessingInstructions {
+            category = categoryUidToHierarchy
+            changed = timestampToIsoDate
+            created = timestampToIsoDate
+            endtime = timestampToIsoDate
+        }
+        queue {
+            pages = 0
+            tx_dpxtemplate_domain_model_publication = 1
+            tx_dpxtemplate_domain_model_publication {
+                additionalWhereClause =  deleted = 0 AND hidden = 0
+                additionalPageIds = 75
+                initialization = ApacheSolrForTypo3\Solr\IndexQueue\Initializer\Record
+                indexingPriority = 0
+                table = tx_dpxtemplate_domain_model_publication
+                fields {
+                    filter_stringM = SOLR_RELATION
+                    filter_stringM {
+                        localField = categories
+                        multiValue = 1
+                    }
+
+                    file_stringS = USER
+                    file_stringS.userFunc = DPX\DpxTemplate\Solr\UserFunc\IndexUserFunc->getFileLink
+
+                    relativefile_stringS = USER
+                    relativefile_stringS.userFunc = DPX\DpxTemplate\Solr\UserFunc\IndexUserFunc->getRelativeFileLink
+
+                    filext_stringS = USER
+                    filext_stringS.userFunc = DPX\DpxTemplate\Solr\UserFunc\IndexUserFunc->getFileExtensionForFileUid
+
+                    filesize_stringS = USER
+                    filesize_stringS.userFunc = DPX\DpxTemplate\Solr\UserFunc\IndexUserFunc->getFileSizeForFileUid
+
+                    image_intS = SOLR_RELATION
+                    image_intS {
+                        localField = image
+                    }
+                    date_intS =   date
+                    name_stringS   = name
+                    typ_intS   = typ
+                    author_stringS    = author
+                    description_stringS   = description
+                    external_intS = external
+                    link_stringS = link
+                    link_text_stringS = link_text
+                }
+            }
+        }
+    }
+}
+
+page.includeJSFooterlibs {
+    solr-jquery >
+    solr-options>
+}
+page.includeCSS {
+    solr-ui >
+}
+

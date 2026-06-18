@@ -1,0 +1,335 @@
+#################
+#### TCEFORM ####
+#################
+TCEFORM {
+    #--------------
+    #    Pages
+    #--------------
+    pages {
+        layout {
+            removeItems = 1, 2, 3, 4
+            altLabels {
+                0 = Standard
+            }
+        }
+    }
+
+    #--------------
+    #    Content
+    #--------------
+    tt_content {
+        header_layout {
+            altLabels {
+                0 = Standard
+                1 = H1
+                2 = H2 - Standard
+                3 = H3
+                4 = H4
+                5 = H5
+                6 = H6
+            }
+
+            removeItems = 0,1
+            addItems {
+                //7 = H1 - versteckt (SR only)
+                8 = H2 - versteckt (SR only)
+                9 = H3 - versteckt (SR only)
+                10 = H4 - versteckt (SR only)
+            }
+        }
+
+        CType {
+            # removeItems = bullets, div, form_formframework, header, html, image, list, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages, menu_subpages, shortcut, table, text, textmedia, textpic, uploads
+            removeItems = bullets, div, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, textmedia, table
+        }
+
+        layout {
+            removeItems = 3
+            addItems {
+
+            }
+
+            altLabels {
+                0 = Normale Box (Standard)
+                1 = Einrückung Element (Col-8)
+                2 = Einrückung Element (Col-10)
+            }
+        }
+
+        frame_class {
+            removeItems = indent, indent-left, indent-right, none, ruler-before, ruler-after
+            addItems {
+                file-highlight = Download Element mit blauen Hintergrund
+                text-2-columns = Text: 2-Spalten (column-2-col)
+                text-3-columns = Text: 3-Spalten (column-3-col)
+                teaser = Teaser: Element (Dunkel)
+                teaser-light = Teaser: Element (Hell)
+                teaser-transparent = Teaser: Element (Transparent)
+            }
+
+            altLabels {
+
+            }
+        }
+
+        imagecols {
+            removeItems = 4,6,7,8
+            altLabels {
+                5 = Auto
+            }
+
+            default = 1
+        }
+
+        imageorient {
+            types {
+                textmedia {
+                    removeItems = 1,2,9,10,17,18,25,26
+                }
+
+                textpic {
+                    removeItems = 1,2,9,10
+                }
+            }
+        }
+
+        imageborder {
+            disabled = 1
+        }
+
+        media.config.appearance.fileUploadAllowed = 0
+    }
+
+    ## Default Image cropping
+    sys_file_reference.crop.config.cropVariants {
+        default {
+            title = Default
+            selectedRatio = NaN
+            allowedAspectRatios {
+                NaN {
+                    title = Free
+                    value = 0.0
+                }
+
+                21:9 {
+                    title = 21:9
+                    value = 2.3333333
+                }
+
+                16:9 {
+                    title = 16:9
+                    value = 1.7777777
+                }
+
+                16:5 {
+                    title = 16:5
+                    value = 3.2
+                }
+
+                16:3 {
+                    title = 16:3
+                    value = 5.3333333
+                }
+
+                4:3 {
+                    title = 4:3
+                    value = 1.3333333
+                }
+
+                3:2 {
+                    title = 3:2
+                    value = 1.5
+                }
+
+                1:1 {
+                    title = 1:1
+                    value = 1
+                }
+            }
+        }
+
+        large {
+            title = Large
+            selectedRatio = NaN
+            allowedAspectRatios {
+                NaN {
+                    title = Free
+                    value = 0.0
+                }
+
+                21:9 {
+                    title = 21:9
+                    value = 2.3333333
+                }
+
+                16:9 {
+                    title = 16:9
+                    value = 1.7777777
+                }
+
+                16:5 {
+                    title = 16:5
+                    value = 3.2
+                }
+
+                16:3 {
+                    title = 16:3
+                    value = 5.3333333
+                }
+
+                4:3 {
+                    title = 4:3
+                    value = 1.3333333
+                }
+
+                3:2 {
+                    title = 3:2
+                    value = 1.5
+                }
+
+                1:1 {
+                    title = 1:1
+                    value = 1
+                }
+            }
+        }
+
+        medium {
+            title = Medium
+            selectedRatio = NaN
+            allowedAspectRatios {
+                NaN {
+                    title = Free
+                    value = 0.0
+                }
+
+                21:9 {
+                    title = 21:9
+                    value = 2.3333333
+                }
+
+                16:9 {
+                    title = 16:9
+                    value = 1.7777777
+                }
+
+                16:5 {
+                    title = 16:5
+                    value = 3.2
+                }
+
+                16:3 {
+                    title = 16:3
+                    value = 5.3333333
+                }
+
+                4:3 {
+                    title = 4:3
+                    value = 1.3333333
+                }
+
+                3:2 {
+                    title = 3:2
+                    value = 1.5
+                }
+
+                1:1 {
+                    title = 1:1
+                    value = 1
+                }
+            }
+        }
+
+        small {
+            title = Small
+            selectedRatio = NaN
+            allowedAspectRatios {
+                NaN {
+                    title = Free
+                    value = 0.0
+                }
+
+                21:9 {
+                    title = 21:9
+                    value = 2.3333333
+                }
+
+                16:9 {
+                    title = 16:9
+                    value = 1.7777777
+                }
+
+                16:5 {
+                    title = 16:5
+                    value = 3.2
+                }
+
+                16:3 {
+                    title = 16:3
+                    value = 5.3333333
+                }
+
+                4:3 {
+                    title = 4:3
+                    value = 1.3333333
+                }
+
+                3:2 {
+                    title = 3:2
+                    value = 1.5
+                }
+
+                1:1 {
+                    title = 1:1
+                    value = 1
+                }
+            }
+        }
+
+        xsmall {
+            title = Xsmall
+            selectedRatio = NaN
+            allowedAspectRatios {
+                NaN {
+                    title = Free
+                    value = 0.0
+                }
+
+                21:9 {
+                    title = 21:9
+                    value = 2.3333333
+                }
+
+                16:9 {
+                    title = 16:9
+                    value = 1.7777777
+                }
+
+                16:5 {
+                    title = 16:5
+                    value = 3.2
+                }
+
+                16:3 {
+                    title = 16:3
+                    value = 5.3333333
+                }
+
+                4:3 {
+                    title = 4:3
+                    value = 1.3333333
+                }
+
+                3:2 {
+                    title = 3:2
+                    value = 1.5
+                }
+
+                1:1 {
+                    title = 1:1
+                    value = 1
+                }
+            }
+        }
+    }
+}

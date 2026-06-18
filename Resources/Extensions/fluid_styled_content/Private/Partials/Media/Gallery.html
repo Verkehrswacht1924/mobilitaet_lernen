@@ -1,0 +1,85 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{gallery.rows}">
+    <f:if condition="{gallery.position.horizontal} == center">
+        <div class="ce-gallery" data-images="{gallery.count.files}">
+    </f:if>
+
+    <f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
+        <div class="ce-gallery float-end ms-md-5" data-images="{gallery.count.files}">
+    </f:if>
+
+    <f:if condition="{gallery.position.horizontal} == left && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
+        <div class="ce-gallery float-start me-md-5" data-images="{gallery.count.files}">
+    </f:if>
+
+    <f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} == TRUE">
+        <div class="ce-gallery ms-md-5 order-1 flex-shrink-0" data-images="{gallery.count.files}">
+    </f:if>
+
+    <f:if condition="{gallery.position.horizontal} == left && {gallery.position.vertical} == intext && {gallery.position.noWrap} == TRUE">
+        <div class="ce-gallery me-md-5 flex-shrink-0" data-images="{gallery.count.files}">
+    </f:if>
+
+    <f:if condition="{gallery.count.columns} == 1">
+        <f:then>
+            <f:render section="GalleryDiv" arguments="{_all}" />
+        </f:then>
+        <f:else>
+            <f:render section="GalleryList" arguments="{_all}" />
+        </f:else>
+    </f:if>
+
+    <f:if condition="{gallery.position.horizontal} == center">
+        </div>
+    </f:if>
+
+    <f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
+        </div>
+    </f:if>
+
+    <f:if condition="{gallery.position.horizontal} == left && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
+        </div>
+    </f:if>
+
+    <f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} == TRUE">
+        </div>
+    </f:if>
+
+    <f:if condition="{gallery.position.horizontal} == left && {gallery.position.vertical} == intext && {gallery.position.noWrap} == TRUE">
+        </div>
+    </f:if>
+</f:if>
+
+<f:section name="GalleryDiv">
+    <f:if condition="{data.image_zoom}">
+        <f:render partial="Media/Rendering/ImagePopup" arguments="{_all}" />
+    </f:if>
+    <f:for each="{gallery.rows}" as="row" iteration="i">
+        <f:for each="{row.columns}" as="column" iteration="iterator">
+            <f:if condition="{column.media}">
+                <div data-count="{i.index}" class="image-wrapper {f:if(condition: '{data.imagecols} == 2', then: 'col col-md-6')}{f:if(condition: '{data.imagecols} == 3', then: 'col col-md-4')}{f:if(condition: '{data.imagecols} == 4', then: 'col col-md-4 col-xl-3')}{f:if(condition: '{data.imagecols} == 5', then: 'col')}">
+                    <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, index: index, settings: settings}" />
+                </div>
+            </f:if>
+        </f:for>
+    </f:for>
+</f:section>
+
+<f:section name="GalleryList">
+    <f:if condition="{data.image_zoom}">
+        <f:render partial="Media/Rendering/ImagePopup" arguments="{_all}" />
+    </f:if>
+    <ul class="ce-row row">
+        <f:for each="{gallery.rows}" as="row" iteration="i">
+            <f:for each="{row.columns}" as="column" iteration="iterator">
+                <f:if condition="{column.media}">
+                    <li data-count="{i.index}" class="image-wrapper {f:if(condition: '{data.imagecols} == 1', then: 'col')}{f:if(condition: '{data.imagecols} == 2', then: 'col col-md-6')}{f:if(condition: '{data.imagecols} == 3', then: 'col col-md-4')}{f:if(condition: '{data.imagecols} == 4', then: 'col col-md-4 col-xl-3')}{f:if(condition: '{data.imagecols} == 5', then: 'col')}">
+                        <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, index: index, settings: settings}" />
+                    </li>
+                </f:if>
+            </f:for>
+        </f:for>
+    </ul>
+</f:section>
+
+</html>

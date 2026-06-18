@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2018-07-31T109:48:17Z" product-name="vms_sitepackage">
+        <header/>
+        <body>
+            <trans-unit id="video.video_title" xml:space="preserve">
+                <source>Video</source>
+            </trans-unit>
+            <trans-unit id="video.video_description" xml:space="preserve">
+                <source>Puts a local or external youtube video on the page</source>
+            </trans-unit>
+            <trans-unit id="audio.audio_title" xml:space="preserve">
+                <source>Audio</source>
+            </trans-unit>
+            <trans-unit id="audio.audio_description" xml:space="preserve">
+                <source>Puts a local or external audio on the page</source>
+            </trans-unit>
+            <trans-unit id="stage.tx_stage_title" xml:space="preserve">
+                <source>Stage</source>
+            </trans-unit>
+            <trans-unit id="stage.tx_stage_description" xml:space="preserve">
+                <source>Inserts a stage module</source>
+            </trans-unit>
+            <trans-unit id="grid.title" xml:space="preserve">
+                <target>Grid</target>
+            </trans-unit>
+            <trans-unit id="grid.description" xml:space="preserve">
+                <target>Create a grid with any number of elements. Can also be switched to a slider can be switched to a slider.</target>
+            </trans-unit>
+            <trans-unit id="grid.elements" xml:space="preserve">
+                <source>Grid elements</source>
+            </trans-unit>
+            <trans-unit id="gallery.title" xml:space="preserve">
+                <source>Gallery</source>
+            </trans-unit>
+            <trans-unit id="gallery.description" xml:space="preserve">
+                <source>Inserts a gallery element as a single image preview, tiles or slider</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

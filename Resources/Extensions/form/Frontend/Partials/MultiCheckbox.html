@@ -1,0 +1,42 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers">
+<formvh:renderRenderable renderable="{element}">
+    <f:render arguments="{element: element, renderFieldset: '{element.properties.renderFieldset}', doNotShowLabel: '{element.properties.legendVisuallyHidden}'}" contentAs="elementContent" partial="Field/FieldMultibox">
+        <f:form.validationResults for="{element.rootForm.identifier}.{element.identifier}">
+            <f:variable name="errorClass">{f:if(condition: '{validationResults.errors}', then: '{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute}')}</f:variable>
+            <ul class="multicheckbox list-unstyled">
+            <f:for as="label" each="{element.properties.options}" iteration="idIterator" key="value">
+                <f:if condition="{element.properties.elementDescription}">
+                    <f:variable name="aria" value="{describedby: '{element.uniqueIdentifier}-desc'}" />
+                </f:if>
+                <f:if condition="{validationResults.errors} && {idIterator.isFirst}">
+                    <f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}" />
+                </f:if>
+
+                    <li class="{element.properties.containerClassAttribute} form-check form-check-inline">
+                        <f:form.checkbox
+                                additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+                                aria="{aria}"
+                                class="{element.properties.elementClassAttribute} form-check-input"
+                                errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute} is-invalid"
+                                id="{element.uniqueIdentifier}-{idIterator.index}"
+                                multiple="1"
+                                property="{element.identifier}"
+                                value="{value}"
+                        />
+                        <label class="{element.properties.labelClassAttribute} form-check-label" for="{element.uniqueIdentifier}-{idIterator.index}">
+                            <span class="{element.properties.labelTextClassAttribute}">{formvh:translateElementProperty(element: element, property: '{0: \'options\', 1: value}')}</span>
+                        </label>
+                    </li>
+            </f:for>
+            </ul>
+            <f:if condition="{validationResults.flattenedErrors} && {element.properties.renderFieldset} == '1'">
+                <span class="{element.rootForm.renderingOptions.fieldProperties.errorMsgClassAttribute}" id="{element.uniqueIdentifier}-errors" role="alert">
+                    <f:for as="error" each="{validationResults.errors}">
+                        <f:format.htmlspecialchars>{formvh:translateElementError(element: element, error: error)}</f:format.htmlspecialchars>
+                    </f:for>
+                </span>
+            </f:if>
+        </f:form.validationResults>
+    </f:render>
+</formvh:renderRenderable>
+</html>

@@ -1,0 +1,78 @@
+plugin.tx_solr {
+    view {
+        templateFiles {
+            results {
+                availableTemplates {
+                    publicationOverview {
+                        label = Publication Overview
+                        file = PublicationOverview
+                    }
+                }
+            }
+        }
+        partialRootPaths {
+            0 = EXT:vms_sitepackage/Resources/Extensions/solr/Private/Partials
+            10 = EXT:vms_sitepackage/Resources/Extensions/fluid_styled_content/Private/Partials
+        }
+        templateRootPaths {
+            0 = EXT:vms_sitepackage/Resources/Extensions/solr/Private/Templates/
+            10 = EXT:vms_sitepackage/Resources/Extensions/solr/Private/Templates/Search/
+        }
+        layoutRootPaths {
+            0 = EXT:vms_sitepackage/Resources/Extensions/solr/Private/Layouts
+            10 = EXT:vms_sitepackage/Resources/Extensions/fluid_styled_content/Private/Layouts
+        }
+    }
+}
+
+plugin.tx_solr {
+    search {
+        initializeWithEmptyQuery = 1
+        showResultsOfInitialEmptyQuery = 1
+        query {
+            sortBy = crdate_intS desc
+            allowEmptyQuery = 1
+        }
+
+        sorting >
+        sorting = 1
+        sorting {
+            defaultOrder = desc
+
+            options {
+                creation {
+                    field = crdate_intS
+                    label = solr.sorting.crDate
+                }
+                modification {
+                    field = tstamp_stringS
+                    label = solr.sorting.tstamp
+                }
+            }
+        }
+
+        faceting = 1
+        faceting {
+            keepAllFacetsOnSelection = 1
+            countAllFacetsForSelection = 1
+            minimumCount = 1
+            showEmptyFacets = 0
+            facets {
+                typ {
+                    keepAllFacetsOnSelection = 1
+                    label = typ
+                    field = typ_intS
+                    partialName=MobilityOptions
+                    operator = OR
+                }
+                schwerpunkt {
+                    keepAllFacetsOnSelection = 1
+                    label = Schwerpunkt
+                    field = filter_stringM
+                    partialName=FilterOptions
+                    operator = OR
+                }
+            }
+        }
+    }
+}

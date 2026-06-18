@@ -1,0 +1,45 @@
+<html data-namespace-typo3-fluid="true">
+<f:comment>Portiert aus dpx_template Mobility.html – Mobilitäts-Filter (zu Fuß / Fahrrad / Bus).
+foot_link/bicycle_link/bus_link sind Relationen auf pages → erste UID verwenden.</f:comment>
+<f:variable name="footUid">{data.foot_link.0.uid}</f:variable>
+<f:variable name="bikeUid">{data.bicycle_link.0.uid}</f:variable>
+<f:variable name="busUid">{data.bus_link.0.uid}</f:variable>
+<div id="mobility-filter" class="frame frame-type-mobility">
+    <f:if condition="{data.header}">
+        <div class="frame frame-default frame-type-header frame-layout-0 frame-space-after-small">
+            <h3 class="ce-headline-center"><span>{data.header}</span></h3>
+        </div>
+    </f:if>
+    <f:if condition="{data.bodytext}">
+        <div class="mobility-intro"><f:format.html>{data.bodytext}</f:format.html></div>
+    </f:if>
+    <div class="container">
+        <div class="row mx-n2 mx-xl-n3">
+            <div class="col-4 px-2 px-xl-5 mb-5 mb-lg-0">
+                <f:if condition="{footUid}">
+                    <f:link.page pageUid="{footUid}" section="mobility-filter" class="mobility-type{f:if(condition:'{data.pid} == {footUid}', then: ' facet-active')}">
+                        <div class="circle circle-2"><span class="circle-inner"></span></div>
+                        <div class="link text-center internal-link mt-1 mt-md-3">zu Fuß</div>
+                    </f:link.page>
+                </f:if>
+            </div>
+            <div class="col-4 px-2 px-xl-5 mb-5 mb-lg-0">
+                <f:if condition="{bikeUid}">
+                    <f:link.page pageUid="{bikeUid}" section="mobility-filter" class="mobility-type{f:if(condition:'{data.pid} == {bikeUid}', then: ' facet-active')}">
+                        <div class="circle circle-3"><span class="circle-inner"></span></div>
+                        <div class="link text-center internal-link mt-1 mt-md-3">mit dem Fahrrad</div>
+                    </f:link.page>
+                </f:if>
+            </div>
+            <div class="col-4 px-2 px-xl-5">
+                <f:if condition="{busUid}">
+                    <f:link.page pageUid="{busUid}" section="mobility-filter" class="mobility-type{f:if(condition:'{data.pid} == {busUid}', then: ' facet-active')}">
+                        <div class="circle circle-1"><span class="circle-inner"></span></div>
+                        <div class="link text-center internal-link mt-1 mt-md-3">mit Bus &amp; Bahn</div>
+                    </f:link.page>
+                </f:if>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

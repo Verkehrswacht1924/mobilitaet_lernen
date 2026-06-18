@@ -1,0 +1,33 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers">
+<formvh:renderRenderable renderable="{element}">
+    <f:form.validationResults for="{element.rootForm.identifier}.{element.identifier}">
+        <f:if condition="{element.properties.elementDescription}">
+            <f:variable name="aria" value="{describedby: '{element.uniqueIdentifier}-desc'}" />
+        </f:if>
+        <f:if condition="{validationResults.errors}">
+            <f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}" />
+        </f:if>
+
+        <f:render arguments="{element: element}" contentAs="elementContent" partial="Field/FieldUpload">
+            <formvh:form.uploadedResource
+                accept="{element.properties.allowedMimeTypes}"
+                additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+                aria="{aria}"
+                as="image"
+                class="{element.properties.elementClassAttribute} form-control form-control-lg"
+                errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute} is-invalid"
+                id="{element.uniqueIdentifier}"
+                property="{element.identifier}"
+            >
+                <f:if condition="{image}">
+                    <div id="{element.uniqueIdentifier}-preview">
+                        <a class="{element.properties.elementClassAttribute}" href="{f:uri.image(image: image, maxWidth: element.properties.imageLinkMaxWidth)}">
+                            <f:image alt="{formvh:translateElementProperty(element: element, property: 'altText')}" image="{image}" maxHeight="{element.properties.imageMaxHeight}" maxWidth="{element.properties.imageMaxWidth}"/>
+                        </a>
+                    </div>
+                </f:if>
+            </formvh:form.uploadedResource>
+        </f:render>
+    </f:form.validationResults>
+</formvh:renderRenderable>
+</html>

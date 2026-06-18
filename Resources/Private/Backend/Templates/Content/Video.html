@@ -1,0 +1,9 @@
+<f:if condition="{processedRow.bodytext}">
+    <f:format.html>{processedRow.bodytext}</f:format.html>
+</f:if>
+
+<f:if condition="{processedRow.audio}">
+    <video preload="none" style="max-width: 100%; width: 510px; height: 100px;" controls>
+        <source src="../<f:uri.typolink parameter='{processedRow.audio}' />" type="audio/mp3">
+    </video>
+</f:if>

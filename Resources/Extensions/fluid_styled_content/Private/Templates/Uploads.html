@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+	<f:if condition="{files}">
+		<ul class="ce-uploads list-unstyled">
+			<f:for each="{files}" as="file" iteration="fileIterator">
+				<li class="row mb-5">
+					<f:if condition="{data.uploads_type} == 1">
+						<div class="col-1">
+							<img class="figure-img img-fluid" width="32" src="{f:uri.resource(path: 'EXT:vms_sitepackage/Resources/Public/Icons/{file.extension}.svg', extensionName: 'frontend')}" alt="{file.extension -> f:format.case()}" loading="lazy">
+						</div>
+					</f:if>
+					<f:if condition="{data.uploads_type} == 2">
+						<div class="col-12 col-sm-2">
+							<f:if condition="{file.type} > 1">
+								<f:if condition="{f:uri.image(src: 'file:{f:if(condition: file.originalFile, then: \'file:{file.originalFile.uid}\', else: \'file:{file.uid}\')}')} != '/'">
+									<f:then>
+										<a class="d-block" href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"')}{f:if(condition: file.title, then: ' title="{file.title}"')}>
+											<f:media file="{file}" width="150" class="figure-img img-fluid rounded" alt="{file.properties.alternative}" />
+										</a>
+									</f:then>
+									<f:else>
+										<img class="figure-img img-fluid rounded" src="{f:uri.resource(path: 'Icons/{file.extension}.svg', extensionName: 'frontend')}" alt="" loading="lazy">
+									</f:else>
+								</f:if>
+							</f:if>
+						</div>
+					</f:if>
+					<div class="col-12 col-sm-10">
+						<h4 class="h5">
+							<a class="download" href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"')}{f:if(condition: file.title, then: ' title="{file.title}"')}>
+								{f:if(condition: file.properties.title, then: file.properties.title, else: file.name) -> f:format.htmlspecialchars()} ({file.extension -> f:format.case()})
+							</a>
+						</h4>
+						<f:if condition="{file.properties.description}">
+							<f:if condition="{data.uploads_description}">
+								<p class="ce-uploads-description">{file.properties.description}</p>
+							</f:if>
+						</f:if>
+						<f:if condition="{data.filelink_size}">
+							<p class="ce-uploads-filesize"><f:format.bytes value="{file.properties.size}" /></p>
+						</f:if>
+					</div>
+				</li>
+			</f:for>
+		</ul>
+	</f:if>
+
+</f:section>
+</html>

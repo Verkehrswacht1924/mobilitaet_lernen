@@ -1,0 +1,39 @@
+<html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+<div class="row">
+    <div class="col-12 offset-xl-2 col-xl-8">
+        <p class="roofline">
+            <f:if condition="{data.event_category}">
+                <f:then>
+                    {data.event_category}
+                </f:then>
+                <f:else>
+                    {f:cObject(typoscriptObjectPath: 'lib.categories', data:'{recordUid: data.uid}')}
+                </f:else>
+            </f:if>
+            |
+            <f:if condition="{data.event_startdate}">
+                <f:if condition="{f:format.date(date: data.event_startdate, format: 'd-m-y')} == {f:format.date(date: data.event_enddate, format: 'd-m-y')}">
+                    <f:then>
+                        {data.event_startdate -> f:format.date(format: '%A')}, {data.event_startdate -> f:format.date(format: 'j.')}
+                        <f:translate extensionName="vms_sitepackage" key="event.month.{data.event_startdate -> f:format.date(format: 'n')}"/>
+                        {data.event_startdate -> f:format.date(format: 'Y,')}
+                        <span>{data.event_startdate -> f:format.date(format: 'G:i')} - {data.event_enddate -> f:format.date(format: 'G:i')} {f:translate(key: 'event.time', extensionName: 'vms_sitepackage')}</span>
+                    </f:then>
+                    <f:else>
+                        {data.event_startdate -> f:format.date(format: 'j.')} - {data.event_enddate -> f:format.date(format: 'j.')}
+                        <f:translate extensionName="vms_sitepackage" key="event.month.{data.event_enddate -> f:format.date(format: 'n')}"/>
+                        {data.event_enddate -> f:format.date(format: 'Y')}
+                    </f:else>
+                </f:if>
+            </f:if>
+        </p>
+        <h2>{data.title}</h2>
+    </div>
+</div>
+
+<!--TYPO3SEARCH_begin-->
+<f:format.raw>{top}</f:format.raw>
+<!--TYPO3SEARCH_end-->
+
+</html>

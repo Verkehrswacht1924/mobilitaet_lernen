@@ -1,0 +1,15 @@
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Helper/PageClass.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Setup/Page/*.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Setup/*.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/Extensions/setup.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Setup/ContentElements/setup.typoscript'
+
+## include only one file
+## @import 'EXT:mysitepackage/Configuration/TypoScript/randomfile.typoscript'
+
+## import all files width ".typoscript" ending from a folder
+## sorting is alphabetical
+## @import 'EXT:mysitepackage/Configuration/TypoScript/*.typoscript'
+
+## import all files
+## @import 'EXT:mysitepackage/Configuration/TypoScript/'

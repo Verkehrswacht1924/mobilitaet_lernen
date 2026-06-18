@@ -1,0 +1,207 @@
+##############
+#### PAGE ####
+##############
+page = PAGE
+page {
+    typeNum = 0
+
+    bodyTagCObject = COA
+    bodyTagCObject {
+        10 =< lib.page.class
+        10.stdWrap.noTrimWrap = | class="| dpx"|
+        wrap = <body id="top"|>
+    }
+
+    headerData {
+        10 = HMENU
+        10 {
+            special = browse
+            special {
+                items = prev|next
+            }
+            1 = TMENU
+            1.NO {
+                allWrap = <link rel="prev" href="|"> |*| <link rel="next" href="|">
+                doNotLinkIt = 1
+                stdWrap {
+                    typolink {
+                        parameter.data = field:uid
+                        returnLast = url
+                    }
+                }
+            }
+        }
+
+        20 = TEXT
+        20 {
+            value = <link rel="preload" href="typo3conf/ext/vms_sitepackage/Resources/Public/Fonts/FilsonProRegular.woff2" as="font" type="font/woff2" crossorigin>
+        }
+
+        30 = TEXT
+        30 {
+            value = <link rel="preload" href="typo3conf/ext/vms_sitepackage/Resources/Public/Fonts/FilsonProRegularItalic.woff2" as="font" type="font/woff2" crossorigin>
+        }
+
+        40 = TEXT
+        40 {
+            value = <link rel="preload" href="typo3conf/ext/vms_sitepackage/Resources/Public/Fonts/FilsonProBook.woff2" as="font" type="font/woff2" crossorigin>
+        }
+
+        50 = TEXT
+        50 {
+            value = <link rel="preload" href="typo3conf/ext/vms_sitepackage/Resources/Public/Fonts/FilsonProBold.woff2" as="font" type="font/woff2" crossorigin>
+        }
+
+        60 = TEXT
+        60 {
+            value = <link rel="preload" href="typo3conf/ext/vms_sitepackage/Resources/Public/Fonts/FilsonProBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+        }
+
+        70 = TEXT
+        70 {
+            value = <link rel="preload" href="typo3conf/ext/vms_sitepackage/Resources/Public/Fonts/FilsonProBlack.woff2" as="font" type="font/woff2" crossorigin>
+        }
+
+        80 = TEXT
+        80 {
+            value = <link rel="preload" href="typo3conf/ext/vms_sitepackage/Resources/Public/Fonts/FilsonProBlackItalic.woff2" as="font" type="font/woff2" crossorigin>
+        }
+    }
+
+    10 = FLUIDTEMPLATE
+    10 {
+        # Template names will be generated automatically by converting the applied
+        # backend_layout, there is no explicit mapping necessary anymore.
+        #
+        # BackendLayout Key
+        # subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        #
+        # Backend Record
+        # uid: 1 -> 1.html
+        #
+        # Database Entry
+        # value: -1 -> None.html
+        # value: pagets__subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        templateName = TEXT
+        templateName {
+            cObject = TEXT
+            cObject {
+                data = pagelayout
+                required = 1
+                split {
+                    token = pagets__
+                    cObjNum = 1
+                    1.current = 1
+                }
+            }
+            ifEmpty = Default
+        }
+
+        templateRootPaths {
+            0 = EXT:vms_sitepackage/Resources/Private/Templates/Page/
+            1 = {$page.fluidtemplate.templateRootPath}
+        }
+
+        partialRootPaths {
+            0 = EXT:vms_sitepackage/Resources/Private/Partials/Page/
+            1 = {$page.fluidtemplate.partialRootPath}
+        }
+
+        layoutRootPaths {
+            0 = EXT:vms_sitepackage/Resources/Private/Layouts/Page/
+            1 = {$page.fluidtemplate.layoutRootPath}
+        }
+
+        variables {
+            # navigation & element libs
+            navMeta             = < lib.navMeta
+            navMetaTop          = < lib.navMetaTop
+            jumpNav             = < lib.jumpNav
+            navBreadcrumb       = < lib.navBreadcrumb
+            navPrimary          = < lib.navPrimary
+            navSubnav           = < lib.navSubnav
+            navPrimaryMeta      = < lib.navPrimaryMeta
+            navMinimap          = < lib.navMinimap
+            footerNav           = < lib.footerNav
+            teaser              = < lib.teaser
+            shariff             = < lib.shariff
+
+            // getting absRefPrefix dynamically
+            absRefPrefix       = TEXT
+            absRefPrefix.value = {$config.absRefPrefix}
+
+            # general title and vars
+            copyright           = < lib.copyright
+            pageheader          = < lib.pageheader
+            headtitle           = < lib.headTitle
+            headertitle         = < lib.headerTitle
+            headerDescription   = < lib.headerDescription
+            newsTitle           = < lib.newsTitle
+            newsDescription     = < lib.newsDescription
+
+            # Top
+            top < styles.content.get
+            top.select.where = colPos=0
+
+            # Main
+            main < styles.content.get
+            main.select.where = colPos=1
+
+            # Supplement
+            supplement < styles.content.get
+            supplement.select.where = colPos=2
+
+            # Bottom
+            bottom < styles.content.get
+            bottom.select.where = colPos=3
+        }
+
+        # set extension name
+        extbase {
+            controllerExtensionName = vms_sitepackage
+        }
+    }
+
+    meta {
+        viewport = {$page.meta.viewport}
+        robots = {$page.meta.robots}
+        apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
+
+        X-UA-Compatible = {$page.meta.compatible}
+        X-UA-Compatible {
+            attribute = http-equiv
+        }
+
+        # Google
+        google = {$page.meta.google}
+        google-site-verification = {$page.meta.google-site-verification}
+    }
+}
+
+page.10.dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+        references.data = levelmedia: -1, slide
+        as = media
+    }
+}
+
+lib {
+    categories = CONTENT
+    categories {
+        table = sys_category
+        select {
+            pidInList = 135
+            selectFields = title
+            join = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid
+            where.data =field:recordUid
+            where.intval = 1
+            where.wrap = uid_foreign=|
+        }
+        renderObj = COA
+        renderObj {
+            1 = TEXT
+            1.field = title
+        }
+    }
+}

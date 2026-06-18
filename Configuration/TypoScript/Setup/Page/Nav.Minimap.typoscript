@@ -1,0 +1,45 @@
+lib.navMinimap = COA
+lib.navMinimap {
+    stdWrap.wrap = <ul id="minimap" class="row minimap list-unstyled">|
+
+    10 = HMENU
+    10 {
+        special = directory
+        special.value = {$config.pids.Minimap}
+        includeNotInMenu = 0
+        excludeUidList = 30
+
+        1 = TMENU
+        1 {
+            noBlur = 1
+            expAll = 1
+            NO.wrapItemAndSub = <li class="minimap-item col-12 col-md-6 col-xl-3">|</li>
+
+            CUR < .NO
+            CUR = 1
+            CUR.allWrap = <strong>|</strong>
+            CUR.doNotLinkIt = 1
+            CUR.stdWrap.htmlSpecialChars = 1
+
+            CUR <.NO
+            CUR {
+                wrapItemAndSub = <li class="breadcrumb-item"><strong>|</strong></li>
+                doNotLinkIt = 1
+            }
+        }
+
+        2 < .1
+        2 = TMENU
+        2 {
+            wrap = <ul class="minimap-sub list-unstyled">|</ul>
+            expAll = 1
+            NO.wrapItemAndSub = <li class="minimap-sub-item">|</li>
+
+            CUR < .NO
+            CUR = 1
+            CUR.allWrap = <strong>|</strong>
+            CUR.doNotLinkIt = 1
+            CUR.stdWrap.htmlSpecialChars = 1
+        }
+    }
+}

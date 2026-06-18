@@ -1,0 +1,14 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+    <f:link.typolink parameter="{file.link}" title="{file.link.title}">
+        <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+            <source media="(min-width: 1220px)" srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920)}">
+            <source media="(min-width: 992px)" srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220)}">
+            <source media="(min-width: 768px)" srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 992)}">
+            <source media="(min-width: 576px)" srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 768)}">
+            <source media="(min-width: 0)" srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 576)}">
+            <f:image class="figure-img img-fluid rounded" cropVariant="default" maxWidth="1920" src="{file.properties.uid}" treatIdAsReference="1" />
+        </picture>
+    </f:link.typolink>
+
+</html>

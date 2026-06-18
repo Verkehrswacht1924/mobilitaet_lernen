@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+  <a href="#galleryCarousel" role="button" data-bs-slide="next" title="Nächstes Bild">
+    <figure class="image">
+      <picture>
+        <f:image src="{file.uid}" treatIdAsReference="1" crop="false" maxWidth="1800" class="figure-img img-fluid rounded"/>
+      </picture>
+      <f:if condition="{file.properties.caption}">
+        <figcaption class="image-caption">
+          <f:if condition="{column.media.description}">
+            <span class="description">{column.media.description} </span>
+          </f:if>
+          <f:if condition="{column.media.originalFile.properties.copyright}">
+            <span class="copyright">© {column.media.originalFile.properties.copyright}</span>
+          </f:if>
+        </figcaption>
+      </f:if>
+    </figure>
+  </a>
+</html>

@@ -1,0 +1,61 @@
+<html data-namespace-typo3-fluid="true">
+<f:comment>Portiert aus dpx_file (Live-.de-Markup). frame_class=file-highlight → Bootstrap-Karten, sonst einfache Liste.</f:comment>
+<f:if condition="{data.tx_dpxfile_file}">
+    <div id="c{data.uid}" class="file-wrapper frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}">
+        <f:if condition="{data.header}">
+            <div class="frame frame-type-header frame-layout-0"><h2>{data.header}</h2></div>
+        </f:if>
+        <f:if condition="{data.bodytext}">
+            <div class="file-intro"><f:format.html>{data.bodytext}</f:format.html></div>
+        </f:if>
+        <f:if condition="{data.frame_class} == 'file-highlight'">
+            <f:then>
+                <ul class="file-list list-unstyled squared-list">
+                    <f:for each="{data.tx_dpxfile_file}" as="file">
+                        <li class="file-list-item mb-4 mb-lg-5">
+                            <div class="card shadow bg-primary h-100">
+                                <div class="card-body d-flex flex-column align-items-start justify-content-between">
+                                    <div>
+                                        <strong class="badge lh-base text-primary bg-white">
+                                            <f:format.case mode="upper">{file.properties.extension}</f:format.case>
+                                            <span aria-hidden="true"> | </span>
+                                            <span class="fw-light"><f:format.bytes decimals="0">{file.properties.size}</f:format.bytes></span>
+                                        </strong>
+                                        <h3 class="card-title my-3 text-white">{f:if(condition: file.title, then: file.title, else: file.properties.name)}</h3>
+                                        <f:if condition="{file.description}">
+                                            <span class="card-text lead text-white"><p>{file.description}</p></span>
+                                        </f:if>
+                                    </div>
+                                    <a class="link download download-light text-white" target="_blank" rel="noopener" href="{file.publicUrl}">Herunterladen</a>
+                                </div>
+                            </div>
+                        </li>
+                    </f:for>
+                </ul>
+            </f:then>
+            <f:else>
+                <ul class="file-list {data.header_position} list-unstyled">
+                    <f:for each="{data.tx_dpxfile_file}" as="file">
+                        <li class="file-list-item">
+                            <div class="file-item">
+                                <h4 class="file-title">
+                                    <a href="{file.publicUrl}" class="download {file.properties.extension}" target="_blank" rel="noopener">
+                                        {f:if(condition: file.title, then: file.title, else: file.properties.name)}
+                                        <span class="visually-hidden"><f:format.case mode="upper">- {file.properties.extension}:{file.properties.size -> f:format.bytes()}</f:format.case></span>
+                                    </a>
+                                </h4>
+                                <f:if condition="{file.description}">
+                                    <p class="file-description">{file.description}</p>
+                                </f:if>
+                                <p class="file-properties">
+                                    <f:format.case mode="upper">{file.properties.extension} - {file.properties.size -> f:format.bytes()}</f:format.case>
+                                </p>
+                            </div>
+                        </li>
+                    </f:for>
+                </ul>
+            </f:else>
+        </f:if>
+    </div>
+</f:if>
+</html>

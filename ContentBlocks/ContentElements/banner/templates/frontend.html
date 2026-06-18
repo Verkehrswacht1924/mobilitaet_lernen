@@ -1,0 +1,18 @@
+<html data-namespace-typo3-fluid="true">
+<div class="dpx-banner {data.tx_dpxbanner_link_background}{f:if(condition: data.tx_dpxbanner_link_bold, then: ' is-bold')}">
+    <f:if condition="{data.header}">
+        <h2 class="dpx-banner__header">{data.header}</h2>
+    </f:if>
+    <f:for each="{data.tx_dpxbanner_file}" as="file">
+        <f:image image="{file}" alt="{file.alternative}" loading="lazy" />
+    </f:for>
+    <f:if condition="{data.tx_dpxbanner_link}">
+        <f:link.typolink parameter="{data.tx_dpxbanner_link}" class="dpx-banner__link {data.tx_dpxbanner_link_layout}">
+            <f:if condition="{data.tx_dpxbanner_link_text}">
+                <f:then>{data.tx_dpxbanner_link_text}</f:then>
+                <f:else>{data.header}</f:else>
+            </f:if>
+        </f:link.typolink>
+    </f:if>
+</div>
+</html>

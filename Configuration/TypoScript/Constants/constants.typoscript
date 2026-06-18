@@ -1,0 +1,2 @@
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Constants/Page/'
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Constants/ContentElements/'

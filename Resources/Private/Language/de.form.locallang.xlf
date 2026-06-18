@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns:t3="http://typo3.org/schemas/xliff" version="1.0">
+    <file t3:id="1415814821" target-language="de" datatype="plaintext" original="EXT:felogin/Resource/Private/Language/locallang.xlf" date="2011-10-17T20:22:32Z" product-name="felogin">
+        <header/>
+        <body>
+            <trans-unit id="ll_welcome_header" resname="ll_welcome_header">
+                <target>Anmelden</target>
+            </trans-unit>
+            <trans-unit id="ll_welcome_message" resname="ll_welcome_message">
+                <target>Bitte geben Sie Ihre E-Mail-Adresse und Ihr Passwort ein.</target>
+            </trans-unit>
+            <trans-unit id="ll_logout_header" resname="ll_logout_header">
+                <target>Sie haben sich ausgeloggt.</target>
+            </trans-unit>
+            <trans-unit id="ll_logout_message" resname="ll_logout_message">
+                <target>Sie haben sich gerade von Ihrer Benutzersitzung auf dieser Website abgemeldet. Sie können sich erneut oder als anderer Benutzer über das untenstehende Formular anmelden.</target>
+            </trans-unit>
+            <trans-unit id="ll_error_header" resname="ll_error_header">
+                <target>Anmelden</target>
+            </trans-unit>
+            <trans-unit id="ll_error_message" resname="ll_error_message" xml:space="preserve">
+				<target>Das hat leider nicht funktioniert.
+                    Versichern Sie sich, dass Sie die richtige E-Mail-Adresse und das richtige Passwort verwenden.</target>
+			</trans-unit>
+            <trans-unit id="ll_success_header" resname="ll_success_header">
+                <target>Anmeldung erfolgreich</target>
+            </trans-unit>
+            <trans-unit id="ll_success_message" resname="ll_success_message">
+                <target>Sie sind jetzt eingeloggt als '###USER###'</target>
+            </trans-unit>
+            <trans-unit id="ll_status_header" resname="ll_status_header">
+                <target>Aktueller Status</target>
+            </trans-unit>
+            <trans-unit id="ll_status_message" resname="ll_status_message">
+                <target>Dies ist Ihr aktueller Status</target>
+            </trans-unit>
+            <trans-unit id="cookie_warning" resname="cookie_warning">
+                <target>Warnung: Es besteht die Möglichkeit, dass Cookies in Ihrem Webbrowser nicht aktiviert sind! Wenn Ihr Login beim nächsten Klick verschwindet, ist das der Fall und Sie sollten Cookies sofort aktivieren (oder Cookies von dieser Website akzeptieren)!</target>
+            </trans-unit>
+            <trans-unit id="username" resname="username">
+                <target>Benutzername</target>
+            </trans-unit>
+            <trans-unit id="password" resname="password">
+                <target>Passwort</target>
+            </trans-unit>
+            <trans-unit id="login" resname="login">
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="permalogin" resname="permalogin">
+                <target>Eingeloggt bleiben</target>
+            </trans-unit>
+            <trans-unit id="logout" resname="logout">
+                <target>Ausloggen</target>
+            </trans-unit>
+            <trans-unit id="send_password" resname="send_password">
+                <target>Passwort senden</target>
+            </trans-unit>
+            <trans-unit id="reset_password" resname="reset_password">
+                <target>Passwort zurücksetzen</target>
+            </trans-unit>
+            <trans-unit id="ll_change_password_header" resname="ll_change_password_header">
+                <target>Ändern Sie Ihr Passwort</target>
+            </trans-unit>
+            <trans-unit id="ll_change_password_message" resname="ll_change_password_message">
+                <target>Bitte geben Sie Ihr neues Passwort zweimal ein. Das Passwort benötigt eine Mindestlänge von %s Zeichen.</target>
+            </trans-unit>
+            <trans-unit id="ll_change_password_nolinkprefix_message" resname="ll_change_password_nolinkprefix_message">
+                <target>Fehler: Es gibt kein Präfix für den Link. Bitte setzen Sie eine der folgenden Angaben in Ihrer Typoskript-Vorlage: plugin.tx_felogin_pi1.feloginBaseURL = http://yourdomain/, config.baseURL = http://yourdomain/, config.absRefPrefix = /</target>
+            </trans-unit>
+            <trans-unit id="ll_change_password_notvalid_message" resname="ll_change_password_notvalid_message">
+                <target>Der von Ihnen angeklickte Link ist nicht gültig. Bitte wiederholen Sie die Prozedur "Passwort vergessen".</target>
+            </trans-unit>
+            <trans-unit id="ll_change_password_notequal_message" resname="ll_change_password_notequal_message">
+                <target>Die Passwörter sind nicht gleich, bitte geben Sie Ihr neues Passwort zweimal ein. Das Passwort benötigt eine Mindestlänge von %s Zeichen.</target>
+            </trans-unit>
+            <trans-unit id="ll_change_password_tooshort_message" resname="ll_change_password_tooshort_message">
+                <target>Die Passwortlänge ist zu kurz. Bitte geben Sie Ihr neues Passwort zweimal ein. Das Passwort benötigt eine Mindestlänge von %s Zeichen.</target>
+            </trans-unit>
+            <trans-unit id="ll_change_password_done_message" resname="ll_change_password_done_message">
+                <target>Ihr Passwort wurde gespeichert. Sie können sich nun mit Ihrem neuen Passwort anmelden.</target>
+            </trans-unit>
+            <trans-unit id="change_password" resname="change_password">
+                <target>Ändern Sie Ihr Passwort</target>
+            </trans-unit>
+            <trans-unit id="newpassword_label1" resname="newpassword_label1">
+                <target>Neues Passwort eingeben</target>
+            </trans-unit>
+            <trans-unit id="newpassword_label2" resname="newpassword_label2">
+                <target>Wiederholen Sie das neue Passwort</target>
+            </trans-unit>
+            <trans-unit id="your_email" resname="your_email">
+                <target>Ihre E-Mail</target>
+            </trans-unit>
+            <trans-unit id="ll_forgot_header" resname="ll_forgot_header">
+                <target>Passwort vergessen?</target>
+            </trans-unit>
+            <trans-unit id="ll_forgot_email_password" resname="ll_forgot_email_password" xml:space="preserve">
+				<target>Ihr Passwort
+Hallo %s
+
+Ihr Benutzername lautet "%s"
+Ihr Passwort lautet "%s"</target>
+			</trans-unit>
+            <trans-unit id="ll_forgot_email_nopassword" resname="ll_forgot_email_nopassword" xml:space="preserve">
+				<target>Ihr Passwort
+Hallo %s
+
+
+Wir konnten keinen Benutzernamen für diese E-Mail-Adresse finden und können Ihnen daher das Passwort nicht zusenden. Wahrscheinlich haben Sie die E-Mail-Adresse falsch geschrieben (Groß-/Kleinschreibung macht einen Unterschied) oder vielleicht haben Sie sich sogar noch nicht registriert?</target>
+			</trans-unit>
+            <trans-unit id="ll_forgot_validate_reset_password" resname="ll_forgot_validate_reset_password" xml:space="preserve">
+				<target>Ihr neues Passwort
+Sehr geehrte/r %s,
+
+Diese E-Mail wurde als Antwort auf Ihre Anfrage zum Zurücksetzen Ihres Passworts gesendet. Bitte klicken Sie auf den untenstehenden Link.
+%s
+
+Aus Sicherheitsgründen ist diese Verbindung nur bis %s aktiv. Wenn Sie den Link bis dahin nicht besuchen, müssen Sie die Schritte zum Zurücksetzen des Passworts wiederholen.</target>
+			</trans-unit>
+            <trans-unit id="ll_forgot_message" resname="ll_forgot_message">
+                <target>Bitte geben Sie die E-Mail-Adresse ein, mit der Sie Ihr Benutzerkonto registriert haben. Dann drücken Sie auf "Passwort senden" und Ihr Passwort wird Ihnen sofort per E-Mail zugesandt. Achten Sie auf die korrekte Schreibweise Ihrer E-Mail-Adresse.</target>
+            </trans-unit>
+            <trans-unit id="ll_forgot_message_emailSent" resname="ll_forgot_message_emailSent">
+                <target>Ihr Passwort wurde nun an die E-Mail-Adresse %s gesendet.</target>
+            </trans-unit>
+            <trans-unit id="ll_forgot_reset_message" resname="ll_forgot_reset_message">
+                <target>Bitte geben Sie Ihre E-Mail-Adresse ein und klicken Sie auf "Weiter". Wir senden Ihnen dann einen Link zur Erstellung eines neuen Passworts zu.</target>
+            </trans-unit>
+            <trans-unit id="ll_forgot_reset_message_emailSent" resname="ll_forgot_reset_message_emailSent">
+                <target>Eine E-Mail wurde an die in Ihrem Konto gespeicherte Adresse geschickt und enthält einen Link zum Zurücksetzen Ihres Passworts. Wenn Sie keine E-Mail erhalten, wurde Ihr Konto oder Ihre E-Mail-Adresse nicht gefunden.</target>
+            </trans-unit>
+            <trans-unit id="ll_forgot_reset_message_error" resname="ll_forgot_reset_message_error">
+                <target>Ihr Konto oder Ihre E-Mail-Adresse existiert nicht.</target>
+            </trans-unit>
+            <trans-unit id="ll_forgot_header_backToLogin" resname="ll_forgot_header_backToLogin">
+                <target>Zurück zum Anmeldeformular</target>
+            </trans-unit>
+            <trans-unit id="ll_enter_your_data" resname="ll_enter_your_data">
+                <target>Benutzername oder E-Mail-Adresse</target>
+            </trans-unit>
+            <trans-unit id="ll_register" resname="ll_register">
+                <target>Registrieren</target>
+            </trans-unit>
+
+            <trans-unit id="stepper.eingabe">
+                <target>Eingabe</target>
+            </trans-unit>
+            <trans-unit id="stepper.check">
+                <target>Check</target>
+            </trans-unit>
+            <trans-unit id="stepper.fertig">
+                <target>Fertig</target>
+            </trans-unit>
+            <trans-unit id="element.pflichtfeld.properties.text">
+                <target>Pflichtfeld</target>
+            </trans-unit>
+            <trans-unit id="unsubscribeHeadline2">
+                <target>Sie möchten Ihren Newsletter abbestellen?</target>
+            </trans-unit>
+            <trans-unit id="unsubscribeHeadlineTeaser1">
+                <target>Bitte geben Sie die E-Mail-Adresse ein, mit der Sie sich für den Newsletter angemeldet haben.</target>
+            </trans-unit>
+            <trans-unit id="unsubscribeHeadlineTeaser2">
+                <target>Wir senden Ihnen anschließend eine E-Mail mit einem Bestätigungslink.</target>
+            </trans-unit>
+            <trans-unit id="element.anrede-select.properties.label">
+                <target>Anrede</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.anrede-select.1221560910">
+                <target>Bitte Anrede angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.anrede-select.1221560718">
+                <target>Bitte Anrede angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.anrede-select.1347992400">
+                <target>Bitte Anrede angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.anrede-select.1347992453">
+                <target>Bitte Anrede angeben</target>
+            </trans-unit>
+
+            <trans-unit id="element.anrede-select.properties.prependOptionLabel">
+                <target>Bitte Auswählen...</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.element.anrede-select.properties.options.1">
+                <target>Herr</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.element.anrede-select.properties.options.2">
+                <target>Frau</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.element.anrede-select.properties.options.3">
+                <target>Divers</target>
+            </trans-unit>
+
+            <trans-unit id="element.firstname.properties.label">
+                <target>Vorname</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.firstname.1221560910">
+                <target>Bitte Vornamen angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.firstname.1221560718">
+                <target>Bitte Vornamen angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.firstname.1347992400">
+                <target>Bitte Vornamen angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.firstname.1347992453">
+                <target>Bitte Vornamen angeben</target>
+            </trans-unit>
+
+            <trans-unit id="element.lastname.properties.label">
+                <target>Nachname</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.lastname.1221560910">
+                <target>Bitte Nachnamen angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.lastname.1221560718">
+                <target>Bitte Nachnamen angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.lastname.1347992400">
+                <target>Bitte Nachnamen angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.lastname.1347992453">
+                <target>Bitte Nachnamen angeben</target>
+            </trans-unit>
+
+            <trans-unit id="element.email.properties.label">
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.email.1221560910">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.email.1221560718">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.email.1347992400">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.email.1347992453">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.email.1221559976">
+                <target>Bitte eine valide E-Mail Adresse angeben</target>
+            </trans-unit>
+
+            <trans-unit id="newsletter_unsubsription_form.validation.error.email.1221560910">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_unsubsription_form.validation.error.email.1221560718">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_unsubsription_form.validation.error.email.1347992400">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_unsubsription_form.validation.error.email.1347992453">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="newsletter_unsubsription_form.validation.error.email.1221559976">
+                <target>Bitte eine valide E-Mail Adresse angeben</target>
+            </trans-unit>
+
+            <trans-unit id="barriere_melden.validation.error.email.1221560910">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.validation.error.email.1221560718">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.validation.error.email.1347992400">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.validation.error.email.1347992453">
+                <target>Bitte E-Mail Adresse angeben</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.validation.error.email.1221559976">
+                <target>Bitte eine valide E-Mail Adresse angeben</target>
+            </trans-unit>
+
+            <trans-unit id="element.Veranstaltungen-1.properties.prependOptionLabel">
+                <target>Kategorien</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.Veranstaltungen-1.1221560910">
+                <target>Bitte mindestens eine Kategorie wählen</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.Veranstaltungen-1.1221560718">
+                <target>Bitte mindestens eine Kategorie wählen</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.Veranstaltungen-1.1347992400">
+                <target>Bitte mindestens eine Kategorie wählen</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.Veranstaltungen-1.1347992453">
+                <target>Bitte mindestens eine Kategorie wählen</target>
+            </trans-unit>
+
+            <trans-unit id="element.Veranstaltungen-1.properties.label">
+                <target>Dafür interessiere ich mich</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.element.Veranstaltungen-1.properties.options.1">
+                <target>Aktuelles</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.element.Veranstaltungen-1.properties.options.2">
+                <target>Veranstaltungen</target>
+            </trans-unit>
+
+            <trans-unit id="element.nachricht.properties.label">
+                <target>Nachricht</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.validation.error.nachricht.1221560910">
+                <target>Bitte geben Sie eine Nachricht ein</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.validation.error.nachricht.1221560718">
+                <target>Bitte geben Sie eine Nachricht ein</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.validation.error.nachricht.1347992400">
+                <target>Bitte geben Sie eine Nachricht ein</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.validation.error.nachricht.1347992453">
+                <target>Bitte geben Sie eine Nachricht ein</target>
+            </trans-unit>
+
+
+            <trans-unit id="element.eingabe.renderingOptions.nextButtonLabel">
+                <target>Weiter</target>
+            </trans-unit>
+            <trans-unit id="element.eingabe.renderingOptions.previousButtonLabel">
+                <target>Zurück</target>
+            </trans-unit>
+            <trans-unit id="element.barriere_melden.renderingOptions.submitButtonLabel">
+                <target>Senden</target>
+            </trans-unit>
+            <trans-unit id="element.newsletter_subscription.renderingOptions.submitButtonLabel">
+                <target>Jetzt anmelden</target>
+            </trans-unit>
+            <trans-unit id="element.newsletter_unsubsription_form.renderingOptions.submitButtonLabel">
+                <target>Senden</target>
+            </trans-unit>
+            <trans-unit id="element.checkbox-zustimmung-newsletter.properties.label">
+                <target>Zustimmung zur Datenverarbeitung</target>
+            </trans-unit>
+            <trans-unit id="element.linkedcheckbox-1.properties.textBeforeLink">
+                <target>Ich stimme der Zusendung des Newsletters zu, habe die</target>
+            </trans-unit>
+            <trans-unit id="element.linkedcheckbox-1.properties.linkText">
+                <target>Datenschutzerklärung</target>
+            </trans-unit>
+            <trans-unit id="element.linkedcheckbox-1.properties.label">
+                <target>Datenschutzerklärung</target>
+            </trans-unit>
+            <trans-unit id="element.linkedcheckbox-1.properties.textAfterLink">
+                <target> gelesen und weiß, dass ich mein Einverständnis jederzeit widerrufen kann.</target>
+            </trans-unit>
+            <trans-unit id="element.linkedcheckbox-2.properties.textBeforeLink">
+                <target>Ich habe den</target>
+            </trans-unit>
+            <trans-unit id="element.linkedcheckbox-2.properties.linkText">
+                <target>Datenschutz</target>
+            </trans-unit>
+            <trans-unit id="element.linkedcheckbox-2.properties.label">
+                <target>Datenschutz</target>
+            </trans-unit>
+            <trans-unit id="element.linkedcheckbox-2.properties.textAfterLink">
+                <target> gelesen und weiß, dass ich mein Einverständnis jederzeit widerrufen kann.</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.linkedcheckbox-1.1221560910">
+                <target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.linkedcheckbox-1.1221560718">
+                <target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.linkedcheckbox-1.1347992400">
+                <target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.linkedcheckbox-1.1347992453">
+                <target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+            </trans-unit>
+
+            <trans-unit id="barriere_melden.validation.error.linkedcheckbox-1.1221560910">
+                <target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.validation.error.linkedcheckbox-1.1221560718">
+                <target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.validation.error.linkedcheckbox-1.1347992400">
+                <target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.validation.error.linkedcheckbox-1.1347992453">
+                <target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+            </trans-unit>
+
+            <trans-unit id="newsletter_subscription.element.checkbox-zustimmung-newsletter.properties.label">
+                <target>Zustimmung zur Datenverarbeitung</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.element.checkbox-zustimmung-newsletter.properties.text">
+                <target>Ich stimme der Zusendung des Newsletters zu und gebe hierfür meine Daten an.</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.checkbox-zustimmung-newsletter.1221560910">
+                <target>Bitte stimmen Sie der Nutzung Ihrer Daten zu</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.checkbox-zustimmung-newsletter.1221560718">
+                <target>Bitte stimmen Sie der Nutzung Ihrer Daten zu</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.checkbox-zustimmung-newsletter.1347992400">
+                <target>Bitte stimmen Sie der Nutzung Ihrer Daten zu</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.validation.error.checkbox-zustimmung-newsletter.1347992453">
+                <target>Bitte stimmen Sie der Nutzung Ihrer Daten zu</target>
+            </trans-unit>
+
+            <trans-unit id="element.datenueberpruefen.properties.previousButtonLabel">
+                <target>Zurück</target>
+            </trans-unit>
+            <trans-unit id="element.datenueberpruefen.properties.nextButtonLabel">
+                <target>Weiter</target>
+            </trans-unit>
+            <trans-unit id="element.datenueberpruefen.renderingOptions.previousButtonLabel">
+                <target>Zurück</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.finisher.Confirmation.message">
+                <target>Ihre Anmerkungen zur Barrierefreiheit wurden an uns versendet. Wir danken Ihnen für Ihre Nachricht und kümmern uns nach Möglichkeit um Ihr Anliegen.</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.finisher.Confirmation.message1">
+                <target>Wir haben eine Mail an Ihre E-Mail Adresse geschickt.</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.finisher.Confirmation.message2">
+                <target>Bitte klicken Sie zur Bestätigung Ihrer Bestellung auf den Link in dieser Mail.</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.finisher.Confirmation.message3">
+                <target>Hinweis: Sollten Sie diese E-Mail nicht in Ihrem Posteingang finden, prüfen Sie auch Ihren Spam-Ordner.</target>
+            </trans-unit>
+            <trans-unit id="newsletter_unsubscription.finisher.Confirmation.message">
+                <target>Wenn Sie mit dieser E-Mail für unseren Newsletter angemeldet sind, dann erhalten Sie jetzt eine E-Mail um die Abmeldung abzuschließen. Bitte prüfen Sie gegebenenfalls auch Ihren Spam-Ordner.</target>
+            </trans-unit>
+            <trans-unit id="element.renderingOptions.submitButtonLabel">
+                <target>Senden</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.heading.h3">
+                <target>Barriere melden</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.subheader.h3">
+                <target>Rückmeldung zur Barrierefreiheit</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.rueckmeldung.fertig">
+                <target>Rückmeldung fertig</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.subheader.h3">
+                <target>Abonnieren Sie den Newsletter der Denkfabrik</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.heading.h3">
+                <target>Blick in die Zukunft</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.teaser.eingabe">
+                <target>Immer auf dem neusten Stand! Informieren Sie sich mit unseren Newslettern über aktuelle Themen der Denkfabrik oder erhalten Sie Veranstaltungshinweise.</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.teaser.datenueberpruefen">
+                <target>Überprüfen Sie Ihre Angaben.</target>
+            </trans-unit>
+            <trans-unit id="newsletter_unsubscription.teaser.datenueberpruefen">
+                <target>Überprüfen Sie Ihre Angaben.</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.teaser.eingabe">
+                <target>Sind Ihnen Mängel beim barrierefreien Zugang zu Inhalten unserer Internetseite aufgefallen? Dann nutzen Sie unser Feedback-Formular, um uns eine Nachricht zukommen zu lassen.</target>
+            </trans-unit>
+            <trans-unit id="barriere_melden.teaser.datenueberpruefen">
+                <target>Überprüfen Sie hier Ihre Angaben und senden Sie eine Nachricht an uns.</target>
+            </trans-unit>
+            <trans-unit id="newsletter_subscription.confimation.headline">
+                <target>Fast fertig...</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,20 @@
+config {
+    pids {
+        # cat=Default Templateset (DPX): advanced/160/100; type=text; label=Homepage:PageID
+        Home                            = 1
+        # cat=Default Templateset (DPX): advanced/160/110; type=text; label=Meta-Sysfolder:PageID
+        Meta                            = 66
+        # cat=Default Templateset (DPX): advanced/160/120; type=text; label=MetaTop-Sysfolder:PageID
+        MetaTop                         = 81
+        # cat=Default Templateset (DPX): advanced/160/120; type=text; label=PrimaryMeta-Sysfolder:PageID
+        PrimaryMeta                     = 25
+        # cat=Default Templateset (DPX): advanced/160/130; type=text; label=Footernav-Sysfolder:PageID
+        Footer                          = 25
+        # cat=Default Templateset (DPX): advanced/160/140; type=text; label=Minimap-Sysfolder:PageID
+        Minimap                         = 1
+        # cat=Default Templateset (DPX): advanced/160/150; type=text; label=Hilfe/FAQ-Sysfolder:PageID
+        helpFaq                         = 84
+        # cat=Default Templateset (DPX): advanced/160/150; type=text; label=Landingpage-Sysfolder:PageID
+        landingPage                     = 83
+    }
+}

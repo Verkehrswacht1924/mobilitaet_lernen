@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-07-31T109:48:17Z" product-name="vms_sitepackage">
+        <header/>
+        <body>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.link_text">
+                <source>Link Text</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.link">
+                <source>Link Ziel</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.typ">
+                <source>Mobility typ</source>
+            </trans-unit>
+
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.item_date">
+                <source>Item Date</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.headline">
+                <source>Headline</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.subheadline">
+                <source>Subheadline</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.image">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.link_target">
+                <source>Link Target</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_type">
+                <source>Target Type</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_type.gallery">
+                <source>Image Gallery</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_type.video">
+                <source>Video</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_type.audio">
+                <source>Audio</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_type.publication">
+                <source>Publication</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_tab">
+                <source>Target Tab</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_tab.tab1">
+                <source>Tab 1</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_tab.tab2">
+                <source>Tab 2</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_tab.tab3">
+                <source>Tab 3</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_tab.tab4">
+                <source>Tab 4</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_tab.tab5">
+                <source>Tab 5</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_tab.tab6">
+                <source>Tab 6</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_tab.tab7">
+                <source>Tab 7</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.target_tab.tab8">
+                <source>Tab 8</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.label.text">
+                <source>Label</source>
+            </trans-unit>
+
+        <!--		Common		-->
+
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.pls_choose">
+                <source>Bitte wählen...</source>
+            </trans-unit>
+
+
+            <trans-unit id="tx_dpxtemplate_domain_model_publication">
+                <source>Publication</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.date">
+                <source>Date</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.name">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.author">
+                <source>Author</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.image">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.file">
+                <source>File</source>
+            </trans-unit>
+            <trans-unit id="tx_denkfabrik_publication_publication.name">
+                <source>Publication</source>
+            </trans-unit>
+            <trans-unit id="tx_denkfabrik_publication_publication.description">
+                <source>Shows publication files</source>
+            </trans-unit>
+            <trans-unit id="tx_dpxtemplate_domain_model_publication.external">
+                <source>External link</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_position.kicker" xml:space="preserve">
+                <source>Kicker</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_position.inside" xml:space="preserve">
+                <source>Intext</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_position.leftintext" xml:space="preserve">
+                <source>Left (in text)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_position.rightintext" xml:space="preserve">
+                <source>Right (in text)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_position.centerintext" xml:space="preserve">
+                <source>Center (in text)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_style" xml:space="preserve">
+                <source>Style</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_style.default" xml:space="preserve">
+                <source>Default</source>
+            </trans-unit>
+            <trans-unit id="CType.menu_section_pages" xml:space="preserve">
+                <source>Teaser menu: Index of subpages from selected pages</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video_caption" xml:space="preserve">
+                <source>Caption</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video_poster_image" xml:space="preserve">
+                <source>Poster Image</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video_poster_video_label" xml:space="preserve">
+                <source>Poster Video</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video_poster_video_description" xml:space="preserve">
+                <source>The Videofile may not be longer than 5 seconds</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video_duration_video_label" xml:space="preserve">
+                <source>Video Duration</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video_duration_video_description" xml:space="preserve">
+                <source>How long is the Videofile</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video" xml:space="preserve">
+                <source>Video</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video_videourl" xml:space="preserve">
+                <source>YouTube Video URL</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video_mainstage_label" xml:space="preserve">
+                <source>Mainstage Video</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video_mainstage_description" xml:space="preserve">
+                <source>Only use for the startpage</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video_mainstage_checkbox" xml:space="preserve">
+                <source>Mainstage</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_video_video" xml:space="preserve">
+                <source>Video (File)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.div.video" xml:space="preserve">
+                <source>Multimedia</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.video" xml:space="preserve">
+                <source>Video</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_audio_poster" xml:space="preserve">
+                <source>Picture above audioplayer</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_audio" xml:space="preserve">
+                <source>Audio</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_audio_audiourl" xml:space="preserve">
+                <source>Audio URL</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_audio_audio" xml:space="preserve">
+                <source>Audio (File)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.audio" xml:space="preserve">
+                <source>Audio</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_file" xml:space="preserve">
+                <source>Stage Image/Video</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_stage_bg" xml:space="preserve">
+                <source>Stage background</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_position" xml:space="preserve">
+                <source>Stage text position</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_textcolor" xml:space="preserve">
+                <source>Stage text color</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_salutation" xml:space="preserve">
+                <source>Salutation</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_bg.I.0" xml:space="preserve">
+                <source>Bright</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_bg.I.1" xml:space="preserve">
+                <source>Dark</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_position.I.0" xml:space="preserve">
+                <source>Default</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_position.I.1" xml:space="preserve">
+                <source>Top</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_salutation.I.0" xml:space="preserve">
+                <source>Hide</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_salutation.I.1" xml:space="preserve">
+                <source>Show</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_position.I.2" xml:space="preserve">
+                <source>Middle</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_position.I.3" xml:space="preserve">
+                <source>Bottom</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_textcolor.I.0" xml:space="preserve">
+                <source>Black</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage_textcolor.I.1" xml:space="preserve">
+                <source>White</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_stage" xml:space="preserve">
+                <source>Stage</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.stage" xml:space="preserve">
+                <source>Stage</source>
+            </trans-unit>
+            <trans-unit id="with_frame" xml:space="preserve">
+                <source>With frame</source>
+            </trans-unit>
+            <trans-unit id="without_frame" xml:space="preserve">
+                <source>Without frame</source>
+            </trans-unit>
+            <trans-unit id="columns.twoColumnTitle" xml:space="preserve">
+                <source>2 Columns</source>
+            </trans-unit>
+            <trans-unit id="columns.twoColumnDescription" xml:space="preserve">
+                <source>Two columns with customized width</source>
+            </trans-unit>
+            <trans-unit id="columns.column.0" xml:space="preserve">
+                <source>One Column 8.33%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.1" xml:space="preserve">
+                <source>Two columns 16.66%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.2" xml:space="preserve">
+                <source>Three columns 25%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.3" xml:space="preserve">
+                <source>Four columns 33.33%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.4" xml:space="preserve">
+                <source>Five columns 41.66%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.5" xml:space="preserve">
+                <source>Six columns 50%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.6" xml:space="preserve">
+                <source>Seven columns 58.33%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.7" xml:space="preserve">
+                <source>Eight columns 66.66%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.8" xml:space="preserve">
+                <source>Nine columns 75%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.9" xml:space="preserve">
+                <source>Ten columns 83.33%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.10" xml:space="preserve">
+                <source>Elven columns 91.66%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.11" xml:space="preserve">
+                <source>Twelve columns 100%</source>
+            </trans-unit>
+            <trans-unit id="columns.column.first" xml:space="preserve">
+                <source>First column</source>
+            </trans-unit>
+            <trans-unit id="columns.column.first.description" xml:space="preserve">
+                <source>Width of the first column</source>
+            </trans-unit>
+            <trans-unit id="columns.column.second" xml:space="preserve">
+                <source>Second column</source>
+            </trans-unit>
+            <trans-unit id="columns.column.second.description" xml:space="preserve">
+                <source>Width of the second column</source>
+            </trans-unit>
+            <trans-unit id="columns.column.third" xml:space="preserve">
+                <source>Third column</source>
+            </trans-unit>
+            <trans-unit id="columns.column.third.description" xml:space="preserve">
+                <source>Width of the third column</source>
+            </trans-unit>
+            <trans-unit id="columns.column.fourth" xml:space="preserve">
+                <source>Fourth column</source>
+            </trans-unit>
+            <trans-unit id="columns.column.fourth.description" xml:space="preserve">
+                <source>Width of the fourth column</source>
+            </trans-unit>
+            <trans-unit id="columns.threeColumnTitle" xml:space="preserve">
+                <source>3 Columns</source>
+            </trans-unit>
+            <trans-unit id="columns.threeColumnDescription" xml:space="preserve">
+                <source>Three columns with customized width</source>
+            </trans-unit>
+            <trans-unit id="columns.fourColumnTitle" xml:space="preserve">
+                <source>4 Columns</source>
+            </trans-unit>
+            <trans-unit id="columns.fourColumnDescription" xml:space="preserve">
+                <source>Four columns with customized width</source>
+            </trans-unit>
+            <trans-unit id="columns.column1" xml:space="preserve">
+                <source>Column 1</source>
+            </trans-unit>
+            <trans-unit id="columns.column2" xml:space="preserve">
+                <source>Column 2</source>
+            </trans-unit>
+            <trans-unit id="columns.column3" xml:space="preserve">
+                <source>Column 3</source>
+            </trans-unit>
+            <trans-unit id="columns.column4" xml:space="preserve">
+                <source>Column 4</source>
+            </trans-unit>
+            <trans-unit id="content" xml:space="preserve">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="grid.title" xml:space="preserve">
+                <source>Grid</source>
+            </trans-unit>
+            <trans-unit id="grid.type" xml:space="preserve">
+                <source>Grid type</source>
+            </trans-unit>
+            <trans-unit id="grid.type.description" xml:space="preserve">
+                <source>Choose whether elements are in a list or in containers</source>
+            </trans-unit>
+            <trans-unit id="grid.type.list" xml:space="preserve">
+                <source>List</source>
+            </trans-unit>
+            <trans-unit id="grid.type.container" xml:space="preserve">
+                <source>Container</source>
+            </trans-unit>
+            <trans-unit id="grid.bgimage" xml:space="preserve">
+                <source>Background image</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.parallax" xml:space="preserve">
+                <source>Parallax animation</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.parallax.description" xml:space="preserve">
+                <source>Enable parallax animation for background image</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.imgbg" xml:space="preserve">
+                <source>Color layer</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.imgbg.description" xml:space="preserve">
+                <source>Insert color layer over image</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.wave" xml:space="preserve">
+                <source>Conclusion image</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.wave.description" xml:space="preserve">
+                <source>Insert final image</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.bgcolor" xml:space="preserve">
+                <source>Backgroud color</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.bgcolor.description" xml:space="preserve">
+                <source>Set a backgroundcolor</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.bgfullsize" xml:space="preserve">
+                <source>Grid expansion</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.bgfullsize.description" xml:space="preserve">
+                <source>Drag grid container across the entire width</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.container" xml:space="preserve">
+                <source>Container</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.container.description" xml:space="preserve">
+                <source>Turns off the container wrapper.</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.light" xml:space="preserve">
+                <source>Grid font-color</source>
+            </trans-unit>
+            <trans-unit id="grid.bg.light.description" xml:space="preserve">
+                <source>Switch font-color from dark to light</source>
+            </trans-unit>
+            <trans-unit id="grid.title" xml:space="preserve">
+                <source>Grid</source>
+            </trans-unit>
+            <trans-unit id="grid.description" xml:space="preserve">
+                <source>Create a grid with any number of elements</source>
+            </trans-unit>
+            <trans-unit id="grid.elements" xml:space="preserve">
+                <source>Grid elements</source>
+            </trans-unit>
+            <trans-unit id="grid.columns" xml:space="preserve">
+                <source>Grid Columns</source>
+            </trans-unit>
+            <trans-unit id="grid.columns.description" xml:space="preserve">
+                <source>Choose how many columns the grid will be divided into. Can also be switched to a slider.
+                </source>
+            </trans-unit>
+            <trans-unit id="grid.columns.onecol" xml:space="preserve">
+                <source>One column</source>
+            </trans-unit>
+            <trans-unit id="grid.columns.twocol" xml:space="preserve">
+                <source>Two columns</source>
+            </trans-unit>
+            <trans-unit id="grid.columns.threecol" xml:space="preserve">
+                <source>Three columns</source>
+            </trans-unit>
+            <trans-unit id="grid.columns.fourcol" xml:space="preserve">
+                <source>Four columns</source>
+            </trans-unit>
+            <trans-unit id="grid.slider.type" xml:space="preserve">
+                <source>Slider type</source>
+            </trans-unit>
+            <trans-unit id="grid.slider.columns" xml:space="preserve">
+                <source>Slider columns</source>
+            </trans-unit>
+            <trans-unit id="grid.slider.description" xml:space="preserve">
+                <source>Toggle to a Slider</source>
+            </trans-unit>
+            <trans-unit id="accordion.title" xml:space="preserve">
+                <source>Accordion</source>
+            </trans-unit>
+            <trans-unit id="accordion.description" xml:space="preserve">
+                <source>The content elements are accessible in an accordion</source>
+            </trans-unit>
+            <trans-unit id="accordion.label.onload" xml:space="preserve">
+                <source>On load</source>
+            </trans-unit>
+            <trans-unit id="accordion.description.onload" xml:space="preserve">
+                <source>Open a specific accordion tile when loading</source>
+            </trans-unit>
+            <trans-unit id="accordion.label.onloadall" xml:space="preserve">
+                <source>Accordion toggle</source>
+            </trans-unit>
+            <trans-unit id="accordion.description.onloadall" xml:space="preserve">
+                <source>Accordions close when an accordion element is selected / Accordions stay open</source>
+            </trans-unit>
+            <trans-unit id="accordion.label.open" xml:space="preserve">
+                <source>Accordion tile</source>
+            </trans-unit>
+            <trans-unit id="accordion.description.open" xml:space="preserve">
+                <source>Choose the accordion tile, wich should be opened</source>
+            </trans-unit>
+            <trans-unit id="tabs.title" xml:space="preserve">
+                <source>Tabs</source>
+            </trans-unit>
+            <trans-unit id="tabs.description" xml:space="preserve">
+                <source>The content elements are accessible through tabs</source>
+            </trans-unit>
+            <trans-unit id="tabs.label.onload" xml:space="preserve">
+                <source>On load</source>
+            </trans-unit>
+            <trans-unit id="tabs.description.onload" xml:space="preserve">
+                <source>Open a specific tab when loading</source>
+            </trans-unit>
+            <trans-unit id="container.title" xml:space="preserve">
+                <source>Page container</source>
+            </trans-unit>
+            <trans-unit id="container.description" xml:space="preserve">
+                <source>Container covering the entire page or screen width.</source>
+            </trans-unit>
+            <trans-unit id="silhouette.0" xml:space="preserve">
+                <source>Standard</source>
+            </trans-unit>
+            <trans-unit id="silhouette.1" xml:space="preserve">
+                <source>Silhouette 1</source>
+            </trans-unit>
+            <trans-unit id="silhouette.2" xml:space="preserve">
+                <source>Silhouette 2</source>
+            </trans-unit>
+            <trans-unit id="silhouette.3" xml:space="preserve">
+                <source>Silhouette 3</source>
+            </trans-unit>
+            <trans-unit id="silhouette.4" xml:space="preserve">
+                <source>Silhouette 4</source>
+            </trans-unit>
+            <trans-unit id="silhouette.5" xml:space="preserve">
+                <source>Silhouette 5</source>
+            </trans-unit>
+            <trans-unit id="silhouette.6" xml:space="preserve">
+                <source>Silhouette 6</source>
+            </trans-unit>
+            <trans-unit id="silhouette.7" xml:space="preserve">
+                <source>Silhouette 7</source>
+            </trans-unit>
+            <trans-unit id="tt_content.file" xml:space="preserve">
+                <source>Gallery Image</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_bg" xml:space="preserve">
+                <source>Gallery background</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_layout" xml:space="preserve">
+                <source>Gallery layout</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_textcolor" xml:space="preserve">
+                <source>Gallery text color</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_salutation" xml:space="preserve">
+                <source>Salutation</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_bg.I.0" xml:space="preserve">
+                <source>Bright</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_bg.I.1" xml:space="preserve">
+                <source>Dark</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_layout.I.0" xml:space="preserve">
+                <source>Single</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_layout.I.1" xml:space="preserve">
+                <source>Tiles</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_layout.I.2" xml:space="preserve">
+                <source>Slider</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_salutation.I.0" xml:space="preserve">
+                <source>Hide</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_salutation.I.1" xml:space="preserve">
+                <source>Show</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_textcolor.I.0" xml:space="preserve">
+                <source>Black</source>
+            </trans-unit>
+            <trans-unit id="tt_content.gallery_textcolor.I.1" xml:space="preserve">
+                <source>White</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.div._gallery_" xml:space="preserve">
+                <source>Gallery</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.gallery" xml:space="preserve">
+                <source>Gallery</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

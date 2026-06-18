@@ -1,0 +1,44 @@
+<li class="teaser-item col-12 col-md-6 {f:if(condition:'{iterator.isFirst}', then:' first')}{f:if(condition:'{iterator.isLast}', then:' last')}">
+    <div class="teaser-item-wrapper">
+        <f:for each="{page.files}" as="file" iteration="counter">
+            <f:if condition="{counter.cycle} == 1">
+                <figure class="figure">
+                    <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+                        <f:image src="{file.properties.uid}" maxWidth="650" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                    </picture>
+                    <f:if condition="{file.description} || {file.originalFile.properties.copyright} || {file.originalFile.properties.caption}">
+                        <figcaption class="image-caption">
+                            <f:if condition="{file.description}">
+                                <span class="description">{file.description} </span>
+                            </f:if>
+                            <f:if condition="{file.originalFile.properties.caption}">
+                                <span class="caption">{file.originalFile.properties.caption} </span>
+                            </f:if>
+                            <f:if condition="{file.originalFile.properties.copyright}">
+                                <span class="copyright">{file.originalFile.properties.copyright} </span>
+                            </f:if>
+                        </figcaption>
+                    </f:if>
+                </figure>
+            </f:if>
+        </f:for>
+        <div class="teaser-item-content">
+            <f:if condition="{page.data.description} || {page.title}">
+                <h3>
+                    <f:link.typolink parameter="{page.link}">
+                        <f:format.stripTags><f:format.raw><f:format.crop maxCharacters="30" respectWordBoundaries="true" respectHtml="true" append="...">{page.title}</f:format.crop></f:format.raw></f:format.stripTags>
+                    </f:link.typolink>
+                </h3>
+                <p>
+                    <f:format.stripTags><f:format.raw><f:format.crop maxCharacters="150" respectWordBoundaries="true" respectHtml="true" append="...">{page.data.description}</f:format.crop></f:format.raw></f:format.stripTags>
+                </p>
+            </f:if>
+
+            <p>
+                <f:link.typolink parameter="{page.link}" class="internal-link">
+                    {f:translate(key: 'content.readmore', extensionName: 'vms_sitepackage')}<span class="visually-hidden">{f:if(condition:'{page.link}', then:': {page.title}')}</span>
+                </f:link.typolink>
+            </p>
+        </div>
+    </div>
+</li>

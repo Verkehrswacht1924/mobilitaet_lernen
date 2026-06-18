@@ -1,0 +1,61 @@
+lib.navBreadcrumb = COA
+lib.navBreadcrumb {
+    stdWrap.wrap = <ol class="breadcrumb">|</ol>
+
+    10 = HMENU
+    10 {
+        special = rootline
+        special.range =  0 | -1
+
+        1 = TMENU
+        1 {
+            noBlur = 1
+
+            NO = 1
+            NO {
+                wrapItemAndSub = <li class="breadcrumb-item">|</li>
+                stdWrap.htmlSpecialChars = 1
+            }
+
+            CUR <.NO
+            CUR {
+                wrapItemAndSub = <li class="breadcrumb-item"><strong class="fw-bold">|</strong></li>
+                doNotLinkIt = 1
+            }
+        }
+    }
+
+    # Add news title if on single view
+    20 = RECORDS
+    20 {
+        stdWrap.if.isTrue.data = GP:tx_news_pi1|news
+        dontCheckPid = 1
+        tables = tx_news_domain_model_news
+        source.data = GP:tx_news_pi1|news
+        source.intval = 1
+        conf.tx_news_domain_model_news = TEXT
+        conf.tx_news_domain_model_news {
+            field = title
+            htmlSpecialChars = 1
+        }
+        stdWrap.wrap = <li class="breadcrumb-item"><strong>|</strong></li>
+        stdWrap.required = 1
+    }
+
+    # Add glossary meaning if on detail view
+    30 = RECORDS
+    30 {
+        stdWrap.if.isTrue.data = GP:tx_dpnglossary_glossary|term
+        dontCheckPid = 1
+        tables = tx_dpnglossary_domain_model_description
+        source.data = GP:tx_dpnglossary_glossary|term
+        source.intval = 1
+        conf.tx_dpnglossary_domain_model_description = TEXT
+        conf.tx_dpnglossary_domain_model_description {
+            field = meaning
+            htmlSpecialChars = 1
+        }
+        stdWrap.wrap = <li class="breadcrumb-item"><strong>|</strong></li>
+        stdWrap.required = 1
+    }
+}

@@ -1,0 +1,20 @@
+lib {
+    pageurl = TEXT
+    pageurl.data = getIndpEnv:TYPO3_REQUEST_URL
+
+    pageid = TEXT
+    pageid.data = page:uid
+
+    math = TEXT
+    math {
+        current = 1
+        prioriCalc = 1
+    }
+
+    home = TEXT
+    home.value = {$config.pids.Home}
+}
+
+lib.parseFunc_RTE.externalBlocks.table.stdWrap.HTMLparser.tags.table.fixAttrib.class.default = table table-striped table-hover
+lib.parseFunc_RTE.externalBlocks.table.stdWrap.HTMLparser.tags.table.fixAttrib.class.always = 1
+lib.parseFunc_RTE.externalBlocks.table.stdWrap.HTMLparser.tags.table.fixAttrib.class.list = table table-striped table-hover

@@ -1,0 +1,261 @@
+<html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+<f:if condition="{animationSettings}">
+    <f:then>
+        <f:asset.script identifier="aosJS"
+                        src="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos-3.0.0-beta-6.min.js"/>
+        <f:asset.script identifier="aosJS">
+            AOS.init();
+        </f:asset.script>
+        <f:asset.css href="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos.css" identifier="aosCSS"/>
+    </f:then>
+</f:if>
+<div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"
+     id="c{data.uid}" {f:if(condition: animationSettings, then:
+'{animationSettings -> f:format.raw()}')}>
+<f:if condition="{data.tx_video_mainstage}">
+    <f:then>
+        <f:render arguments="{_all}" section="PopupVideo"/>
+    </f:then>
+    <f:else>
+        <f:render arguments="{_all}" section="Video"/>
+    </f:else>
+</f:if>
+
+<!-- Sections -->
+<f:section name="Video">
+    <f:if condition="{data.tx_video_video}">
+        <div class="video video-local">
+            <video controls height="100%"
+                   poster="{f:uri.image(image: '{data_tx_video_poster_image.0}', maxWidth: 973, maxHeight: 535c)}"
+                   preload="none" style="width:100%; height:100%;" width="100%"
+                   src="{f:uri.typolink(parameter: '{data.tx_video_video}')}">
+                <f:if condition="{data.tx_video_caption}">
+                    <track default kind="subtitles" src="{f:uri.typolink(parameter: '{data.tx_video_caption}')}"
+                           srclang="de">
+                </f:if>
+            </video>
+        </div>
+    </f:if>
+
+    <f:if condition="{data.tx_video_videourl}">
+        <div class="video video-youtube">
+            <f:if condition="{data_tx_video_poster_image.0}">
+                <f:then>
+                    <div class="dsgvo"
+                         style="background:url('{f:uri.image(image: data_tx_video_poster_image.0, maxWidth: 973, maxHeight: 535c)}'); no-repeat: 0 0; background-size: cover;"
+                         {f:if(condition:
+                    '{data.tx_video_videourl}', then: ' data-src={data.tx_video_videourl -> f:format.raw()}')}>
+                </f:then>
+                <f:else>
+                    <div class="dsgvo" {f:if(condition:
+                    '{data.tx_video_videourl}', then: ' data-src={data.tx_video_videourl -> f:format.raw()}')}>
+                </f:else>
+            </f:if>
+            <div class="player-wrapper">
+                <div class="dsgvo-text">
+                    <button class="video-start mejs__overlay-button"
+                            title="{f:translate(key: 'videoyoutube.play', extensionName: 'vms_sitepackage')}">
+                        <span class="visually-hidden">{f:translate(key: 'videoyoutube.play', extensionName: 'vms_sitepackage')}</span>
+                    </button>
+                    <p>
+                        <f:format.raw>{f:translate(key: 'videoyoutube.link', extensionName: 'vms_sitepackage')}
+                        </f:format.raw>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </f:if>
+    <div class="row">
+        <f:if condition="{data.header} ">
+            <div class="col mt-3">
+                <f:switch expression="{layout}">
+                    <f:case value="1">
+                        <h1 class="lead fw-bold mb-0">
+                            {data.header}
+                        </h1>
+                    </f:case>
+                    <f:case value="2">
+                        <h2 class="lead fw-bold mb-0">
+                            {data.header}
+                        </h2>
+                    </f:case>
+                    <f:case value="3">
+                        <h3 class="lead fw-bold mb-0">
+                            {data.header}
+                        </h3>
+                    </f:case>
+                    <f:case value="4">
+                        <h4 class="lead fw-bold mb-0">
+                            {data.header}
+                        </h4>
+                    </f:case>
+                    <f:case value="5">
+                        <h5 class="lead fw-bold mb-0">
+                            {data.header}
+                        </h5>
+                    </f:case>
+                    <f:case value="6">
+                        <h6 class="lead fw-bold mb-0">
+                            {data.header}
+                        </h6>
+                    </f:case>
+                    <f:case value="7">
+                        <h1 class="visually-hidden">
+                            {data.header}
+                        </h1>
+                    </f:case>
+                    <f:case value="8">
+                        <h2 class="visually-hidden">
+                            {data.header}
+                        </h2>
+                    </f:case>
+                    <f:case value="9">
+                        <h3 class="visually-hidden">
+                            {header}
+                        </h3>
+                    </f:case>
+                    <f:case value="10">
+                        <h4 class="visually-hidden">
+                            {data.header}
+                        </h4>
+                    </f:case>
+                    <f:case value="10">
+                        <h4 class="visually-hidden">
+                            {data.header}
+                        </h4>
+                    </f:case>
+                    <f:case value="100">
+                        <f:comment> -- do not show header --</f:comment>
+                    </f:case>
+                    <f:defaultCase>
+                        <h3 class="lead fw-bold mb-0">
+                            {data.header}
+                        </h3>
+                    </f:defaultCase>
+                </f:switch>
+            </div>
+        </f:if>
+        <f:if condition="{data.tx_video_duration_video}">
+            <div class="col-auto mt-3">
+                <strong class="lead fw-bold mb-0">
+                    {data.tx_video_duration_video}
+                </strong>
+            </div>
+        </f:if>
+        <f:if condition="{data.bodytext}">
+            <div class="col-12">
+                <f:format.crop maxCharacters="200">
+                    <f:format.html>{data.bodytext}</f:format.html>
+                </f:format.crop>
+            </div>
+        </f:if>
+    </div>
+</f:section>
+
+<f:section name="PopupVideo">
+    <div class="video-teaser {f:if(condition: '{data.tx_video_poster_video} == FALSE && {data_tx_video_poster_image.0}', then: 'video-teaser-img')}">
+        <f:if condition="{data.tx_video_poster_video}">
+            <f:then>
+                <div class="video-teaser-wrapper">
+                    <video autoplay class="teaser" muted>
+                        <source src="{f:uri.typolink(parameter: '{data.tx_video_poster_video}')}" type="video/mp4">
+                    </video>
+                </div>
+            </f:then>
+            <f:else>
+                <f:if condition="{data_tx_video_poster_image.0}">
+                    <picture data-aspectratio-xs="{xsmall.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}"
+                             data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}"
+                             data-aspectratio-xl="{default.selectedRatio}">
+                        <source srcset="{f:uri.image(image: data_tx_video_poster_image.0, cropVariant: 'default', maxWidth: 1440)}"
+                                media="(min-width: 1220px)">
+                        <source srcset="{f:uri.image(image: data_tx_video_poster_image.0, cropVariant: 'large', maxWidth: 1220)}"
+                                media="(min-width: 992px)">
+                        <source srcset="{f:uri.image(image: data_tx_video_poster_image.0, cropVariant: 'medium', maxWidth: 992)}"
+                                media="(min-width: 768px)">
+                        <source srcset="{f:uri.image(image: data_tx_video_poster_image.0, cropVariant: 'small', maxWidth: 768)}"
+                                media="(min-width: 576px)">
+                        <source srcset="{f:uri.image(image: data_tx_video_poster_image.0, cropVariant: 'xsmall', maxWidth: 576)}"
+                                media="(min-width: 0)">
+                        <f:image src="{data_tx_video_poster_image.0.properties.uid}" maxWidth="1440"
+                                 cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded"
+                                 loading="lazy"/>
+                    </picture>
+                </f:if>
+            </f:else>
+        </f:if>
+
+        <f:if condition="{data.tx_video_video}">
+            <a class="js-play-button btn" data-bs-target="#popupVideo-{data.uid}" data-bs-toggle="modal"
+               href="#popupVideo-{data.uid}" role="button">
+                <span class="play-button-text">{f:translate(key: 'videoyoutube.play', extensionName: 'vms_sitepackage')}</span>
+            </a>
+        </f:if>
+
+        <div class="video-body">
+            <div class="container">
+                <div class="video-body-wrapper">
+                    <f:if condition="{data.header}">
+                        <f:render arguments="{_all}" partial="Header/All"/>
+                    </f:if>
+
+                    <f:if condition="{data.bodytext}">
+                        <f:format.html>{data.bodytext}</f:format.html>
+                    </f:if>
+
+                    <a href="#main-container" title="{f:translate(key: 'to.content', extensionName: 'vms_sitepackage')}"
+                       class="btn-bottom" role="button"><span class="visually-hidden">{f:translate(key: 'to.content', extensionName: 'vms_sitepackage')}</span></a>
+                </div>
+            </div>
+        </div>
+
+        <f:if condition="{data.tx_video_video}">
+            <div aria-hidden="true" class="modal fade js-popup-player" data-bs-backdrop="static"
+                 id="popupVideo-{data.uid}" style="display: none;" tabindex="-1">
+                <div class="modal-dialog modal-fullscreen" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="container">
+                                <div class="row modal-row">
+                                    <div class="col-12 modal-col-1">
+                                        <button aria-label="{f:translate(key: 'content.close', extensionName: 'vms_sitepackage')}"
+                                                class="btn-close" data-bs-dismiss="modal"
+                                                title="{f:translate(key: 'content.close', extensionName: 'vms_sitepackage')}"
+                                                type="button"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body modal-body-video">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="video-wrapper">
+                                            <video src="{f:uri.typolink(parameter: '{data.tx_video_video}')}"
+                                                   class="popup-player" style="max-width: 100%;" controls
+                                                   poster="{f:uri.image(image: '{data_tx_video_poster_image.0}', maxWidth: 1280, maxHeight: 720c)}"
+                                                   preload="none">
+                                                <f:if condition="{data.tx_video_caption}">
+                                                    <track default kind="subtitles"
+                                                           src="{f:uri.typolink(parameter: '{data.tx_video_caption}')}"
+                                                           srclang="de">
+                                                </f:if>
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:if>
+    </div>
+</f:section>
+</div>
+
+<f:asset.script identifier="mediaelementsJS" src="EXT:vms_sitepackage/Resources/Public/JavaScripts/mediaelements.js"/>
+<f:asset.css href="EXT:vms_sitepackage/Resources/Public/StyleSheets/mediaelements.css" identifier="mediaelementsCSS"/>
+</html>

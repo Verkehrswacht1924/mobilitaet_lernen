@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Container" />
+
+<f:section name="Main">
+    <f:if condition="{children_101}">
+            <div class="{f:if(condition:'{data.slider} != 1', then:' p-0')}">
+                <f:if condition="{data.slider} == 1">
+                    <div class="swiper swiper-{data.slider_type}-col-{data.slider_columns}">
+                </f:if>
+                <{data.grid_type} class="{f:if(condition:'{data.slider} == 1', then:'slider swiper-wrapper', else: 'row row-cols-1 row-cols-md-2 row-cols-lg-{data.grid_columns}')}{f:if(condition:'{data.grid_type} == ul', then:' list-unstyled')}">
+                    <f:if condition="{children_101}">
+                        <f:for each="{children_101}" as="child">
+                            <{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')} class="{f:if(condition:'{data.slider} == 1', then:'swiper-slide', else:'col')}">
+                            <f:format.raw>{child.renderedContent}</f:format.raw>
+                        </{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')}>
+                        </f:for>
+                    </f:if>
+                </{data.grid_type}>
+
+            <f:if condition="{data.slider_type} == 'fade' && {data.slider} == 1">
+                <f:then>
+                    <div class="autoplay container">
+                        <button class="swiper-start"><span>Start</span></button>
+                        <button class="swiper-stop active"><span>Pause</span></button>
+                    </div>
+                </f:then>
+            </f:if>
+
+            <f:if condition="{data.slider_type} == 'slide' && {data.slider} == 1">
+                <f:then>
+                    <div class="swiper-navigation">
+                        <button class="swiper-button-prev"></button>
+                        <div class="swiper-pagination"></div>
+                        <button class="swiper-button-next"></button>
+                    </div>
+                </f:then>
+            </f:if>
+
+            <f:if condition="{data.slider} == 1">
+        </div>
+    </f:if>
+    </div>
+    <f:if condition="{data.slider} == 1">
+        <f:asset.script identifier="swiperJS" src="EXT:vms_sitepackage/Resources/Public/JavaScripts/swiper.js"/>
+        <f:asset.css href="EXT:vms_sitepackage/Resources/Public/StyleSheets/swiper.css" identifier="swiperCSS"/>
+    </f:if>
+    </f:if>
+</f:section>
+
+</html>

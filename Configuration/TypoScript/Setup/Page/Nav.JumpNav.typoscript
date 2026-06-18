@@ -1,0 +1,3 @@
+lib.jumpNav = TEXT
+lib.jumpNav.data = getIndpEnv:TYPO3_REQUEST_URL
+lib.jumpNav.dataWrap = <nav class="skipnav" aria-label="{lll:EXT:vms_sitepackage/Resources/Private/Language/locallang.xlf:header.jumpto}"><a href=" | #mainContent">{lll:EXT:vms_sitepackage/Resources/Private/Language/locallang.xlf:header.jumptocontent}</a></nav>

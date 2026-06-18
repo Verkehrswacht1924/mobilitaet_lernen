@@ -1,0 +1,90 @@
+<html data-namespace-typo3-fluid="true">
+<f:comment>Portiert aus dpx_stage DpxStage.html – gleiche CSS-Klassen wie im Original.</f:comment>
+<div class="frame frame-type-{data.CType} stage {data.tx_dpxstage_stage_position} {f:if(condition:'{data.tx_dpxstage_size}',then:'stage-small')}{f:if(condition: data.tx_dpxstage_stage_textcolor, then: ' stage-text-white')}">
+
+    <f:if condition="{data.tx_dpxstage_file}">
+        <div class="stage-image">
+            <f:for each="{data.tx_dpxstage_file}" as="file">
+                <f:image image="{file}" alt="{file.alternative}" title="{file.title}" loading="lazy" />
+            </f:for>
+        </div>
+    </f:if>
+
+    <f:if condition="{data.tx_dpxstage_stage_salutation}">
+        <f:then>
+            <div class="container stage-content">
+                <div class="row">
+                    <div class="col-12">
+                        <f:security.ifAuthenticated>
+                            <h2 class="text-center salutation">
+                                <span>{f:cObject(typoscriptObjectPath: 'lib.userName')}</span>
+                            </h2>
+                        </f:security.ifAuthenticated>
+                        <f:render section="counter" arguments="{_all}" />
+                        <f:render section="head" arguments="{_all}" />
+                        <f:if condition="{data.bodytext}">
+                            <f:format.html>{data.bodytext}</f:format.html>
+                        </f:if>
+                        <f:render section="buttonLink" arguments="{_all}" />
+                    </div>
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+            <f:if condition="{data.header} || {data.bodytext}">
+                <div class="container stage-content-wrapper">
+                    <div class="row">
+                        <div class="col-12">
+                            <f:variable name="headerVisibilityClass"></f:variable>
+                            <f:switch expression="{data.tx_dpxstage_contentvisibility}">
+                                <f:case value="1"><f:variable name="headerVisibilityClass">d-none d-md-block</f:variable></f:case>
+                                <f:case value="2"><f:variable name="headerVisibilityClass">d-none d-md-none d-lg-block</f:variable></f:case>
+                            </f:switch>
+                            <div class="stage-content{f:if(condition: data.tx_dpxstage_stage_bg, then: ' stage-bg-dark')} {headerVisibilityClass}">
+                                <div class="stage-elem">
+                                    <f:render section="counter" arguments="{_all}" />
+                                    <f:render section="head" arguments="{_all}" />
+                                    <f:if condition="{data.bodytext}">
+                                        <f:format.html>{data.bodytext}</f:format.html>
+                                    </f:if>
+                                    <f:render section="buttonLink" arguments="{_all}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </f:if>
+        </f:else>
+    </f:if>
+</div>
+
+<f:section name="head">
+    <f:if condition="{data.header}">
+        <f:if condition="{data.header_kicker}"><span class="kicker">{data.header_kicker}</span></f:if>
+        <h2>{data.header}</h2>
+        <f:if condition="{data.subheader}"><p class="subheader">{data.subheader}</p></f:if>
+    </f:if>
+</f:section>
+
+<f:section name="counter">
+    <f:if condition="{data.tx_dpxstage_stage_counter}">
+        <p class="countdown">
+            <span class="countdown-item"><span id="days">000</span><span id="daystxt">Tage</span></span>
+            <span class="countdown-item"><span id="hours">00</span><span id="hourstxt">Stunden</span></span>
+            <span class="countdown-item"><span id="minutes">00</span><span id="minutestxt">Minuten</span></span>
+            <span class="countdown-item"><span id="seconds">00</span><span id="secondstxt">Sekunden</span></span>
+        </p>
+        <div class="countdown-alert"><p>Die Seite ist jetzt da!</p></div>
+    </f:if>
+</f:section>
+
+<f:section name="buttonLink">
+    <f:if condition="{data.tx_dpxstage_link}">
+        <div class="ce-button ce-{data.tx_dpxstage_link_position}">
+            <f:link.typolink parameter="{data.tx_dpxstage_link}" class="btn btn-primary {data.tx_dpxstage_link_position}">
+                <span>{data.tx_dpxstage_link_text}</span>
+            </f:link.typolink>
+        </div>
+    </f:if>
+</f:section>
+</html>

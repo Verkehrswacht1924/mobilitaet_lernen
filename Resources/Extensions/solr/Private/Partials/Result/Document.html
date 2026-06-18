@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:section name="Document">
+    <div class="card shadow h-100">
+        <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+                <f:if condition="{document.file_stringS}">
+                    <ul class="list-unstyled d-flex flex-row flex-wrap">
+                        <f:for as="filter" each="{document.filter_stringM}" iteration="iteratorBadge">
+                            <li class="">
+                                <strong class="d-inline-block rounded-4 px-3 py-1 lh-base fw-light text-primary{f:if(condition: '{document.typ_intS} === 2', then: ' bg-cyan-200')}{f:if(condition: '{document.typ_intS} === 3', then: ' bg-yellow-200')}{f:if(condition: '{document.typ_intS} === 1', then: ' bg-purple-100')}{f:if(condition: '!{iteratorBadge.isLast}', then: ' mb-2')}">
+                                    {filter}
+                                </strong>
+                            </li>
+                        </f:for>
+                    </ul>
+                </f:if>
+                <h4 class="card-title my-3">
+                    {document.name_stringS}
+                </h4>
+                <span class="card-text lead">
+                    <f:format.crop maxCharacters="150"><f:format.html>{document.description_stringS}</f:format.html></f:format.crop>
+                </span>
+            </div>
+            <f:if condition="{document.file_stringS}">
+                <a href="{document.file_stringS}" class="link download" target="_blank" download>
+                    Herunterladen&nbsp;
+                    <span class="fw-light"><f:format.case mode="upper">{document.filext_stringS}</f:format.case></span>
+                    <span aria-hidden="true">&nbsp;|&nbsp;</span>
+                    <span class="fw-light">{document.filesize_stringS}</span>
+                </a>
+            </f:if>
+        </div>
+    </div>
+</f:section>
+
+</html>

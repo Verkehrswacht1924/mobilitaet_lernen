@@ -1,0 +1,32 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+    <link rel="apple-touch-icon" sizes="60x60" href="typo3conf/ext/vms_sitepackage/Resources/Public/Favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="typo3conf/ext/vms_sitepackage/Resources/Public/Favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="typo3conf/ext/vms_sitepackage/Resources/Public/Favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="typo3conf/ext/vms_sitepackage/Resources/Public/Favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="typo3conf/ext/vms_sitepackage/Resources/Public/Favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="typo3conf/ext/vms_sitepackage/Resources/Public/Favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="typo3conf/ext/vms_sitepackage/Resources/Public/Favicons/favicon-16x16.png">
+    <link rel="manifest" href="typo3conf/ext/vms_sitepackage/Resources/Public/Favicons/site.webmanifest">
+    <link rel="mask-icon" href="typo3conf/ext/vms_sitepackage/Resources/Public/Favicons/safari-pinned-tab.svg" color="#333333">
+    <link rel="shortcut icon" href="typo3conf/ext/vms_sitepackage/Resources/Public/Favicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="digitaspixelpark.com">
+    <meta name="application-name" content="digitaspixelpark.com">
+    <meta name="msapplication-TileColor" content="#333333">
+    <meta name="msapplication-config" content="typo3conf/ext/vms_sitepackage/Resources/Public/Favicons/browserconfig.xml">
+    <meta name="theme-color" content="#333333">
+    
+    <f:if condition="{data.keywords}">
+        <meta name="keywords" content="{data.keywords}">
+    </f:if>
+    <f:if condition="{data.lastUpdated}">
+        <meta name="last-modified" content="{f:format.date(format: '%Y-%m-%d, %R', date: data.lastUpdated)}">
+    </f:if>
+    <f:if condition="{data.author}">
+        <meta name="author" content="{data.author}">
+    </f:if>
+    <f:if condition="{data.author_email}">
+        <meta name="email" content="{data.author_email}">
+    </f:if>
+
+</html>

@@ -1,0 +1,4 @@
+##########################
+#### CONTENT ELEMENTS ####
+##########################
+@import 'EXT:vms_sitepackage/Configuration/TsConfig/Page/ContentElement/Element/*.tsconfig'

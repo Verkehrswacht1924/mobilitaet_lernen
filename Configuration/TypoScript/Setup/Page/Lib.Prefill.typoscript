@@ -1,0 +1,13 @@
+lib {
+    prefillUrl = TEXT
+    prefillUrl {
+        dataWrap = {getIndpEnv:TYPO3_REQUEST_HOST}|
+        typolink.parameter.current = 1
+        typolink.returnLast = url
+    }
+
+    currentURL = TEXT
+    currentURL {
+        data = getIndpEnv:TYPO3_REQUEST_URL
+    }
+}

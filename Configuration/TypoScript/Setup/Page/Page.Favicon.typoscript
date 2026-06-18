@@ -1,0 +1,5 @@
+page.headerData.2039 = FLUIDTEMPLATE
+page.headerData.2039 {
+    file = EXT:vms_sitepackage/Resources/Private/Partials/Page/Favicons.html
+    extbase.controllerExtensionName = MpTemplate
+}

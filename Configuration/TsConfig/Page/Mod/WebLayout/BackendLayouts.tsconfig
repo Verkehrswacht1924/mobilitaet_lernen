@@ -1,0 +1,4 @@
+########################
+#### BACKENDLAYOUTS ####
+########################
+@import 'EXT:vms_sitepackage/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts/*.tsconfig'

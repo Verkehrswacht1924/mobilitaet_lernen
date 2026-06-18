@@ -1,0 +1,37 @@
+lib.language = COA
+lib.language {
+    20 = HMENU
+    20 {
+        special = language
+        special.value = 0,1
+        special.normalWhenNoLanguage = 0
+        wrap =
+        1 = TMENU
+        1 {
+            noBlur = 1
+            NO = 1
+            NO {
+                doNotLinkIt = 1
+                linkWrap = <li>|</li>
+                stdWrap.override = De || En
+                stdWrap {
+                    typolink {
+                        parameter.data = page:uid
+                        additionalParams = &L=0 || &L=1
+                        ATagParams = hreflang="de-DE" || hreflang="en-US"
+                        addQueryString = 1
+                        addQueryString.exclude = L,id,no_cache
+                        addQueryString.method = GET
+                        no_cache = 0
+                    }
+                }
+            }
+            ACT < .NO
+            ACT {
+                linkWrap = <li><p class="is-active">|</p></li>
+                stdWrap.typolink >
+            }
+        }
+    }
+    wrap = <ul id="language_menu" class="language-menu list-unstyled">|</ul>
+}

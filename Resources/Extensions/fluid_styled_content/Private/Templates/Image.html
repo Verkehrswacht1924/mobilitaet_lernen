@@ -1,0 +1,37 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+	<f:section name="Main">
+
+		<f:if condition="{gallery.position.horizontal} == center">
+			<f:render section="TopCenter" arguments="{_all}" />
+		</f:if>
+
+		<f:if condition="{gallery.position.horizontal} == right">
+			<f:render section="TopLeft" arguments="{_all}" />
+		</f:if>
+
+		<f:if condition="{gallery.position.horizontal} == left">
+			<f:render section="TopRight" arguments="{_all}" />
+		</f:if>
+
+		<f:section name="TopCenter">
+			<div class="textpic topcenter">
+				<f:render partial="Media/Gallery" arguments="{_all}" />
+			</div>
+		</f:section>
+
+		<f:section name="TopLeft">
+			<div class="textpic topleft">
+				<f:render partial="Media/Gallery" arguments="{_all}" />
+			</div>
+		</f:section>
+
+		<f:section name="TopRight">
+			<div class="textpic topright">
+				<f:render partial="Media/Gallery" arguments="{_all}" />
+			</div>
+		</f:section>
+
+	</f:section>
+</html>

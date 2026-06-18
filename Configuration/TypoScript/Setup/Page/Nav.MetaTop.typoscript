@@ -1,0 +1,25 @@
+lib.navMetaTop = COA
+lib.navMetaTop {
+    wrap = <ul class="navbar-nav flex-lg-row justify-content-lg-end">|</ul>
+
+    10 = HMENU
+    10 {
+        special = directory
+        special.value = {$config.pids.MetaTop}
+        includeNotInMenu = 0
+
+        1 = TMENU
+        1 {
+            expAll = 1
+            NO.wrapItemAndSub = <li class="nav-item d-flex align-items-center">|</li>
+            NO.ATagParams = class="link link--small nav-link text-decoration-none text-light fw-bold py-0"
+
+            CUR < .NO
+            CUR = 1
+            CUR.doNotLinkIt = 1
+            CUR.ATagParams = class="dropdown-item dropdown-item-strong"
+            CUR.allWrap = <strong class="text-light fw-bold text-decoration-underline link-offset-3">|</strong>
+            CUR.stdWrap.htmlSpecialChars = 1
+        }
+    }
+}

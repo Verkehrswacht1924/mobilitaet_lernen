@@ -1,0 +1,53 @@
+lib.navSubnav = HMENU
+lib.navSubnav {
+    entryLevel = 1
+    includeNotInMenu = 0
+
+    1 = TMENU
+    1 {
+        expAll = 0
+        noBlur = 1
+        wrap = <ul id="subnav" class="nav flex-column hidden-md-down">|</ul>
+
+        NO = 1
+        NO.wrapItemAndSub = <li class="nav-item mb-1">|</li>
+        NO.stdWrap.htmlSpecialChars = 1
+        NO.ATagParams = class="nav-link"
+        NO.allWrap = |
+
+        CUR < .NO
+        CUR = 1
+        CUR.allWrap = <strong class="nav-link">|</strong>
+        CUR.doNotLinkIt = 1
+        CUR.stdWrap.htmlSpecialChars = 1
+
+        ACT < .NO
+        ACT = 1
+        ACT.ATagParams = class="nav-link active"
+        ACT.allWrap = |
+
+        ACTIFSUB < .NO
+        ACTIFSUB = 1
+        ACTIFSUB.ATagParams = class="nav-link actifsub"
+        ACTIFSUB.allWrap = |
+    }
+    2 < .1
+    2 {
+        wrap = <ul class="nav flex-column ps-2">|</ul>
+
+        NO = 1
+        NO.wrapItemAndSub = <li class="nav-item">|</li>
+    }
+    3 < .2
+    3 {
+        wrap = <ul class="nav flex-column ps-3">|</ul>
+    }
+    4 < .2
+    4 {
+        wrap = <ul class="nav flex-column ps-4">|</ul>
+    }
+    5 < .2
+    5 {
+        wrap = <ul class="nav flex-column ps-5">|</ul>
+    }
+}

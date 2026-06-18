@@ -1,0 +1,16 @@
+name: dpxfile/dpx-download
+typeName: dpxfile_dpx_download
+prefixFields: false
+fields:
+  - identifier: header
+    useExistingField: true
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+  - identifier: frame_class
+    useExistingField: true
+  - identifier: layout
+    useExistingField: true
+  - identifier: tx_dpxfile_file
+    type: File
+    allowed: docx,doc,xlsx,xls,ppt,pptx,txt,pdf,gif,jpg,png,svg

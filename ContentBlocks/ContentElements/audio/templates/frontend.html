@@ -1,0 +1,33 @@
+<html data-namespace-typo3-fluid="true">
+<f:comment>Portiert aus dpx_template Audio.html – Audio-Player mit optionalem Poster.
+Link-Felder (TypolinkParameter) über f:uri.typolink aufgelöst.</f:comment>
+<f:variable name="audioSrc"><f:if condition="{data.tx_audio_audio}"><f:uri.typolink parameter="{data.tx_audio_audio}" /></f:if></f:variable>
+<f:variable name="audioUrlSrc"><f:if condition="{data.tx_audio_audiourl}"><f:uri.typolink parameter="{data.tx_audio_audiourl}" /></f:if></f:variable>
+<f:variable name="finalAudio">{f:if(condition: audioSrc, then: audioSrc, else: audioUrlSrc)}</f:variable>
+
+<div class="frame frame-type-audio" id="c{data.uid}">
+    <f:if condition="{data.header}">
+        <div class="audio-head">
+            <f:if condition="{data.header_kicker}"><span class="kicker">{data.header_kicker}</span></f:if>
+            <h3 class="lead fw-bold mb-0">{data.header}</h3>
+            <f:if condition="{data.subheader}"><p class="subheader">{data.subheader}</p></f:if>
+        </div>
+    </f:if>
+
+    <f:if condition="{data.tx_audio_poster}">
+        <div class="audio-poster">
+            <f:image image="{data.tx_audio_poster.0}" maxWidth="973" alt="{data.tx_audio_poster.0.alternative}" loading="lazy" />
+        </div>
+    </f:if>
+
+    <f:if condition="{finalAudio}">
+        <div class="audio video-local">
+            <audio controls preload="none" style="width:100%;" src="{finalAudio}"></audio>
+        </div>
+    </f:if>
+
+    <f:if condition="{data.bodytext}">
+        <div class="audio-text"><f:format.html>{data.bodytext}</f:format.html></div>
+    </f:if>
+</div>
+</html>

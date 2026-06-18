@@ -1,0 +1,105 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Header">
+	<f:if condition="{data.tx_header_inside} != 1 && {data.header_layout} != 100">
+		<div class="textpic-header">
+			<f:render partial="Header/All" arguments="{_all}" />
+		</div>
+	</f:if>
+</f:section>
+
+<f:section name="Main">
+	<f:if condition="{gallery.position.horizontal} == center">
+		<f:render section="TopCenter" arguments="{_all}" />
+	</f:if>
+
+	<f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
+		<f:render section="InTextRight" arguments="{_all}" />
+	</f:if>
+
+	<f:if condition="{gallery.position.horizontal} == left && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
+		<f:render section="InTextLeft" arguments="{_all}" />
+	</f:if>
+
+	<f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} == TRUE">
+		<f:render section="NextToTextRight" arguments="{_all}" />
+	</f:if>
+
+	<f:if condition="{gallery.position.horizontal} == left && {gallery.position.vertical} == intext && {gallery.position.noWrap} == TRUE">
+		<f:render section="NextToTextLeft" arguments="{_all}" />
+	</f:if>
+</f:section>
+
+<f:section name="TopCenter">
+	<div class="textpic topcenter">
+		<f:render partial="Media/Gallery" arguments="{_all}" />
+		<f:if condition="{data.bodytext} || {data.header}">
+			<div class="ce-bodytext">
+				<f:if condition="{data.tx_header_inside} = 1">
+					<f:render partial="Header/All" arguments="{_all}" />
+				</f:if>
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+		</f:if>
+	</div>
+</f:section>
+
+<f:section name="InTextRight">
+	<div class="textpic intext-right">
+		<f:if condition="{data.bodytext} || {data.header}">
+			<f:render partial="Media/Gallery" arguments="{_all}" />
+			<div class="ce-bodytext">
+				<f:if condition="{data.tx_header_inside} = 1">
+					<f:render partial="Header/All" arguments="{_all}" />
+				</f:if>
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+		</f:if>
+	</div>
+</f:section>
+
+<f:section name="InTextLeft">
+	<div class="textpic intext-left">
+		<f:render partial="Media/Gallery" arguments="{_all}" />
+		<f:if condition="{data.bodytext} || {data.header}">
+			<div class="ce-bodytext">
+				<f:if condition="{data.tx_header_inside} = 1">
+					<f:render partial="Header/All" arguments="{_all}" />
+				</f:if>
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+		</f:if>
+	</div>
+</f:section>
+
+<f:section name="NextToTextRight">
+	<div class="textpic nexttotext-right">
+		<f:if condition="{data.bodytext} || {data.header}">
+			<div class="ce-bodytext">
+				<f:if condition="{data.tx_header_inside} = 1">
+					<f:render partial="Header/All" arguments="{_all}" />
+				</f:if>
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+		</f:if>
+		<f:render partial="Media/Gallery" arguments="{_all}" />
+	</div>
+</f:section>
+
+<f:section name="NextToTextLeft">
+	<div class="textpic nexttotext-left">
+		<f:render partial="Media/Gallery" arguments="{_all}" />
+		<f:if condition="{data.bodytext} || {data.header}">
+			<div class="ce-bodytext">
+				<f:if condition="{data.tx_header_inside} = 1">
+					<f:render partial="Header/All" arguments="{_all}" />
+				</f:if>
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+		</f:if>
+	</div>
+</f:section>
+
+</html>

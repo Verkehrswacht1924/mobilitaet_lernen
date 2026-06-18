@@ -1,0 +1,80 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="modal fade" id="Modal-{data.uid}" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="container">
+                    <div class="row g-0">
+                        <div class="col-10 title">
+                            <h3 class="modal-title" id="modalLabel-{data.uid}">{data.header}</h3>
+                        </div>
+                        <div class="col-2 close">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" title="{f:translate(key: 'LLL:EXT:vms_sitepackage/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}"><span class="visually-hidden">{f:translate(key: 'LLL:EXT:vms_sitepackage/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="Carousel-{data.uid}" class="carousel carousel-dark slide carousel-fade" data-bs-pause="true" data-bs-ride="false" data-bs-interval="false">
+                    <ul class="carousel-inner list-unstyled">
+                        <f:for each="{gallery.rows}" as="row">
+                            <f:for each="{row.columns}" as="column">
+                                <f:if condition="{column.media}">
+                                    <li class="carousel-item{f:if(condition: '{column.media.properties.sorting_foreign} == 1', then: ' active')}">
+                                        <a class="download" target="_blank" title="Herunterladen" href="/fileadmin{column.media.properties.identifier}"><span class="visually-hidden">Herunterladen</span></a>
+                                        <f:if condition="{files -> f:count()} > 1">
+                                            <a href="#Carousel-{data.uid}" role="button" data-bs-slide="next" title="Nächstes Bild">
+                                        </f:if>
+                                        <figure class="image">
+                                            <picture>
+                                                <f:image src="{column.media.properties.uid}" treatIdAsReference="1" crop="false" maxWidth="1800" />
+                                            </picture>
+                                            <f:if condition="{column.media.description} || {column.media.originalFile.properties.caption} || {column.media.originalFile.properties.copyright}">
+                                                <figcaption class="image-caption">
+                                                    <f:if condition="{column.media.description}">
+                                                        <span class="description">{column.media.description} </span>
+                                                    </f:if>
+                                                    <f:if condition="{column.media.originalFile.properties.caption}">
+                                                        <span class="caption">{column.media.originalFile.properties.caption} </span>
+                                                    </f:if>
+                                                    <f:if condition="{column.media.originalFile.properties.copyright}">
+                                                        <span class="copyright">{column.media.originalFile.properties.copyright} </span>
+                                                    </f:if>
+                                                </figcaption>
+                                            </f:if>
+                                        </figure>
+                                        <f:if condition="{files -> f:count()} > 1">
+                                            </a>
+                                            <p class="carousel-iterator">{column.media.properties.sorting_foreign} von {files -> f:count()}</p>
+                                        </f:if>
+                                    </li>
+                                </f:if>
+                            </f:for>
+                        </f:for>
+                    </ul>
+                </div>
+                <div class="modal-footer container">
+                    <nav aria-label="Galerie Navigation">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="carousel-control-prev" href="#galleryCarousel-{data.uid}" role="button" data-bs-slide="prev" title="{f:translate(key: 'LLL:EXT:vms_sitepackage/Resources/Private/Language/locallang.xlf:tt_content.gallery_previous')}">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">{f:translate(key: 'LLL:EXT:vms_sitepackage/Resources/Private/Language/locallang.xlf:tt_content.gallery_previous')}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="carousel-control-next" href="#galleryCarousel-{data.uid}" role="button" data-bs-slide="next" title="{f:translate(key: 'LLL:EXT:vms_sitepackage/Resources/Private/Language/locallang.xlf:tt_content.gallery_next')}">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">{f:translate(key: 'LLL:EXT:vms_sitepackage/Resources/Private/Language/locallang.xlf:tt_content.gallery_next')}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

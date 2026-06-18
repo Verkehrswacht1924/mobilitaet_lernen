@@ -1,0 +1,66 @@
+name: dpxstage/dpx-stage
+typeName: dpxstage_dpx_stage
+prefixFields: false
+fields:
+  - identifier: tx_dpxstage_file
+    type: File
+    maxitems: 1
+    allowed: png,jpg,jpeg,gif,svg,mp4
+  - identifier: header
+    useExistingField: true
+  - identifier: subheader
+    useExistingField: true
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+  - identifier: tx_dpxstage_stage_salutation
+    type: Checkbox
+  - identifier: tx_dpxstage_stage_counter
+    type: Checkbox
+  - identifier: tx_dpxstage_contentvisibility
+    type: Select
+    renderType: selectSingle
+    items:
+      - label: 'Immer sichtbar'
+        value: '0'
+      - label: 'Mobil ausblenden'
+        value: '1'
+      - label: 'Tablet ausblenden'
+        value: '2'
+  - identifier: tx_dpxstage_size
+    type: Select
+    renderType: selectSingle
+    items:
+      - label: 'Normal'
+        value: '0'
+      - label: 'Klein'
+        value: '1'
+  - identifier: tx_dpxstage_stage_position
+    type: Select
+    renderType: selectSingle
+    items:
+      - label: 'Oben'
+        value: stage-top
+      - label: 'Mitte'
+        value: stage-middle
+      - label: 'Unten'
+        value: stage-bottom
+  - identifier: tx_dpxstage_stage_textcolor
+    type: Checkbox
+  - identifier: tx_dpxstage_stage_bg
+    type: Checkbox
+  - identifier: tx_dpxstage_link_text
+    type: Text
+    max: 100
+  - identifier: tx_dpxstage_link
+    type: Link
+  - identifier: tx_dpxstage_link_position
+    type: Select
+    renderType: selectSingle
+    items:
+      - label: 'Zentriert'
+        value: btn-center
+      - label: 'Links'
+        value: btn-left
+      - label: 'Rechts'
+        value: btn-right

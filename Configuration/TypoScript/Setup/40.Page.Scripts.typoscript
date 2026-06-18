@@ -1,0 +1,5 @@
+page {
+    includeJSFooter  {
+        screen              = EXT:vms_sitepackage/Resources/Public/JavaScripts/screen.js
+    }
+}

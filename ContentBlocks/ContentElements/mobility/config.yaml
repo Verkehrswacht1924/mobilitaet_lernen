@@ -1,0 +1,21 @@
+name: vms/mobility
+typeName: mobility
+prefixFields: false
+fields:
+  - identifier: header
+    useExistingField: true
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+  - identifier: foot_link
+    type: Relation
+    allowed: pages
+    maxitems: 1
+  - identifier: bicycle_link
+    type: Relation
+    allowed: pages
+    maxitems: 1
+  - identifier: bus_link
+    type: Relation
+    allowed: pages
+    maxitems: 1

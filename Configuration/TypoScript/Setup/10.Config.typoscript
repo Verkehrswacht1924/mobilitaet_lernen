@@ -1,0 +1,54 @@
+################
+#### CONFIG ####
+################
+
+config {
+    no_cache = {$config.no_cache}
+    uniqueLinkVars = 1
+    pageTitleFirst = 1
+    pageTitleSeparator = -
+    pageTitleSeparator.noTrimWrap = | | |
+    renderCharset = utf-8
+    metaCharset = utf-8
+    doctype = html5
+    removeDefaultJS = {$config.removeDefaultJS}
+    inlineStyle2TempFile = 1
+    moveJsFromHeaderToFooter = 1
+    spamProtectEmailAddresses = {$config.spamProtectEmailAddresses}
+    spamProtectEmailAddresses_atSubst = {$config.spamProtectEmailAddresses_atSubst}
+    admPanel = {$config.admPanel}
+    debug = {$config.debug}
+    cache_period = 43200
+    sendCacheHeaders = 1
+    intTarget =
+    extTarget =
+    disablePrefixComment = 1
+    index_enable = 1
+    index_externals = 1
+    index_metatags = 0
+    headerComment = {$config.headerComment}
+    prefixLocalAnchors = all
+    simulateStaticDocuments = 0
+
+    // Language Settings
+    sys_language_overlay = 1
+    sys_language_mode = content_fallback
+    language = {$config.language}
+    locale_all = {$config.languageLocal}
+    htmlTag_setParams = lang="{$config.language}" dir="{$config.languageDir}" class="no-js" data-bs-theme="light"
+
+    // Compression and concatenation of CSS and JS files
+    compressJs = {$config.compressJs}
+    compressCss = {$config.compressCss}
+    concatenateJs = {$config.concatenateJs}
+    concatenateCss = {$config.concatenateCss}
+
+    additionalHeaders {
+        10.header = strict-transport-security:max-age=31536000
+        20.header = X-Frame-Options:SAMEORIGIN
+        30.header = X-Xss-Protection: 1; mode=block
+        40.header = X-Content-Type-Options: nosniff
+        50.header = Referrer-Policy:strict-origin
+        60.header = Content-Security-Policy: upgrade-insecure-requests; base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org *.soundcloud.com *.youtube.com *.youtube-nocookie.com; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline' https://www.youtube.com/ *.youtube-nocookie.com; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org *.soundcloud.com *.youtube.com *.youtube-nocookie.com; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
+    }
+}

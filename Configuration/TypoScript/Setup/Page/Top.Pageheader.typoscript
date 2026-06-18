@@ -1,0 +1,6 @@
+# Seitentitel ausgeben
+lib.pageheader = TEXT
+lib.pageheader {
+    value = {page:title}
+    insertData = 1
+}

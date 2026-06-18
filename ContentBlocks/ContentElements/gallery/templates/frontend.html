@@ -1,0 +1,23 @@
+<html data-namespace-typo3-fluid="true">
+<div class="dpx-gallery {data.tx_dpxgallery_gallery_layout}{f:if(condition: data.tx_dpxgallery_gallery_bg, then: ' has-bg')}{f:if(condition: data.tx_dpxgallery_gallery_textcolor, then: ' text-light')} img-style-{data.tx_dpxgallery_gallery_image_style} {data.tx_dpxgallery_gallery_slider_style} {data.tx_dpxgallery_gallery_slider_navigation} {data.tx_dpxgallery_gallery_slider_arrows}">
+    <f:if condition="{data.header}">
+        <header class="dpx-gallery__head">
+            <h2>{data.header}</h2>
+            <f:if condition="{data.subheader}"><p class="dpx-gallery__sub">{data.subheader}</p></f:if>
+        </header>
+    </f:if>
+    <f:if condition="{data.bodytext}">
+        <div class="dpx-gallery__text"><f:format.html>{data.bodytext}</f:format.html></div>
+    </f:if>
+    <div class="dpx-gallery__items">
+        <f:for each="{data.tx_dpxgallery_file}" as="file">
+            <figure class="dpx-gallery__item">
+                <f:image image="{file}" alt="{file.alternative}" title="{file.title}" loading="lazy" />
+                <f:if condition="{file.description}">
+                    <figcaption>{file.description}</figcaption>
+                </f:if>
+            </figure>
+        </f:for>
+    </div>
+</div>
+</html>

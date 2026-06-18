@@ -1,0 +1,280 @@
+lib.navPrimary = COA
+lib.navPrimary {
+    wrap =
+
+    10 = HMENU
+    10 {
+
+        entryLevel = 0
+        excludeUidList = 30
+
+        ### Erste Ebene ###
+        1 = TMENU
+        1 {
+            expAll = 1
+            noBlur = 1
+            wrap = <ul class="main-menu list-unstyled row mb-0" id="mainNav">|</ul>
+
+            NO = 1
+            NO.ATagParams = class="first-child link internal-link p-1"
+            NO.ATagTitle.field =
+            NO.wrapItemAndSub = <li class="col-12 col-lg-6 mb-4">|</li>
+            NO.stdWrap.htmlSpecialChars = 1
+
+            CUR < .NO
+            CUR = 1
+            CUR.allWrap = <strong class="first-child link internal-link p-1 active">|</strong>
+            CUR.doNotLinkIt = 1
+            CUR.stdWrap.htmlSpecialChars = 1
+
+            ACT < .NO
+            ACT = 1
+            ACT.ATagParams = class="first-child active"
+            ACT.allWrap = |
+
+            IFSUB < .NO
+            IFSUB = 1
+
+            ACTIFSUB < .NO
+            ACTIFSUB = 1
+            ACTIFSUB.ATagParams = class="first-child gradient-line-after active"
+            ACTIFSUB.allWrap = |
+        }
+
+        ### Zweite, dritte und vierte Ebene (Kopieren von erster Ebene) ###
+        2 < .1
+        2 {
+            wrap = <ul class="list-unstyled">|</ul>
+
+            NO = 1
+            NO.ATagParams = class="sub dropdown-item"
+            NO.ATagTitle.field =
+            NO.wrapItemAndSub = <li id="menu-{field:uid}">|</li>
+            NO.stdWrap.htmlSpecialChars = 1
+            NO.wrapItemAndSub.insertData = 1
+
+            IFSUB < .NO
+            IFSUB = 1
+            IFSUB.ATagParams = class="sub has-sub dropdown-item"
+            IFSUB.allWrap = |<button class="btn-open collapsed dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            IFSUB.allWrap.insertData = 1
+
+            CUR < .NO
+            CUR = 1
+            CUR.ATagParams = class="sub"
+            CUR.allWrap = <strong class="sub">|</strong>
+            CUR.doNotLinkIt = 1
+            CUR.stdWrap.htmlSpecialChars = 1
+            CUR.allWrap.insertData = 1
+
+            CURIFSUB < .NO
+            CURIFSUB = 1
+            CURIFSUB.ATagParams = class="sub has-sub"
+            CURIFSUB.allWrap = <strong class="sub">|</strong><button class="btn-open collapsed dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            CURIFSUB.doNotLinkIt = 1
+            CURIFSUB.stdWrap.htmlSpecialChars = 1
+            CURIFSUB.allWrap.insertData = 1
+
+            ACT < .NO
+            ACT = 1
+            ACT.ATagParams = class="sub dropdown-item"
+            ACT.allWrap = |
+            ACT.allWrap.insertData = 1
+
+            ACTIFSUB < .NO
+            ACTIFSUB = 1
+            ACTIFSUB.ATagParams = class="sub has-sub dropdown-item"
+            ACTIFSUB.allWrap = |
+            ACTIFSUB.allWrap = |<button class="btn-open collapsed active dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            ACTIFSUB.allWrap.insertData = 1
+        }
+
+        3 < .1
+        3 {
+            wrap = <ul class="list-unstyled collapse" data-bs-parent="#mainNav">|</ul>
+
+            NO = 1
+            NO.ATagParams = class="sub dropdown-item"
+            NO.ATagTitle.field =
+            NO.wrapItemAndSub = <li id="menu-{field:uid}">|</li>
+            NO.stdWrap.htmlSpecialChars = 1
+            NO.wrapItemAndSub.insertData = 1
+
+            IFSUB < .NO
+            IFSUB = 1
+            IFSUB.ATagParams = class="sub has-sub dropdown-item"
+            IFSUB.allWrap = |<button class="btn-open collapsed dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            IFSUB.allWrap.insertData = 1
+
+            CUR < .NO
+            CUR = 1
+            CUR.ATagParams = class="sub"
+            CUR.allWrap = <strong class="sub">|</strong>
+            CUR.doNotLinkIt = 1
+            CUR.stdWrap.htmlSpecialChars = 1
+            CUR.allWrap.insertData = 1
+
+            CURIFSUB < .NO
+            CURIFSUB = 1
+            CURIFSUB.ATagParams = class="sub has-sub"
+            CURIFSUB.allWrap = <strong class="sub">|</strong><button class="btn-open collapsed dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            CURIFSUB.doNotLinkIt = 1
+            CURIFSUB.stdWrap.htmlSpecialChars = 1
+            CURIFSUB.allWrap.insertData = 1
+
+            ACT < .NO
+            ACT = 1
+            ACT.ATagParams = class="sub dropdown-item"
+            ACT.allWrap = |
+            ACT.allWrap.insertData = 1
+
+            ACTIFSUB < .NO
+            ACTIFSUB = 1
+            ACTIFSUB.ATagParams = class="sub has-sub dropdown-item"
+            ACTIFSUB.allWrap = |
+            ACTIFSUB.allWrap = |<button class="btn-open collapsed active dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            ACTIFSUB.allWrap.insertData = 1
+        }
+
+        4 < .1
+        4 {
+            wrap = <ul class="list-unstyled collapse">|</ul>
+
+            NO = 1
+            NO.ATagParams = class="sub dropdown-item"
+            NO.ATagTitle.field =
+            NO.wrapItemAndSub = <li id="menu-{field:uid}">|</li>
+            NO.stdWrap.htmlSpecialChars = 1
+            NO.wrapItemAndSub.insertData = 1
+
+            IFSUB < .NO
+            IFSUB = 1
+            IFSUB.ATagParams = class="sub has-sub dropdown-item"
+            IFSUB.allWrap = |<button class="btn-open collapsed dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            IFSUB.allWrap.insertData = 1
+
+            CUR < .NO
+            CUR = 1
+            CUR.ATagParams = class="sub"
+            CUR.allWrap = <strong class="sub">|</strong>
+            CUR.doNotLinkIt = 1
+            CUR.stdWrap.htmlSpecialChars = 1
+            CUR.allWrap.insertData = 1
+
+            CURIFSUB < .NO
+            CURIFSUB = 1
+            CURIFSUB.ATagParams = class="sub has-sub"
+            CURIFSUB.allWrap = <strong class="sub">|</strong><button class="btn-open collapsed dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            CURIFSUB.doNotLinkIt = 1
+            CURIFSUB.stdWrap.htmlSpecialChars = 1
+            CURIFSUB.allWrap.insertData = 1
+
+            ACT < .NO
+            ACT = 1
+            ACT.ATagParams = class="sub dropdown-item"
+            ACT.allWrap = |
+            ACT.allWrap.insertData = 1
+
+            ACTIFSUB < .NO
+            ACTIFSUB = 1
+            ACTIFSUB.ATagParams = class="sub has-sub dropdown-item"
+            ACTIFSUB.allWrap = |
+            ACTIFSUB.allWrap = |<button class="btn-open collapsed active dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            ACTIFSUB.allWrap.insertData = 1
+        }
+
+        5 < .1
+        5 {
+            wrap = <ul class="list-unstyled collapse">|</ul>
+
+            NO = 1
+            NO.ATagParams = class="sub dropdown-item"
+            NO.ATagTitle.field =
+            NO.wrapItemAndSub = <li id="menu-{field:uid}">|</li>
+            NO.stdWrap.htmlSpecialChars = 1
+            NO.wrapItemAndSub.insertData = 1
+
+            IFSUB < .NO
+            IFSUB = 1
+            IFSUB.ATagParams = class="sub has-sub dropdown-item"
+            IFSUB.allWrap = |<button class="btn-open collapsed dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            IFSUB.allWrap.insertData = 1
+
+            CUR < .NO
+            CUR = 1
+            CUR.ATagParams = class="sub"
+            CUR.allWrap = <strong class="sub">|</strong>
+            CUR.doNotLinkIt = 1
+            CUR.stdWrap.htmlSpecialChars = 1
+            CUR.allWrap.insertData = 1
+
+            CURIFSUB < .NO
+            CURIFSUB = 1
+            CURIFSUB.ATagParams = class="sub has-sub"
+            CURIFSUB.allWrap = <strong class="sub">|</strong><button class="btn-open collapsed dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            CURIFSUB.doNotLinkIt = 1
+            CURIFSUB.stdWrap.htmlSpecialChars = 1
+            CURIFSUB.allWrap.insertData = 1
+
+            ACT < .NO
+            ACT = 1
+            ACT.ATagParams = class="sub dropdown-item"
+            ACT.allWrap = |
+            ACT.allWrap.insertData = 1
+
+            ACTIFSUB < .NO
+            ACTIFSUB = 1
+            ACTIFSUB.ATagParams = class="sub has-sub dropdown-item"
+            ACTIFSUB.allWrap = |
+            ACTIFSUB.allWrap = |<button class="btn-open collapsed active dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            ACTIFSUB.allWrap.insertData = 1
+        }
+
+        6 < .1
+        6 {
+            wrap = <ul class="list-unstyled collapse">|</ul>
+
+            NO = 1
+            NO.ATagParams = class="sub"
+            NO.ATagTitle.field =
+            NO.wrapItemAndSub = <li id="menu-{field:uid}">|</li>
+            NO.stdWrap.htmlSpecialChars = 1
+            NO.wrapItemAndSub.insertData = 1
+
+            IFSUB < .NO
+            IFSUB = 1
+            IFSUB.ATagParams = class="sub has-sub"
+            IFSUB.allWrap = |<button class="btn-open collapsed dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            IFSUB.allWrap.insertData = 1
+
+            CUR < .NO
+            CUR = 1
+            CUR.ATagParams = class="sub"
+            CUR.allWrap = <strong class="sub">|</strong>
+            CUR.doNotLinkIt = 1
+            CUR.stdWrap.htmlSpecialChars = 1
+            CUR.allWrap.insertData = 1
+
+            CURIFSUB < .NO
+            CURIFSUB = 1
+            CURIFSUB.ATagParams = class="sub has-sub"
+            CURIFSUB.allWrap = <strong class="sub">|</strong><button class="btn-open collapsed dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            CURIFSUB.doNotLinkIt = 1
+            CURIFSUB.stdWrap.htmlSpecialChars = 1
+            CURIFSUB.allWrap.insertData = 1
+
+            ACT < .NO
+            ACT = 1
+            ACT.ATagParams = class="sub"
+            ACT.allWrap = |
+            ACT.allWrap.insertData = 1
+
+            ACTIFSUB < .NO
+            ACTIFSUB = 1
+            ACTIFSUB.ATagParams = class="sub has-sub"
+            ACTIFSUB.allWrap = |
+            ACTIFSUB.allWrap = |<button class="btn-open collapsed active dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{field:uid}" aria-expanded="false" aria-controls="menu-{field:uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
+            ACTIFSUB.allWrap.insertData = 1
+        }
+    }
+}

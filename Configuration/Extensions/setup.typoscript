@@ -1,0 +1,3 @@
+@import 'EXT:vms_sitepackage/Configuration/Extensions/fluid_styled_content/TypoScript/setup.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/Extensions/solr/TypoScript/setup.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/Extensions/seo/Configuration/TypoScript/XmlSitemap/setup.typoscript'

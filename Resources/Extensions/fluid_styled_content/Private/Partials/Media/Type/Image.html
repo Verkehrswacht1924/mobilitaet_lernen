@@ -1,0 +1,36 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+<figure class="figure">
+    <f:if condition="{file.link}">
+        <f:then>
+            <f:link.typolink parameter="{file.link}" title="{file.link.title}">
+                <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data: data, index: index, metaDataProperties: metaDataProperties}" partial="Media/Rendering/Image"/>
+            </f:link.typolink>
+        </f:then>
+        <f:else>
+            <f:if condition="{data.image_zoom}">
+                <f:then>
+                    <a class="popup" data-bs-target="#Modal-{data.uid}" data-bs-toggle="modal" href="/fileadmin{file.properties.identifier}" role="button">
+                        <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data: data, cycle: cycle, metaDataProperties: metaDataProperties}" partial="Media/Rendering/Image"/>
+                    </a>
+                </f:then>
+                <f:else>
+                    <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data: data, index: index, metaDataProperties: metaDataProperties}" partial="Media/Rendering/Image"/>
+                </f:else>
+            </f:if>
+        </f:else>
+    </f:if>
+    <f:if condition="{file.description} || {file.originalFile.properties.copyright} || {file.originalFile.properties.caption}">
+        <figcaption class="figure-caption">
+            <f:if condition="{file.description}">
+                <span class="description">{file.description} </span>
+            </f:if>
+            <f:if condition="{file.originalFile.properties.caption}">
+                <span class="caption">{file.originalFile.properties.caption} </span>
+            </f:if>
+            <f:if condition="{file.originalFile.properties.copyright}">
+                <span class="copyright">{file.originalFile.properties.copyright} </span>
+            </f:if>
+        </figcaption>
+    </f:if>
+</figure>
+</html>

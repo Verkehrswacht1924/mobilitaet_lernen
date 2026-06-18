@@ -1,0 +1,16 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<div class="bg-info ce-content-element-info{f:if(condition: header, then: ' cec-my')}">
+    <f:if condition="{frame_class} == 'none'">
+        <f:then>
+            <core:icon identifier="tx_noframe" /> {f:translate(key: 'LLL:EXT:vms_sitepackage/Resources/Private/Language/locallang_db.xlf:without_frame')}
+        </f:then>
+        <f:else>
+            <core:icon identifier="tx_frame" /> {f:translate(key: 'LLL:EXT:vms_sitepackage/Resources/Private/Language/locallang_db.xlf:with_frame')}
+        </f:else>
+    </f:if>
+</div>
+<f:format.raw>{tx_container_grid}</f:format.raw>
+
+</html>

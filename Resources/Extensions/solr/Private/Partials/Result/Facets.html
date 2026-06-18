@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	  xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	  xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:section name="Facets">
+	<div id="tx-solr-faceting">
+		<s:facet.area.group groupName="main" facets="{resultSet.facets.available}">
+			<div class="facet-area-main">
+				<div class="solr-facets-available secondaryContentSection">
+					<div class="facets d-grid gap-3">
+						<f:for each="{areaFacets}" as="facet">
+							<f:if condition="{facet.name} == schwerpunkt">
+								<div aria-labelledby="facet-{facet.name}" class="col-lg-12">
+									<f:render partial="Facets/FilterOptions" arguments="{resultSet:resultSet, facet:facet}"/>
+								</div>
+							</f:if>
+						</f:for>
+					</div>
+				</div>
+			</div>
+		</s:facet.area.group>
+	</div>
+</f:section>
+</html>

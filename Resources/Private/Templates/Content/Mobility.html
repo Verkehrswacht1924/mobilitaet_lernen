@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<div id="mobility-filter" class="frame{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+    <div class="frame frame-default frame-type-header frame-layout-0 frame-space-after-small">
+        <h3 class="ce-headline-center ">
+            <span>{data.header}</span>
+        </h3>
+    </div>
+    <div class="container">
+        <div class="row mx-n2 mx-xl-n3">
+            <div class="col-4 px-2 px-xl-5 mb-5 mb-lg-0">
+                <f:link.page pageUid="{data.foot_link}" section="mobility-filter" class="mobility-type{f:if(condition:'{data.pid}=={data.foot_link}', then: ' facet-active')}">
+                    <div class="circle circle-2">
+                        <span class="circle-inner"></span>
+                    </div>
+                    <div class="link text-center internal-link mt-1 mt-md-3 d-md-none">
+                        {f:translate(key: 'filter.option.label.mobile.2',
+                        extensionName: 'vms_sitepackage')}
+                    </div>
+                    <div class="link text-center internal-link text-center mt-1 mt-md-3 d-none d-md-block">
+                        {f:translate(key: 'filter.option.label.desktop.2',
+                        extensionName: 'vms_sitepackage')}
+                    </div>
+                </f:link.page>
+            </div>
+            <div class="col-4 px-2 px-xl-5 mb-5 mb-lg-0">
+                <f:link.page pageUid="{data.bicycle_link}" section="mobility-filter" class="mobility-type{f:if(condition:'{data.pid}=={data.bicycle_link}', then: ' facet-active')}">
+                    <div class="circle circle-3">
+                        <span class="{circle-inner}"></span>
+                    </div>
+                    <div class="link text-center internal-link mt-1 mt-md-3 d-md-none">
+                        {f:translate(key: 'filter.option.label.mobile.3',
+                        extensionName: 'vms_sitepackage')}
+                    </div>
+                    <div class="link text-center internal-link text-center mt-1 mt-md-3 d-none d-md-block">
+                        {f:translate(key: 'filter.option.label.desktop.3',
+                        extensionName: 'vms_sitepackage')}
+                    </div>
+                </f:link.page>
+            </div>
+            <div class="col-4 px-2 px-xl-5">
+                <f:link.page pageUid="{data.bus_link}" section="mobility-filter" class="mobility-type{f:if(condition:'{data.pid}=={data.bus_link}', then: ' facet-active')}">
+                    <div class="circle circle-1">
+                        <span class="circle-inner"></span>
+                    </div>
+                    <div class="link text-center internal-link mt-1 mt-md-3 d-md-none">
+                        {f:translate(key: 'filter.option.label.mobile.1',
+                        extensionName: 'vms_sitepackage')}
+                    </div>
+                    <div class="link text-center internal-link text-center mt-1 mt-md-3 d-none d-md-block">
+                        {f:translate(key: 'filter.option.label.desktop.1',
+                        extensionName: 'vms_sitepackage')}
+                    </div>
+                </f:link.page>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,6 @@
+plugin.vms_sitepackage {
+    settings {
+        helpFaq = {$config.pids.helpFaq}
+        landingPage = {$config.pids.landingPage}
+    }
+}

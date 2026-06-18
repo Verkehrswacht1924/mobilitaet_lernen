@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<div>
+    <ul class="list-unstyled d-flex justify-content-lg-center flex-row flex-wrap mb-0" data-facet-name="{facet.name}" data-facet-label="{facet.label}" id="facet{facet.name}">
+        <f:for each="{facet.options}" as="option" iteration="iteration">
+            <li data-facet-item-value="{option.value}" class="{f:if(condition: '!{iteration.isLast}', then: 'me-4 me-xl-5 mb-2 mb-lg-3')}" >
+                <div class="d-flex justify-content-between">
+                    <f:if condition="{option.selected}">
+                        <f:then>
+                            <f:variable name="isFilterActive">1</f:variable>
+                            <f:variable name="facetOptionUri">{s:uri.facet.removeFacetItem(facet: facet, facetItem: option)}</f:variable>
+                        </f:then>
+                        <f:else>
+                            <f:variable name="isFilterActive">0</f:variable>
+                            <f:variable name="facetOptionUri">{s:uri.facet.addFacetItem(facet: facet, facetItem: option)}</f:variable>
+                        </f:else>
+                    </f:if>
+                    <a class="facet solr-ajaxified saveScrollPosition" href="{facetOptionUri}#tx-solr-search">
+                        <div class="form-check">
+                            <span class="form-check-input{f:if(condition: '{isFilterActive}', then: ' form-check-input-active')}"></span>
+                            <span class="form-check-label fw-bold">{option.label}</span>
+                        </div>
+                    </a>
+                    <f:comment>
+                        <span class="facet-result-count badge bg-info">{option.documentCount}</span>
+                    </f:comment>
+                </div>
+            </li>
+        </f:for>
+    </ul>
+</div>
+<f:asset.script identifier="saveScrollPos" src="EXT:vms_sitepackage/Resources/Public/JavaScripts/saveScrollPos.js"/>
+</html>

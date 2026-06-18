@@ -1,0 +1,1 @@
+plugin.tx_solr.settings.facetText = {$config.solr.facetText}

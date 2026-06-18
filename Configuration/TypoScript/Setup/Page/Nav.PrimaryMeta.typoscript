@@ -1,0 +1,24 @@
+lib.navPrimaryMeta = COA
+lib.navPrimaryMeta {
+    wrap =
+
+    10 = HMENU
+    10 {
+        special = directory
+        special.value = {$config.pids.PrimaryMeta}
+        wrap = <ul class="main-meta row list-unstyled">|</ul>
+
+        1 = TMENU
+        1 {
+            expAll = 1
+            NO.wrapItemAndSub = <li class="col-auto meta-item mb-3">|</li>
+            NO.ATagParams = class="fw-light text-primary p-lg-1"
+
+            CUR < .NO
+            CUR = 1
+            CUR.allWrap = <strong class="fw-bold text-primary p-lg-1">|</strong>
+            CUR.doNotLinkIt = 1
+            CUR.stdWrap.htmlSpecialChars = 1
+        }
+    }
+}

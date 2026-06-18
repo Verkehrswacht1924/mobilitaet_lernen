@@ -1,0 +1,15 @@
+plugin.tx_solr {
+
+    statistics = {$plugin.tx_solr.statistics}
+    suggest    = {$plugin.tx_solr.suggest}
+
+    search {
+        targetPage       = {$plugin.tx_solr.search.targetPage}
+        faceting         = {$plugin.tx_solr.search.faceting}
+        grouping         = {$plugin.tx_solr.search.grouping}
+        sorting          = {$plugin.tx_solr.search.sorting}
+        spellchecking    = {$plugin.tx_solr.search.spellchecking}
+        lastSearches     = {$plugin.tx_solr.search.lastSearches}
+        frequentSearches = {$plugin.tx_solr.search.frequentSearches}
+    }
+}

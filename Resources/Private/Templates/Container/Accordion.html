@@ -1,0 +1,62 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Container" />
+
+<f:section name="Main">
+    <div class="accordion-wrapper">
+        <ul class="accordion list-unstyled" id="accordion-{data.uid}">
+            <f:for each="{children_101}" as="record" iteration="iterator">
+                <li class="accordion-item">
+                    <f:if condition="{data.container_headline} > 1">
+                        <f:then>
+                            <f:switch expression="{data.container_headline}">
+                                <f:case value="2"><h2 class="accordion-header" id="heading-{record.uid}"></f:case>
+                                <f:case value="3"><h3 class="accordion-header" id="heading-{record.uid}"></f:case>
+                                <f:case value="4"><h4 class="accordion-header" id="heading-{record.uid}"></f:case>
+                                <f:case value="5"><h5 class="accordion-header" id="heading-{record.uid}"></f:case>
+                                <f:case value="6"><h6 class="accordion-header" id="heading-{record.uid}"></f:case>
+                            </f:switch>
+                        </f:then>
+                        <f:else>
+                            <div class="accordion-header" id="heading-{record.uid}">
+                        </f:else>
+                    </f:if>
+                    <a href="#accordion-{record.uid}" class="accordion-button {f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle} != {data.container_accordion_open}', then: ' collapsed')}{f:if(condition: '{data.container_accordion_toggle} == 0', then: ' collapsed')}"
+                       data-bs-toggle="collapse"
+                       data-bs-target="#accordion-{record.uid}"
+                       data-bs-parent="{f:if(condition: '{data.container_accordion_toggle_all} != 1', then: '#accordion-{data.uid}')}"
+                       aria-expanded="{f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle}=={data.container_accordion_open}', then: 'true', else: 'false')}"
+                       aria-controls="accordion-{record.uid}"
+                       role="button"
+                    >{record.header}</a>
+                    <f:if condition="{data.container_headline} > 1">
+                        <f:then>
+                            <f:switch expression="{data.container_headline}">
+                                <f:case value="2"></h2></f:case>
+                                <f:case value="3"></h3></f:case>
+                                <f:case value="4"></h4></f:case>
+                                <f:case value="5"></h5></f:case>
+                                <f:case value="6"></h6></f:case>
+                                <f:defaultCase></span></f:defaultCase>
+                            </f:switch>
+                        </f:then>
+                        <f:else>
+                            </div>
+                        </f:else>
+                    </f:if>
+
+                    <div id="accordion-{record.uid}"
+                         class="accordion-collapse collapse{f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle} == {data.container_accordion_open}', then: ' show')}"
+                         aria-labelledby="heading-{record.uid}"
+                         data-bs-parent="{f:if(condition: '{data.container_accordion_toggle_all} != 1', then: '#accordion-{data.uid}')}">
+                        <div class="accordion-body">
+                            {f:cObject(typoscriptObjectPath: 'lib.dpxContainer.renderContent', data: record)}
+                        </div>
+                    </div>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</f:section>
+
+</html>

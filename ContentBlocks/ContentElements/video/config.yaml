@@ -1,0 +1,27 @@
+name: vms/video
+typeName: video
+prefixFields: false
+fields:
+  - identifier: header
+    useExistingField: true
+  - identifier: subheader
+    useExistingField: true
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+  - identifier: tx_video_mainstage
+    type: Checkbox
+  - identifier: tx_video_video
+    type: Link
+  - identifier: tx_video_videourl
+    type: Link
+  - identifier: tx_video_duration_video
+    type: Text
+  - identifier: tx_video_poster_image
+    type: File
+    maxitems: 1
+    allowed: jpg,jpeg,svg,png,gif
+  - identifier: tx_video_poster_video
+    type: Link
+  - identifier: tx_video_caption
+    type: Link

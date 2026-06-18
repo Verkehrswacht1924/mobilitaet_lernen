@@ -1,0 +1,7 @@
+page {
+    includeCSS {
+        screen                  = EXT:vms_sitepackage/Resources/Public/StyleSheets/screen.css
+        print                   = EXT:vms_sitepackage/Resources/Public/StyleSheets/print.css
+        print.media             = print
+    }
+}

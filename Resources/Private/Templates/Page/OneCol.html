@@ -1,0 +1,56 @@
+<html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <f:render arguments="{_all}" partial="Header"/>
+
+    <main class="main-wrapper shadow" id="mainContent">
+
+        <f:if condition="{top}">
+            <div class="top-container">
+                <f:format.raw>{top}</f:format.raw>
+            </div>
+        </f:if>
+
+        <f:if condition="{data.breadcrumb} != 1">
+            <nav class="breadcrumb d-none d-md-block" aria-label="{f:translate(key: 'header.youarehere', extensionName: 'vms_sitepackage')}">
+                <div class="container">
+                    <f:format.raw>{navBreadcrumb}</f:format.raw>
+                </div>
+            </nav>
+        </f:if>
+
+        <div class="main-container container">
+            <div class="row">
+                <div class="col-12">
+                    <!--TYPO3SEARCH_begin-->
+                    <f:format.raw>{main}</f:format.raw>
+                    <f:format.raw>{bottom}</f:format.raw>
+                    <!--TYPO3SEARCH_end-->
+                    <f:if condition="{data.socialmedia} != 1">
+                        <f:render partial="Footer.Share" arguments="{_all}"/>
+                    </f:if>
+                </div>
+            </div>
+        </div>
+    </main>
+    <f:render arguments="{_all}" partial="Footer"/>
+
+    <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} != {v:variable.typoscript(path: 'plugin.vms_sitepackage.settings.helpFaq')}">
+        <f:then>
+            <div class="totop-wrapper">
+                <div class="container">
+                    <f:link.page
+                            pageUid="{v:variable.typoscript(path: 'plugin.vms_sitepackage.settings.helpFaq')}"
+                            class="totop badge text-bg-primary bg-primary rounded-pill pe-5 lh-lg text-white link internal-link link-mobile-no-icon on"
+                            additionalAttributes="{aria-label:'Nach oben', title:'Nach oben'}">
+                        <span class="d-lg-none fs-6" aria-label="{f:translate(key: 'totop.button.label', extensionName: 'vms_sitepackage')}">?</span>
+                        <span class="d-none d-lg-block"><f:translate extensionName="vms_sitepackage"key="totop.button.label"/></span>
+                    </f:link.page>
+                </div>
+            </div>
+        </f:then>
+    </f:if>
+</f:section>
+</html>

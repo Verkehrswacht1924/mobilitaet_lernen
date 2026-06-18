@@ -1,0 +1,14 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+        audio {
+            iconIdentifier = tx_audio
+            title = LLL:EXT:vms_sitepackage/Resources/Private/Language/Tca.xlf:audio.audio_title
+            description = LLL:EXT:vms_sitepackage/Resources/Private/Language/Tca.xlf:audio.audio_description
+            tt_content_defValues {
+                CType = audio
+            }
+        }
+    }
+
+    show := addToList(audio)
+}

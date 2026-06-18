@@ -1,0 +1,23 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers">
+<formvh:renderRenderable renderable="{form}">
+    <formvh:form
+        action="{form.renderingOptions.controllerAction}"
+        addQueryString="{form.renderingOptions.addQueryString}"
+        additionalAttributes="{formvh:translateElementProperty(element: form, property: 'fluidAdditionalAttributes')}"
+        additionalParams="{form.renderingOptions.additionalParams}"
+        argumentsToBeExcludedFromQueryString="{form.renderingOptions.argumentsToBeExcludedFromQueryString}"
+        class="form"
+        enctype="{form.renderingOptions.httpEnctype}"
+        id="{form.identifier}"
+        method="{form.renderingOptions.httpMethod}"
+        novalidate="novalidate"
+        object="{form}"
+        section="{form.identifier}"
+    >
+        <f:render arguments="{page: form.currentPage}" partial="{form.currentPage.templateName}" />
+        <div class="{form.renderingOptions.formNavigation.navigationWrapperClassAttribute}">
+            <f:render arguments="{form: form}" partial="Form/Navigation" />
+        </div>
+    </formvh:form>
+</formvh:renderRenderable>
+</html>

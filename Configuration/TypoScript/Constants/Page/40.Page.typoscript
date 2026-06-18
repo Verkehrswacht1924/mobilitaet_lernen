@@ -1,0 +1,28 @@
+############
+### PAGE ###
+############
+page {
+    fluidtemplate {
+        # cat=template: templates/100/100; type=string; label=Layout Root Path: Path to layouts
+        layoutRootPath = EXT:vms_sitepackage/Resources/Private/Layouts/Page/
+        # cat=template: templates/100/110; type=string; label=Partial Root Path: Path to partials
+        partialRootPath = EXT:vms_sitepackage/Resources/Private/Partials/Page/
+        # cat=template: templates/100/120; type=string; label=Template Root Path: Path to templates
+        templateRootPath = EXT:vms_sitepackage/Resources/Private/Templates/Page/
+    }
+
+    meta {
+        # cat=template: meta data/130/100; type=string; label=viewport
+        viewport = width=device-width, initial-scale=1, minimum-scale=1
+        # cat=template: meta data/130/110; type=string; label=robots
+        robots = index,follow
+        # cat=template: meta data/130/120; type=string; label=apple-mobile-web-app-capable
+        apple-mobile-web-app-capable = no
+        # cat=template: meta data/130/130; type=string; label=compatible
+        compatible = IE=edge
+        # cat=template: meta data/130/140; type=string; label=google
+        google = notranslate
+        # cat=template: meta data/130/150; type=string; label=google-site-verification
+        google-site-verification =
+    }
+}

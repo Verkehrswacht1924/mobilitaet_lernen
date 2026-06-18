@@ -1,0 +1,14 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+        stage {
+            iconIdentifier = tx_stage
+            title = LLL:EXT:vms_sitepackage/Resources/Private/Language/Tca.xlf:stage.tx_stage_title
+            description = LLL:EXT:vms_sitepackage/Resources/Private/Language/Tca.xlf:stage.tx_stage_description
+            tt_content_defValues {
+                CType = stage
+            }
+        }
+    }
+
+    show := addToList(stage)
+}

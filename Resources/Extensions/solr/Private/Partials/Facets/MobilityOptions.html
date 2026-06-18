@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:comment>
+<div class="row mx-n2 mx-xl-n3">
+
+    <f:for each="{facet.options}" as="option" iteration="iteration">
+        <f:if condition="{option.value} > 0">
+            <div class="col-4 px-2 px-xl-5">
+                <f:if condition="{option.selected}">
+                    <f:then>
+                        <f:variable name="activeFilter">1</f:variable>
+                    </f:then>
+                    <f:else>
+                        <f:variable name="facetOptionUri">{s:uri.facet.setFacetItem(facet: facet, facetItem: option)}</f:variable>
+                        <f:variable name="activeFilter">0</f:variable>
+                    </f:else>
+                </f:if>
+                <f:variable name="filterType" value="{option.facet.name}:{option.value} {f:if(condition: '{activeFilter}', then: 'filter-active')}"/>
+                <a class="facet solr-ajaxified facet-{f:if(condition: '{activeFilter}', then: 'active')}"
+                   href="{facetOptionUri}">
+                    <div class="circle circle-{option.value}">
+                        <span class="circle-inner"></span>
+                    </div>
+                    <div class="link internal-link mt-1 mt-md-3 d-md-none">{f:translate(key: 'filter.option.label.mobile.{option.label}',
+                        extensionName: 'vms_sitepackage')}
+                    </div>
+                    <div class="link internal-link mt-1 mt-md-3 d-none d-md-block">{f:translate(key: 'filter.option.label.desktop.{option.label}',
+                        extensionName: 'vms_sitepackage')}
+                    </div>
+                </a>
+                <f:comment><span class="facet-result-count badge bg-info">{option.documentCount}</span></f:comment>
+            </div>
+        </f:if>
+    </f:for>
+</div>
+</f:comment>
+</html>

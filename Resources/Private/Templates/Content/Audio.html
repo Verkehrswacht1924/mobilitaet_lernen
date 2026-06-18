@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:if condition="{animationSettings}">
+    <f:then>
+        <f:asset.script identifier="aosJS" src="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos-3.0.0-beta-6.min.js"/>
+        <f:asset.script identifier="aosJS">
+            AOS.init();
+        </f:asset.script>
+        <f:asset.css href="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos.css" identifier="aosCSS"/>
+    </f:then>
+</f:if>
+<div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-audio frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"{f:if(condition: animationSettings, then: '{animationSettings -> f:format.raw()}')}>
+
+    <f:if condition="{data.header}">
+        <f:render arguments="{_all}" partial="Header/All" />
+    </f:if>
+
+    <f:if condition="{data.bodytext}">
+        <f:format.html>{data.bodytext}</f:format.html>
+    </f:if>
+    
+    <f:if condition="{data.tx_audio_audio}">
+        <div class="audio audio-local">
+            <f:if condition="{data_tx_audio_poster.0}">
+                <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+                    <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'default', maxWidth: 1440)}" media="(min-width: 1220px)">
+                    <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'large', maxWidth: 1220)}" media="(min-width: 992px)">
+                    <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'medium', maxWidth: 992)}" media="(min-width: 768px)">
+                    <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'small', maxWidth: 768)}" media="(min-width: 576px)">
+                    <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'xsmall', maxWidth: 576)}" media="(min-width: 0)">
+                    <f:image src="{data_tx_audio_poster.0.properties.uid}" maxWidth="1440" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                </picture>
+            </f:if>
+            <audio preload="none" controls style="max-width:100%; width: 100%;">
+                <source src="{f:uri.typolink(parameter: '{data.tx_audio_audio}')}" type="audio/mp3">
+            </audio>
+        </div>
+    </f:if>
+    
+    <f:if condition="{data.tx_audio_audiourl}">
+        <div class="audio audio-soundcloud">
+            <div class="dsgvo" {f:if(condition: '{data_tx_audio_poster.0}', then: ' style="background:url(\'{f:uri.image(image: data_tx_audio_poster.0, maxWidth: 952, maxHeight: 535c)}\') no-repeat 0 0; background-size: cover;"')}>
+            <div class="player-wrapper">
+                <div class="dsgvo-text">
+                    <button class="audio-start mejs__overlay-button"
+                            title="Audio abspielen"
+                            data-mediaurl="{data.tx_audio_audiourl}">
+                        <span class="visually-hidden">Audio abspielen</span>
+                    </button>
+                    <p>Zum Aktivieren des Widgets musst Du auf den Button klicken. Nach dem Aktivieren des Buttons gelten die <a href="https://help.soundcloud.com/hc/de/articles/115003570428-Datenschutz-bei-SoundCloud" target="_blank" class="external-link" title="Link öffnet in neuem Fenster">Datenschutzbestimmungen von SoundCloud</a>.</p>
+                </div>
+            </div>
+        </div>
+</div>
+</f:if>
+</div>
+<f:asset.script identifier="mediaelementsJS" src="EXT:vms_sitepackage/Resources/Public/JavaScripts/mediaelements.js" />
+<f:asset.css identifier="mediaelementsCSS" href="EXT:vms_sitepackage/Resources/Public/StyleSheets/mediaelements.css" />
+</html>

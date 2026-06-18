@@ -1,0 +1,19 @@
+TYPO3:
+  CMS:
+    Form:
+       persistenceManager:
+              allowedExtensionPaths:
+                10: EXT:vms_sitepackage/Resources/Extensions/form/Forms/
+              allowSaveToExtensionPaths: true
+              allowDeleteFromExtensionPaths: true
+       prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  200: 'EXT:vms_sitepackage/Resources/Extensions/form/Frontend/Templates/'
+                partialRootPaths:
+                  200: 'EXT:vms_sitepackage/Resources/Extensions/form/Frontend/Partials/'
+                layoutRootPaths:
+                  200: 'EXT:vms_sitepackage/Resources/Extensions/form/Frontend/Layouts/'

@@ -1,0 +1,7 @@
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Setup/ContentElements/tt_content/tt_content.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Setup/ContentElements/tt_content/Video.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Setup/ContentElements/tt_content/Audio.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Setup/ContentElements/tt_content/Stage.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Setup/ContentElements/tt_content/Gallery.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Setup/ContentElements/tt_content/Mobility.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/TypoScript/Setup/ContentElements/tt_content/ContainerElements.typoscript'

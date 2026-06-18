@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-07-31T109:48:17Z" product-name="vms_sitepackage">
+        <header/>
+        <body>
+            <trans-unit id="video.video_title" xml:space="preserve">
+                <target>Video</target>
+            </trans-unit>
+            <trans-unit id="video.video_description" xml:space="preserve">
+                <target>Legt ein lokales Video oder ein externes YouTube Video an</target>
+            </trans-unit>
+            <trans-unit id="audio.audio_title" xml:space="preserve">
+                <target>Audio</target>
+            </trans-unit>
+            <trans-unit id="audio.audio_description" xml:space="preserve">
+                <target>Legt ein lokales Audio oder ein externes Audio an</target>
+            </trans-unit>
+            <trans-unit id="stage.tx_stage_title" xml:space="preserve">
+                <target>Bühne</target>
+            </trans-unit>
+            <trans-unit id="stage.tx_stage_description" xml:space="preserve">
+                <target>Fügt ein Bühnenelement ein</target>
+            </trans-unit>
+            <trans-unit id="grid.title" xml:space="preserve">
+                <target>Raster</target>
+            </trans-unit>
+            <trans-unit id="grid.description" xml:space="preserve">
+                <target>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen. Kann auch zu einem Slider
+umgeschaltet werden.</target>
+            </trans-unit>
+            <trans-unit id="grid.elements" xml:space="preserve">
+                <target>Raster Elemente</target>
+            </trans-unit>
+            <trans-unit id="gallery.title" xml:space="preserve">
+                <target>Galerie</target>
+            </trans-unit>
+            <trans-unit id="gallery.description" xml:space="preserve">
+                <target>Fügt ein Galerieelement als Einzelbild Vorschau, Kacheln oder Slider ein</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

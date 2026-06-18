@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="Split"/>
+<f:section name="content">
+    <div id="tx-solr-search" class="d-grid gap-3">
+        <div class="grid-fullsize px-3 px-xl-0 {f:if(condition: '{resultSet.usedAdditionalFilters.0} === \'typ_intS:2\'', then: ' bg-cyan-100')}{f:if(condition: '{resultSet.usedAdditionalFilters.0} === \'typ_intS:3\'', then: ' bg-yellow-100')}{f:if(condition: '{resultSet.usedAdditionalFilters.0} === \'typ_intS:1\'', then: ' bg-purple-100')}">
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-1">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 offset-lg-2 frame-space-before-medium">
+                            <div class="row d-flex align-items-center justify-content-center">
+                                <div class="col-12 col-lg-auto">
+                                    <h3><f:translate extensionName="vms_sitepackage"key="checkbox.filter.headline"/></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <f:render partial="Result/FacetsFocus" section="Facets" arguments="{resultSet:resultSet, arguments:arguments}"/>
+                    <f:if condition="1">
+                        <f:then>
+                            <div class="row">
+                                <div class="col-md-12 d-grid gap-3">
+                                    <f:if condition="{resultSet.hasSearched}">
+                                        <div data-start="{pagination.startRecordNumber}"
+                                             class="results-list list-group">
+                                            <div class="row">
+                                                <div class="col-12 pt-4 pt-lg-4 pb-2 pb-lg-4">
+                                                    <div class="row d-flex justify-content-lg-end">
+                                                        <div class="col-12 col-lg-auto mb-3 mb-lg-4">
+                                                            <strong class="fw-bold mb-3 mb-lg-0 me-lg-2 d-block d-lg-inline-block">
+                                                                <span aria-hidden="true">(</span> {resultSet.allResultCount}
+                                                                <f:if condition="{resultSet.allResultCount} > 1">
+                                                                    <f:then>
+                                                                        <f:translate extensionName="vms_sitepackage" key="filter.download.documents"/>
+                                                                    </f:then>
+                                                                    <f:else>
+                                                                        <f:translate extensionName="vms_sitepackage" key="filter.download.document"/>
+                                                                    </f:else>
+                                                                </f:if>
+                                                                <span aria-hidden="true">)</span>
+                                                            </strong>
+                                                            <f:link.action action="downloadeZip" controller="ZipResults" arguments="{arguments:arguments}" class="btn btn-primary downloadeAllButton">
+                                                                <f:translate extensionName="vms_sitepackage"key="filter.download.selection"/>
+                                                            </f:link.action>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="row list-unstyled">
+                                                        <f:for each="{resultSet.searchResults}" as="document">
+                                                            <f:if condition="{document.file_stringS}">
+                                                                <li class="col-12 col-lg-6 col-xxl-4 mb-4 mb-lg-5">
+                                                                    <f:render partial="Result/Document"
+                                                                              section="Document"
+                                                                              arguments="{resultSet: resultSet, document: document}"/>
+                                                                </li>
+                                                            </f:if>
+                                                        </f:for>
+                                                    </ul>
+                                                    <div class="row">
+                                                        <div class="col-12 d-flex justify-content-center">
+                                                            <f:render partial="Result/Pagination"
+                                                                      section="Pagination"
+                                                                      arguments="{resultSet: resultSet, pagination: pagination, currentPage: currentPage}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </f:if>
+                                </div>
+                            </div>
+                        </f:then>
+                    </f:if>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>
+
+<f:section name="extra">
+    <div id="tx-solr-search-functions">
+        <f:if condition="{resultSet.hasSearched}">
+            <f:if condition="{resultSet.usedSearchRequest.contextTypoScriptConfiguration.searchFaceting}">
+                <f:render partial="Result/FacetsType" section="Facets" arguments="{resultSet:resultSet}"/>
+            </f:if>
+        </f:if>
+    </div>
+</f:section>
+
+</html>

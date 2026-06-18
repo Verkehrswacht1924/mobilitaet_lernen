@@ -1,0 +1,14 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+        video {
+            iconIdentifier = tx_video
+            title = LLL:EXT:vms_sitepackage/Resources/Private/Language/Tca.xlf:video.video_title
+            description = LLL:EXT:vms_sitepackage/Resources/Private/Language/Tca.xlf:video.video_description
+            tt_content_defValues {
+                CType = video
+            }
+        }
+    }
+
+    show := addToList(video)
+}

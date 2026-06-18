@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:format.raw>{jumpNav}</f:format.raw>
+
+    <div class="layer"></div>
+
+    <header class="header-wrapper">
+        <div class="header-wrapper-bg bg-white shadow">
+            <div class="meta-desktop">
+                <div class="bg-primary meta-wrapper py-4 py-lg-0">
+                    <div class="container meta-nav">
+                        <div class="row">
+                            <div class="col">
+                                <f:format.raw>{navMetaTop}</f:format.raw>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container main-nav">
+                <div class="row h-100 my-auto align-content-center align-items-center justify-content-between">
+                    <f:render partial="Header.Mainnav" arguments="{navPrimary: navPrimary, navPrimaryMeta: navPrimaryMeta, searchBoxMobi: searchBoxMobi}"/>
+                    <div class="col-auto logo-wrapper text-end text-lg-center">
+                        <h1 class="logo mb-0 lh-1">
+                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {f:cObject(typoscriptObjectPath: 'lib.home')} || {f:cObject(typoscriptObjectPath: 'lib.pageid')} == {v:variable.typoscript(path: 'plugin.vms_sitepackage.settings.landingPage')}">
+                                <f:then>
+                                    <f:render section="LogoBastMobile"/>
+                                </f:then>
+                                <f:else>
+                                    <f:link.page class="logo-main" pageUid="1">
+                                        <f:render section="LogoBastMobile"/>
+                                    </f:link.page>
+                                </f:else>
+                            </f:if>
+                        </h1>
+                    </div>
+                    <f:render partial="Header.Meta" arguments="{_all}"/>
+                </div>
+            </div>
+        </div>
+    </header>
+    <f:section name="LogoBastMobile">
+        <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
+        <f:image class="logo" src="EXT:vms_sitepackage/Resources/Public/Images/BAStLogo.svg"/>
+    </f:section>
+</html>

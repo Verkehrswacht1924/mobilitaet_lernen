@@ -1,0 +1,9 @@
+# Include setup
+@import 'EXT:vms_sitepackage/Configuration/Extensions/fluid_styled_content/TypoScript/Helper/ContentElement.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/Extensions/fluid_styled_content/TypoScript/Helper/ParseFunc.typoscript'
+
+# Content elements
+@import 'EXT:vms_sitepackage/Configuration/Extensions/fluid_styled_content/TypoScript/ContentElement/Image.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/Extensions/fluid_styled_content/TypoScript/ContentElement/MenuSubpages.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/Extensions/fluid_styled_content/TypoScript/ContentElement/Uploads.typoscript'
+

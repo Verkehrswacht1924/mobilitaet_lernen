@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<div class="indexedsearchbox">
+    <h2 class="visually-hidden">{f:translate(key: 'header.search', extensionName: 'vms_sitepackage')}</h2>
+    <f:form class="form-inline" pageUid="35" method="post" id="tx_indexedsearch_1" noCacheHash="true" absolute="0" action="search" extensionName="IndexedSearch" pluginName="pi2" controller="Search">
+        <div class="hidden tx-indexedsearch-hidden-fields">
+            <input name="tx_indexedsearch_pi2[search][_sections]" value="0" type="hidden">
+            <input id="tx_indexedsearch_freeIndexUid_1" name="tx_indexedsearch_pi2[search][_freeIndexUid]" value="_" type="hidden">
+            <input id="tx_indexedsearch_pointer_1" name="tx_indexedsearch_pi2[search][pointer]" value="0" type="hidden">
+            <input name="tx_indexedsearch_pi2[search][ext]" value="" type="hidden">
+            <input name="tx_indexedsearch_pi2[search][searchType]" value="1" type="hidden">
+            <input name="tx_indexedsearch_pi2[search][defaultOperand]" value="0" type="hidden">
+            <input name="tx_indexedsearch_pi2[search][mediaType]" value="-1" type="hidden">
+            <input name="tx_indexedsearch_pi2[search][sortOrder]" value="rank_flag" type="hidden">
+            <input name="tx_indexedsearch_pi2[search][group]" value="" type="hidden">
+            <input name="tx_indexedsearch_pi2[search][languageUid]" value="-1" type="hidden">
+            <input name="tx_indexedsearch_pi2[search][desc]" value="" type="hidden">
+            <input name="tx_indexedsearch_pi2[search][numberOfResults]" value="10" type="hidden">
+            <input name="tx_indexedsearch_pi2[search][extendedSearch]" value="" type="hidden">
+        </div>
+        <div class="form-group">
+            <label for="searchbox" class="searchbox-label">{f:translate(key: 'header.search', extensionName: 'vms_sitepackage')}</label>
+            <f:form.textfield name="search[sword]" value="" id="searchbox" class="form-control form-control-sm" placeholder="{f:translate(key: 'header.searchterm', extensionName: 'vms_sitepackage')}" />
+        </div>
+        <input class="btn btn-primary btn-search" src="./typo3conf/ext/vms_sitepackage/Resources/Public/Images/Icons/icon_search.svg" name="tx-indexedsearch-searchbox-button-submit" alt="{f:translate(key: 'header.magnifyingglass', extensionName: 'vms_sitepackage')}" title="{f:translate(key: 'header.searching')}" type="image">
+    </f:form>
+</div>
+
+</html>

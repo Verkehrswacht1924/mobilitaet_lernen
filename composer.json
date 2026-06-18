@@ -1,0 +1,19 @@
+{
+    "name": "vms/sitepackage",
+    "type": "typo3-cms-extension",
+    "description": "VMS Sitepackage - offener Rebuild mobilität-lernen (TYPO3 13)",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^13.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "VMS\\Sitepackage\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "vms_sitepackage"
+        }
+    }
+}

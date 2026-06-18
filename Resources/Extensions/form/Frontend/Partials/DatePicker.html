@@ -1,0 +1,55 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers">
+<formvh:renderRenderable renderable="{element}">
+    <f:form.validationResults for="{element.rootForm.identifier}.{element.identifier}">
+        <f:if condition="{element.properties.elementDescription}">
+            <f:variable name="aria" value="{describedby: '{element.uniqueIdentifier}-desc'}"/>
+        </f:if>
+        <f:if condition="{validationResults.errors}">
+            <f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}"/>
+        </f:if>
+
+        <div class="{element.properties.containerClassAttribute}">
+            <f:render arguments="{element: element}" contentAs="elementContent" partial="Field/Field">
+                <formvh:form.datePicker
+                    additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+                    aria="{aria}"
+                    class="{element.properties.elementClassAttribute} form-control form-control-lg"
+                    dateFormat="{element.properties.dateFormat}"
+                    enableDatePicker="{element.properties.enableDatePicker}"
+                    errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute} is-invalid"
+                    id="{element.uniqueIdentifier}"
+                    initialDate="{element.properties.initialDate}"
+                    previewMode="{element.rootForm.renderingOptions.previewMode}"
+                    property="{element.identifier}"
+                />
+            </f:render>
+            <f:if condition="{element.properties.displayTimeSelector}">
+                <div class="{f:if(condition: '{validationResults.errors.0}', then: ' {element.properties.errorClassAttribute}')} mb-4">
+                    <div class="{element.properties.containerClassAttribute}">
+                        <label class="{element.properties.labelClassAttribute} form-label" for="{element.uniqueIdentifier}-time">{formvh:translateElementProperty(element: element, property: 'timeSelectorHourLabel')}</label>
+                        <formvh:form.timePicker
+                            class="{element.properties.timeSelectorClassAttribute}"
+                            errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute} is-invalid"
+                            id="{element.uniqueIdentifier}-time"
+                            initialDate="{element.properties.initialDate}"
+                            property="{element.identifier}"
+                            timeType="hour"
+                        />
+                    </div>
+                </div>
+                <div class="{f:if(condition: '{validationResults.errors.0}', then: ' {element.properties.errorClassAttribute}')} mb-4">
+                    <label class="{element.properties.labelClassAttribute} form-label" for="{element.uniqueIdentifier}-time-minute">{formvh:translateElementProperty(element: element, property: 'timeSelectorMinuteLabel')}</label>
+                    <formvh:form.timePicker
+                        class="{element.properties.timeSelectorClassAttribute}"
+                        errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute} is-invalid"
+                        id="{element.uniqueIdentifier}-time-minute"
+                        initialDate="{element.properties.initialDate}"
+                        property="{element.identifier}"
+                        timeType="minute"
+                    />
+                </div>
+            </f:if>
+        </div>
+    </f:form.validationResults>
+</formvh:renderRenderable>
+</html>

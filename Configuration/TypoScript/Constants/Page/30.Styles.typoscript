@@ -1,0 +1,23 @@
+styles {
+    content {
+        defaultHeaderType = 2
+
+        imgtext {
+            maxW = 1920
+            maxWInText = 1920
+            linkWrap.width = 1920c
+            linkWrap.height = 1200c
+        }
+
+        textmedia {
+            maxW = 1920
+            maxWInText = 1920
+            linkWrap.width = 1920c
+            linkWrap.height = 1200c
+        }
+
+        links {
+            extTarget = _blank
+        }
+    }
+}

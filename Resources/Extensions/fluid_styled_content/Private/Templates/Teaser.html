@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+
+	<f:section name="Header">
+
+	</f:section>
+
+	<f:section name="Main">
+		<f:if condition="{data.colPos} == 0">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+		</f:if>
+
+		<f:if condition="{data.tx_header_inside} != 1 || {data.header_layout} != 100">
+			<div class="textpic-header">
+				<f:render partial="Header/All" arguments="{_all}" />
+			</div>
+		</f:if>
+		<f:if condition="{data.bodytext}">
+			<div class="ce-bodytext">
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+		</f:if>
+
+		<f:if condition="{data.bodytext} && {data.tx_header_inside} = 1">
+			<div class="ce-bodytext">
+				<f:render partial="Header/All" arguments="{_all}" />
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+		</f:if>
+
+		<f:render partial="Media/Teaser" arguments="{_all}" />
+
+		<f:if condition="{data.colPos} == 0">
+			</div>
+			</div>
+			</div>
+		</f:if>
+	</f:section>
+
+</html>

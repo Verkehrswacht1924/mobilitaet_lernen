@@ -1,0 +1,2 @@
+@import 'EXT:vms_sitepackage/Configuration/Extensions/fluid_styled_content/TypoScript/constants.typoscript'
+@import 'EXT:vms_sitepackage/Configuration/Extensions/solr/TypoScript/constants.typoscript'

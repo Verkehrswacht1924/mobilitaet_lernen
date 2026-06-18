@@ -1,0 +1,6 @@
+lib.copyright = TEXT
+lib.copyright {
+    data = date : U
+    strftime = %Y
+    noTrimWrap = |© digitaspixelpark.com | |
+}

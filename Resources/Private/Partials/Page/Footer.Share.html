@@ -1,0 +1,51 @@
+<html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+<aside aria-label="Socialmedia" class="col-12 offset-xl-2 col-xl-8 pt-5 pb-3" id="share">
+    <h2 class="h3">{f:translate(key:'aside.sharepage', extensionName:'vms_sitepackage')}</h2>
+    <ul class="row g-0 list-unstyled share">
+        <li class="col facebook">
+            <a aria-label="{f:translate(key:'aside.shareonfacebook', extensionName:'vms_sitepackage')}" class="popup-window" href="https://www.facebook.com/sharer/sharer.php?u={f:cObject(typoscriptObjectPath: 'lib.currentURL', data: '{data.uid}') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareonfacebook', extensionName:'vms_sitepackage')}">
+                <span class="icon-share icon-facebook"></span>
+                <span class="visually-hidden">{f:translate(key:'aside.share', extensionName:'vms_sitepackage')}</span>
+            </a>
+        </li>
+        <f:if condition="{data.uid} == 31">
+            <f:then>
+                <li class="col twitter">
+                    <a aria-label="{f:translate(key:'aside.shareontwitter', extensionName:'vms_sitepackage')}" class="popup-window" href="https://twitter.com/intent/tweet?text={newsTitle -> f:format.urlencode()}&nbsp;&ndash;&nbsp;{newsDescription -> f:format.urlencode()}&amp;url={f:cObject(typoscriptObjectPath: 'lib.currentURL', data: '{data.uid}') -> f:format.urlencode()}&amp;via={f:cObject(typoscriptObjectPath: 'lib.prefillUrl') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareontwitter', extensionName:'vms_sitepackage')}">
+                        <span class="icon-share icon-twitter"></span>
+                        <span class="visually-hidden">{f:translate(key:'aside.tweet', extensionName:'vms_sitepackage')}</span>
+                    </a>
+                </li>
+            </f:then>
+            <f:else>
+                <li class="col twitter">
+                    <a aria-label="{f:translate(key:'aside.shareontwitter', extensionName:'vms_sitepackage')}" class="popup-window" href="https://twitter.com/intent/tweet?text={headertitle -> f:format.urlencode()}&nbsp;&ndash;&nbsp;{headerDescription -> f:format.urlencode()}&amp;url={f:cObject(typoscriptObjectPath: 'lib.currentURL', data: '{data.uid}') -> f:format.urlencode()}&amp;via={f:cObject(typoscriptObjectPath: 'lib.prefillUrl') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareontwitter', extensionName:'vms_sitepackage')}">
+                        <span class="icon-share icon-twitter"></span>
+                        <span class="visually-hidden">{f:translate(key:'aside.tweet', extensionName:'vms_sitepackage')}</span>
+                    </a>
+                </li>
+            </f:else>
+        </f:if>
+        <li class="col xing">
+            <a aria-label="{f:translate(key:'aside.shareonxing', extensionName:'vms_sitepackage')}" class="popup-window" href="https://www.xing.com/spi/shares/new?url={f:cObject(typoscriptObjectPath: 'lib.currentURL', data: '{data.uid}') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareonxing', extensionName:'vms_sitepackage')}">
+                <span class="icon-share icon-xing"></span>
+                <span class="visually-hidden">{f:translate(key:'aside.share', extensionName:'vms_sitepackage')}</span>
+            </a>
+        </li>
+        <li class="col linkedin">
+            <a aria-label="{f:translate(key:'aside.shareonlinkedin', extensionName:'vms_sitepackage')}" class="popup-window" href="https://www.linkedin.com/shareArticle?url={f:cObject(typoscriptObjectPath: 'lib.currentURL', data: '{data.uid}') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareonlinkedin', extensionName:'vms_sitepackage')}">
+                <span class="icon-share icon-linkedin"></span>
+                <span class="visually-hidden">{f:translate(key:'aside.share', extensionName:'vms_sitepackage')}</span>
+            </a>
+        </li>
+        <li class="col print">
+            <a aria-label="{f:translate(key:'aside.printpage', extensionName:'vms_sitepackage')}" href="javascript:window.print();" rel="nofollow" role="button" title="{f:translate(key:'aside.printpage', extensionName:'vms_sitepackage')}">
+                <span class="icon-share icon-print"></span>
+                <span class="visually-hidden">{f:translate(key:'aside.print', extensionName:'vms_sitepackage')}</span>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+</html>

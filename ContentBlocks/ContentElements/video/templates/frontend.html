@@ -1,0 +1,53 @@
+<html data-namespace-typo3-fluid="true">
+<f:comment>Portiert aus dpx_template Video.html – lokales Video + DSGVO-YouTube-Overlay.
+Link-Felder (TypolinkParameter) werden über f:uri.typolink zu URLs aufgelöst.</f:comment>
+<f:variable name="videoUrl"><f:if condition="{data.tx_video_video}"><f:uri.typolink parameter="{data.tx_video_video}" /></f:if></f:variable>
+<f:variable name="videoEmbedUrl"><f:if condition="{data.tx_video_videourl}"><f:uri.typolink parameter="{data.tx_video_videourl}" /></f:if></f:variable>
+<f:variable name="captionUrl"><f:if condition="{data.tx_video_caption}"><f:uri.typolink parameter="{data.tx_video_caption}" /></f:if></f:variable>
+<f:variable name="posterUrl"><f:if condition="{data.tx_video_poster_image}"><f:uri.image image="{data.tx_video_poster_image.0}" maxWidth="973" maxHeight="535c" /></f:if></f:variable>
+
+<div class="frame frame-type-video" id="c{data.uid}">
+    <f:if condition="{videoUrl}">
+        <div class="video video-local">
+            <video controls preload="none" width="100%" style="width:100%; height:100%;" poster="{posterUrl}" src="{videoUrl}">
+                <f:if condition="{captionUrl}">
+                    <track default kind="subtitles" srclang="de" src="{captionUrl}">
+                </f:if>
+            </video>
+        </div>
+    </f:if>
+
+    <f:if condition="{videoEmbedUrl}">
+        <div class="video video-youtube">
+            <div class="dsgvo" data-src="{videoEmbedUrl}"
+                 style="{f:if(condition: posterUrl, then: 'background:url(\'{posterUrl}\') no-repeat 0 0; background-size: cover;')}">
+                <div class="player-wrapper">
+                    <div class="dsgvo-text">
+                        <button class="video-start mejs__overlay-button" title="Video abspielen">
+                            <span class="visually-hidden">Video abspielen</span>
+                        </button>
+                        <p>Mit dem Abspielen akzeptieren Sie die Datenschutzbestimmungen von YouTube.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:if>
+
+    <f:if condition="{data.header}">
+        <div class="row">
+            <div class="col mt-3">
+                <f:if condition="{data.header_kicker}"><span class="kicker">{data.header_kicker}</span></f:if>
+                <h3 class="lead fw-bold mb-0">{data.header}</h3>
+                <f:if condition="{data.subheader}"><p class="subheader">{data.subheader}</p></f:if>
+            </div>
+        </div>
+    </f:if>
+
+    <f:if condition="{data.bodytext}">
+        <div class="video-text"><f:format.html>{data.bodytext}</f:format.html></div>
+    </f:if>
+    <f:if condition="{data.tx_video_duration_video}">
+        <p class="video-duration">{data.tx_video_duration_video}</p>
+    </f:if>
+</div>
+</html>

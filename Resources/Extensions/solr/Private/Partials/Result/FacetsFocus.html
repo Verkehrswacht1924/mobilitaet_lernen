@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:section name="Facets">
+    <div class="row">
+        <div class="col-12 mt-4 mt-lg-4">
+            <div id="tx-solr-faceting">
+                <s:facet.area.group groupName="main" facets="{resultSet.facets.available}">
+                    <div class="facet-area-main">
+                        <div class="solr-facets-available secondaryContentSection">
+                            <f:comment>
+                                <f:for each="{areaFacets}" as="facet">
+                                    <f:if condition="{facet.name} == typ && {facet.options.1.selected}">
+                                        <p class="mb-2 mb-lg-3">
+                                            <f:format.raw>{settings.facetText}</f:format.raw>
+                                        </p>
+                                    </f:if>
+                                </f:for>
+                            </f:comment>
+                            <div class="facets d-grid gap-3">
+                                <f:for each="{areaFacets}" as="facet">
+                                    <f:if condition="{facet.name} == schwerpunkt">
+                                        <div aria-labelledby="facet-{facet.name}" class="col-lg-12">
+                                            <f:render partial="Facets/FilterOptions" arguments="{resultSet:resultSet, facet:facet, arguments:arguments}"/>
+                                        </div>
+                                    </f:if>
+                                </f:for>
+                            </div>
+                        </div>
+                    </div>
+                </s:facet.area.group>
+            </div>
+        </div>
+    </div>
+</f:section>
+</html>

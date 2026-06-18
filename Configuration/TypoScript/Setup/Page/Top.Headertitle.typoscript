@@ -1,0 +1,17 @@
+# Seitentitel ausgeben
+lib {
+    headTitle = TEXT
+    headTitle {
+        value = {$config.headTitle}
+    }
+
+    headerTitle = TEXT
+    headerTitle {
+        data = page : title
+    }
+
+    headerDescription = TEXT
+    headerDescription {
+        data = page : description
+    }
+}

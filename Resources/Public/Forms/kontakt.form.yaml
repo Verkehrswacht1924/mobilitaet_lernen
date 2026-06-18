@@ -1,0 +1,218 @@
+renderingOptions:
+  submitButtonLabel: Absenden
+identifier: kontakt
+label: Kontakt
+type: Form
+prototypeName: standard
+finishers:
+  - options:
+      subject: 'E-Mail von digitaspixelpark.com: {text-1} {name}'
+      recipientAddress: matthias.peltzer@digitaspixelpark.com
+      recipientName: digitaspixelpark.com
+      senderAddress: '{email}'
+      senderName: '{name}'
+      replyToAddress: matthias.peltzer@digitaspixelpark.com
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: true
+      translation:
+        language: ''
+    identifier: EmailToReceiver
+  - options:
+      pageUid: '53'
+      additionalParameters: ''
+    identifier: Redirect
+renderables:
+  - renderingOptions:
+      previousButtonLabel: 'Vorherige Seite'
+      nextButtonLabel: 'Nächste Seite'
+    identifier: page-1
+    label: Kontaktformular
+    type: Page
+    renderables:
+      - label: Inhaltselement
+        properties:
+          contentElementUid: '355'
+        type: ContentElement
+        identifier: contentelement-2
+      - type: GridRow
+        identifier: gridrow-1
+        label: 'Vor- und Nachname'
+        renderables:
+          - defaultValue: ''
+            type: Text
+            identifier: text-1
+            label: Vorname
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+              validationErrorMessages:
+                - code: 1221565130
+                  message: 'Bitte nur Buchstaben verwenden'
+                - code: 1221560910
+                  message: 'Bitte gib Deinen Vornamen ein'
+                - code: 1221560718
+                  message: 'Bitte gib Deinen Vornamen ein'
+                - code: 1347992400
+                  message: 'Bitte gib Deinen Vornamen ein'
+                - code: 1347992453
+                  message: 'Bitte gib Deinen Vornamen ein'
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  sm:
+                    numbersOfColumnsToUse: '12'
+                  lg:
+                    numbersOfColumnsToUse: '6'
+                  md:
+                    numbersOfColumnsToUse: '6'
+                  xs:
+                    numbersOfColumnsToUse: '12'
+            validators:
+              - options:
+                  regularExpression: '^([a-zA-ZäöüÄÖÜß ])^'
+                identifier: RegularExpression
+              - identifier: NotEmpty
+          - defaultValue: ''
+            identifier: name
+            label: Nachname
+            type: Text
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+              validationErrorMessages:
+                - code: 1221560910
+                  message: 'Bitte gib Deinen Nachnamen ein'
+                - code: 1221560718
+                  message: 'Bitte gib Deinen Nachnamen ein'
+                - code: 1347992400
+                  message: 'Bitte gib Deinen Nachnamen ein'
+                - code: 1347992453
+                  message: 'Bitte gib Deinen Nachnamen ein'
+                - code: 1221565130
+                  message: 'Bitte nur Buchstaben verwenden'
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  sm:
+                    numbersOfColumnsToUse: '12'
+                  lg:
+                    numbersOfColumnsToUse: '6'
+                  md:
+                    numbersOfColumnsToUse: '6'
+                  xs:
+                    numbersOfColumnsToUse: '12'
+            validators:
+              - identifier: NotEmpty
+              - options:
+                  regularExpression: '^([a-zA-ZäöüÄÖÜß ])^'
+                identifier: RegularExpression
+      - defaultValue: ''
+        identifier: email
+        label: E-Mail-Adresse
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+          validationErrorMessages:
+            - code: 1221560910
+              message: 'Bitte gib Deine E-Mail-Adresse an'
+            - code: 1221560718
+              message: 'Bitte gib Deine E-Mail-Adresse an'
+            - code: 1347992400
+              message: 'Bitte gib Deine E-Mail-Adresse an'
+            - code: 1347992453
+              message: 'Bitte gib Deine E-Mail-Adresse an'
+            - code: 1221559976
+              message: 'Bitte eine gültige E-Mail-Adresse eintragen'
+        validators:
+          - identifier: NotEmpty
+          - identifier: EmailAddress
+      - properties:
+          options:
+            'Einfach so': 'Einfach so'
+            Musik: Musik
+            TYPO3: TYPO3
+          validationErrorMessages:
+            - code: 1221560910
+              message: 'Bitte wähle ein Betreff'
+            - code: 1221560718
+              message: 'Bitte wähle ein Betreff'
+            - code: 1347992400
+              message: 'Bitte wähle ein Betreff'
+            - code: 1347992453
+              message: 'Bitte wähle ein Betreff'
+            - code: 1475002976
+              message: 'Bitte wähle höchstens ein Betreff aus'
+            - code: 1475002994
+              message: 'Bitte wähle höchstens ein Betreff aus'
+        type: MultiCheckbox
+        identifier: multicheckbox-1
+        label: Betreff
+        validators:
+          - identifier: NotEmpty
+          - options:
+              minimum: '1'
+              maximum: '1'
+            identifier: Count
+      - defaultValue: ''
+        identifier: message
+        label: Nachricht
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+            minlength: '10'
+            maxlength: '2000'
+          validationErrorMessages:
+            - code: 1221560910
+              message: 'Bitte gebe eine Nachricht ein (min. 10 Zeichen, max. 2000 Zeichen)'
+            - code: 1221560718
+              message: 'Bitte gebe eine Nachricht ein (min. 10 Zeichen, max. 2000 Zeichen)'
+            - code: 1347992400
+              message: 'Bitte gebe eine Nachricht ein (min. 10 Zeichen, max. 2000 Zeichen)'
+            - code: 1347992453
+              message: 'Bitte gebe eine Nachricht ein (min. 10 Zeichen, max. 2000 Zeichen)'
+            - code: 1238110957
+              message: 'Du musst mindestens 10 und höchstens 2000 Zeichen eingeben.'
+            - code: 1269883975
+              message: 'Du musst mindestens 10 und höchstens 2000 Zeichen eingeben.'
+            - code: 1428504122
+              message: 'Du musst mindestens 10 und höchstens 2000 Zeichen eingeben.'
+            - code: 1238108068
+              message: 'Du musst mindestens 10 und höchstens 2000 Zeichen eingeben.'
+            - code: 1238108069
+              message: 'Du musst mindestens 10 und höchstens 2000 Zeichen eingeben.'
+        validators:
+          - identifier: NotEmpty
+          - options:
+              minimum: '10'
+              maximum: '2000'
+            identifier: StringLength
+      - type: Checkbox
+        identifier: checkbox-1
+        label: 'Mit der Weiterleitung meiner o. g. Daten an den Betreiber der Seite digitaspixelpark.com bin ich einverstanden. Soweit ich besondere Arten personenbezogener Daten (§ 3 Abs. 9 BDSG) übermittele, bezieht sich meine Einwilligung ausdrücklich auch auf diese Daten.'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+          validationErrorMessages:
+            - code: 1221560910
+              message: 'Bitte stimme der Datenverarbeitung zu!'
+            - code: 1221560718
+              message: 'Bitte stimme der Datenverarbeitung zu!'
+            - code: 1347992400
+              message: 'Bitte stimme der Datenverarbeitung zu!'
+            - code: 1347992453
+              message: 'Bitte stimme der Datenverarbeitung zu!'
+        validators:
+          - identifier: NotEmpty
+      - label: Inhaltselement
+        properties:
+          contentElementUid: '258'
+        type: ContentElement
+        identifier: contentelement-1
+  - renderingOptions:
+      previousButtonLabel: 'Vorherige Seite'
+      nextButtonLabel: 'Nächste Seite'
+    identifier: summarypage
+    label: Zusammenfassung
+    type: SummaryPage

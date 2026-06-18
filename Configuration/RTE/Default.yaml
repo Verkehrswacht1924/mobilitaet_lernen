@@ -1,0 +1,283 @@
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+editor:
+
+  externalPlugins:
+    abbr:
+      resource: "EXT:vms_sitepackage/Resources/Public/CKEditor/Plugins/abbr/plugin.js"
+
+  config:
+    contentsCss: "EXT:vms_sitepackage/Resources/Public/StyleSheets/ckeditor.css"
+
+    language_list: [ 'en:English', 'de:German' ]
+
+    stylesSet:
+      # Blockstile
+      - { name: "Unterüberschrift", element: "p", attributes: { 'class': 'subheader' } }
+      - { name: "Dachzeile", element: "p", attributes: { 'class': 'kicker' } }
+      #- { name: "Nowrap", element: "p", attributes: { 'class': 'text-nowrap' } }
+
+      # Textstile
+      - { name: "Text: Klein", element: "span", attributes: { 'class': 'small' } }
+      - { name: "Text: Versalien", element: "span", attributes: { 'class': 'text-uppercase' } }
+      - { name: "Text: Bold", element: "span", attributes: { 'class': 'fw-bold' } }
+      - { name: "Text: Emphasize", element: "span", attributes: { 'class': 'fst-italic' } }
+      - { name: "Text: Versteckt", element: "span", attributes: { 'class': 'hide visually-hidden' } }
+      # - { name: "Text: small", element: "span", attributes: { 'class': 'small' } }
+      # - { name: "Text: Mark", element: "mark" }
+      # - { name: "Text: Del", element: "del" }
+      # - { name: "Text: Ins", element: "ins" }
+      # - { name: "Text: Code", element: "code" }
+      # - { name: "Address", element: "address" }
+      # - { name: "Text: Zitat left", element: "blockquote" ,attributes: { 'class': 'blockquote text-left' }}
+      # - { name: "Text: Zitat center", element: "blockquote" ,attributes: { 'class': 'blockquote text-center' }}
+      # - { name: "Text: Zitat right", element: "blockquote" ,attributes: { 'class': 'blockquote text-right' }}
+      - { name: "Style: H2", element: [ 'h2', 'h3', 'h4', 'h5', 'h6' ], attributes: { 'class': 'h2' } }
+      - { name: "Style: H3", element: [ 'h2', 'h3', 'h4', 'h5', 'h6' ], attributes: { 'class': 'h3' } }
+      - { name: "Style: H4", element: [ 'h2', 'h3', 'h4', 'h5', 'h6' ], attributes: { 'class': 'h4' } }
+      - { name: "Style: H5", element: [ 'h2', 'h3', 'h4', 'h5', 'h6' ], attributes: { 'class': 'h5' } }
+      - { name: "Style: H6", element: [ 'h2', 'h3', 'h4', 'h5', 'h6' ], attributes: { 'class': 'h6' } }
+      # - { name: "Lowercase", element: "p", attributes: { 'class': 'text-lowercase' } }
+      # - { name: "Uppercase", element: "p", attributes: { 'class': 'text-uppercase' } }
+      # - { name: "Capitalize", element: "p", attributes: { 'class': 'text-capitalize' } }
+      # - { name: "Color: Primary", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'p'], attributes: { 'class': 'text-primary' } }
+      # - { name: "Color: Secondary", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'p'], attributes: { 'class': 'text-secondary' } }
+      # - { name: "Color: Success", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'p'], attributes: { 'class': 'text-success' } }
+      # - { name: "Color: Danger", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'p'], attributes: { 'class': 'text-danger' } }
+      # - { name: "Color: Warning", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'p'], attributes: { 'class': 'text-warning' } }
+      # - { name: "Color: Info", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'p'], attributes: { 'class': 'text-info' } }
+      # - { name: "Color: Light", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'p'], attributes: { 'class': 'text-light' } }
+      # - { name: "Color: Dark", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'p'], attributes: { 'class': 'text-dark' } }
+
+      #Tabellen
+      - { name: "Table: Hover", element: "table", attributes: { 'class': 'table table-hover' } }
+      - { name: "Table: Striped", element: "table", attributes: { 'class': 'table table-striped table-hover' } }
+      - { name: "Table: Bordered", element: "table", attributes: { 'class': 'table table-bordered' } }
+      # - { name: "Table: Small", element: "table", attributes: { 'class': 'table table-sm' } }
+      # - { name: "Table: Inverse", element: "table", attributes: { 'class': 'table table-inverse' } }
+
+      # Tabellen-Zeilen
+      # - { name: "Row: Active", element: "tr", attributes: { 'class': 'table-active' } }
+      # - { name: "Row: Primary", element: "tr", attributes: { 'class': 'table-primary' } }
+      # - { name: "Row: Secondary", element: "tr", attributes: { 'class': 'table-secondary' } }
+      # - { name: "Row: Success", element: "tr", attributes: { 'class': 'table-success' } }
+      # - { name: "Row: Danger", element: "tr", attributes: { 'class': 'table-danger' } }
+      # - { name: "Row: Warning", element: "tr", attributes: { 'class': 'table-warning' } }
+      # - { name: "Row: Info", element: "tr", attributes: { 'class': 'table-info' } }
+      # - { name: "Row: Light", element: "tr", attributes: { 'class': 'table-light' } }
+      # - { name: "Row: Dark", element: "tr", attributes: { 'class': 'table-dark' } }
+
+      # Alerts
+      # - { name: "Alert: Primary", element: "div", attributes: { 'class': 'alert alert-primary' } }
+      # - { name: "Alert: Secondary", element: "div", attributes: { 'class': 'alert alert-secondary' } }
+      # - { name: "Alert: Success", element: "div", attributes: { 'class': 'alert alert-success' } }
+      # - { name: "Alert: Danger", element: "div", attributes: { 'class': 'alert alert-danger' } }
+      # - { name: "Alert: Warning", element: "div", attributes: { 'class': 'alert alert-warning' } }
+      # - { name: "Alert: Info", element: "div", attributes: { 'class': 'alert alert-info' } }
+      # - { name: "Alert: Light", element: "div", attributes: { 'class': 'alert alert-light' } }
+      # - { name: "Alert: Dark", element: "div", attributes: { 'class': 'alert alert-dark' } }
+
+      # Buttons
+      - { name: "Button: Primary", element: "a", attributes: { 'class': 'btn btn-primary' } }
+      - { name: "Button: Secondary", element: "a", attributes: { 'class': 'btn btn-secondary' } }
+      # - { name: "Button: Success", element: "a", attributes: { 'class': 'btn btn-success' } }
+      # - { name: "Button: Danger", element: "a", attributes: { 'class': 'btn btn-danger' } }
+      # - { name: "Button: Warning", element: "a", attributes: { 'class': 'btn btn-warning' } }
+      # - { name: "Button: Info", element: "a", attributes: { 'class': 'btn btn-info' } }
+      # - { name: "Button: Light", element: "a", attributes: { 'class': 'btn btn-light' } }
+      # - { name: "Button: Dark", element: "a", attributes: { 'class': 'btn btn-dark' } }
+
+      # Badges
+      # - { name: "Badge: Primary", element: "span", attributes: { 'class': 'badge badge-primary' } }
+      # - { name: "Badge: Secondary", element: "span", attributes: { 'class': 'badge badge-secondary' } }
+      # - { name: "Badge: Success", element: "span", attributes: { 'class': 'badge badge-success' } }
+      # - { name: "Badge: Danger", element: "span", attributes: { 'class': 'badge badge-danger' } }
+      # - { name: "Badge: Warning", element: "span", attributes: { 'class': 'badge badge-warning' } }
+      # - { name: "Badge: Info", element: "span", attributes: { 'class': 'badge badge-info' } }
+      # - { name: "Badge: Light", element: "span", attributes: { 'class': 'badge badge-light' } }
+      # - { name: "Badge: Dark", element: "span", attributes: { 'class': 'badge badge-dark' } }
+
+      # Pill badges
+      # - { name: "Pill badge: Primary", element: "span", attributes: { 'class': 'badge badge-pill badge-primary' } }
+      # - { name: "Pill badge: Secondary", element: "span", attributes: { 'class': 'badge badge-pill badge-secondary' } }
+      # - { name: "Pill badge: Success", element: "span", attributes: { 'class': 'badge badge-pill badge-success' } }
+      # - { name: "Pill badge: Danger", element: "span", attributes: { 'class': 'badge badge-pill badge-danger' } }
+      # - { name: "Pill badge: Warning", element: "span", attributes: { 'class': 'badge badge-pill badge-warning' } }
+      # - { name: "Pill badge: Info", element: "span", attributes: { 'class': 'badge badge-pill badge-info' } }
+      # - { name: "Pill badge: Light", element: "span", attributes: { 'class': 'badge badge-pill badge-light' } }
+      # - { name: "Pill badge: Dark", element: "span", attributes: { 'class': 'badge badge-pill badge-dark' } }
+
+      # Listen
+      - { name: 'Liste: Unsortiert ungestyled', element: "ul", attributes: { 'class': 'list-unstyled' } }
+      # - { name: 'List: Unsortiert Inline', element: "ul", attributes: { 'class': 'list-inline' } }
+      - { name: 'Liste: Sortiert ungestyled', element: "ol", attributes: { 'class': 'list-unstyled' } }
+      # - { name: 'List: Sortiert Inline', element: "ol", attributes: { 'class': 'list-inline' } }
+      - { name: 'Liste: Sprungmarken', element: "ul", attributes: { 'class': 'list-unstyled list-jumpmark' } }
+
+
+    format_tags: "p;h2;h3;h4;h5;pre;div"
+
+    toolbarGroups:
+      - { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }
+      - { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] }
+      - { name: 'forms', groups: [ 'forms' ] }
+      - { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] }
+      - { name: 'links', groups: [ 'links' ] }
+      - { name: 'insert', groups: [ 'insert' ] }
+      - '/'
+      - { name: 'styles', groups: [ 'styles' ] }
+      - { name: 'colors', groups: [ 'colors' ] }
+      - { name: 'tools', groups: [ 'tools' ] }
+      - { name: 'document', groups: [ 'mode', 'document', 'doctools' ] }
+      - { name: 'clipboard', groups: [ 'clipboard', 'undo' ] }
+      - { name: 'others', groups: [ 'others' ] }
+      - { name: 'about', groups: [ 'about' ] }
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+
+    extraPlugins:
+      - justify
+      - find
+      - specialchar
+      - showblocks
+      - language
+      - table
+      - tableselection
+
+    removePlugins:
+      - image
+      - horizontalrule
+
+    removeButtons:
+      - Save
+      - NewPage
+      - Preview
+      - Print
+      - Templates
+      - Cut
+      - Copy
+      - Paste
+      - PasteText
+      - PasteFromWord
+      - Find
+      - Replace
+      - SelectAll
+      - Scayt
+      - Form
+      - Checkbox
+      - Radio
+      - TextField
+      - Textarea
+      - Select
+      - Button
+      - ImageButton
+      - HiddenField
+      - Underline
+      - Strike
+      - Subscript
+      - Superscript
+      - CopyFormatting
+      - CreateDiv
+      - JustifyBlock
+      - BidiLtr
+      - BidiRtl
+      - Anchor
+      - Image
+      - Flash
+      - HorizontalRule
+      - Smiley
+      - PageBreak
+      - Iframe
+      - Font
+      - FontSize
+      - TextColor
+      - BGColor
+      - About
+
+    allowedContent: true
+
+    extraAllowedContent:
+      - dd
+      - dl
+      - dt
+
+    processing:
+      allowTags:
+        - dl
+        - dt
+        - dd
+
+      allowTagsOutside: [ dd, dl, dt ]
+
+      HTMLparser_db:
+        noAttrib:
+
+#Button config and defaults
+buttons:
+
+  link:
+    relAttribute.:
+      enabled: false
+
+    properties:
+      class:
+        allowedClasses: 'link,link internal-link,link download,link folder,link external-link,link email,link phone'
+
+    page:
+      properties:
+        class:
+          default: 'link internal-link'
+
+    file:
+      properties:
+        class:
+          default: 'link download'
+
+    folder:
+      properties:
+        class:
+          default: 'link folder'
+
+    url:
+      properties:
+        class:
+          default: 'link external-link'
+
+    mail:
+      properties:
+        class:
+          default: 'link email'
+
+#Classes config
+classesAnchor:
+
+  linkInternal:
+    class: 'link internal-link'
+    type: 'page'
+
+  linkDownload:
+    class: 'link download'
+    type: 'file'
+    titleText: 'Öffnet Datei'
+
+  linkFolder:
+    class: 'link folder'
+    type: 'folder'
+    titleText: 'Öffnet Ordner'
+
+  linkExternal:
+    class: 'link external-link'
+    type: 'url'
+    titleText: 'Öffnet neues Fenster'
+    target: '_blank'
+
+  linkMail:
+    class: 'link email'
+    type: 'mail'
+    titleText: 'Öffnet E-Mail-Programm'

@@ -1,0 +1,15 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Container" />
+
+<f:section name="Main">
+    <div class="p-0">
+        <f:if condition="{children_101}">
+            <f:for as="child" each="{children_101}">
+                <f:format.raw>{child.renderedContent}</f:format.raw>
+            </f:for>
+        </f:if>
+    </div>
+</f:section>
+
+</html>

@@ -1,0 +1,27 @@
+# === Abschnitt 1: Sicherheit & SEO (additiv, vms_sitepackage) ===
+
+# Permissions-Policy: restriktiv. Videos sind click-to-play (kein Autoplay nötig),
+# daher kein Funktionsverlust.
+config.additionalHeaders.209.header = Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+
+# Generator-Meta entfernen (geringe Info-Disclosure)
+page.meta.generator >
+
+# OpenGraph-Defaults (site-weit). Erscheinen nur, wenn Wert vorhanden
+# (z.B. og:description nur bei gepflegter Seiten-Beschreibung). Twitter liest og: als Fallback.
+page.meta {
+    og:site_name = Mobilität lernen
+    og:type = website
+    og:locale = de_DE
+    og:title.data = page:title
+    og:description.data = page:description
+    og:url.data = getIndpEnv:TYPO3_REQUEST_URL
+    og:image = https://www.xn--mobilitt-lernen-6kb.de/fileadmin/Bilder/Buehne_mobilE.png
+}
+
+# Strukturierte Daten (JSON-LD): Organization + WebSite
+page.headerData.1701 = TEXT
+page.headerData.1701.value (
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Mobilität lernen","alternateName":"MobiLe","url":"https://www.xn--mobilitt-lernen-6kb.de/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Mobilität lernen","url":"https://www.xn--mobilitt-lernen-6kb.de/"}</script>
+)

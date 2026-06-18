@@ -1,0 +1,37 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Container" />
+
+<f:section name="Main">
+    <div class="ce-tabpanel tabpanel tabs-wrapper" id="tabpanel-{data.uid}" role="tabpanel">
+        <nav class="tab-navigation">
+            <ul class="nav nav-tabs" id="tab-{data.uid}" role="tablist">
+                <f:for as="record" each="{children_101}" iteration="iterator">
+                    <li class="nav-item nav-tabs" role="presentation">
+                        <button aria-controls="tab-content-{record.uid}"
+                                aria-selected="{f:if(condition:'{iterator.cycle}=={data.container_tab_open}',then:'true', else: 'false')}"
+                                class="nav-link{f:if(condition:'{iterator.cycle}=={data.container_tab_open}',then:' active')}"
+                                data-bs-target="#tab-content-{record.uid}"
+                                data-bs-toggle="tab"
+                                id="tab-{record.uid}"
+                                role="tab"
+                                type="button"
+                        >
+                            <span>{record.header}</span>
+                        </button>
+                    </li>
+
+                </f:for>
+            </ul>
+        </nav>
+        <div class="tab-content" id="tab-content-{data.uid}">
+            <f:for as="record" each="{children_101}" iteration="iterator">
+                <div aria-labelledby="tab-{record.uid}" class="ce-tab-pane tab-pane fade{f:if(condition:'{iterator.cycle}=={data.container_tab_open}',then:' show active')}" id="tab-content-{record.uid}" role="tabpanel">
+                    {f:cObject(typoscriptObjectPath: 'lib.dpxContainer.renderContent', data: record)}
+                </div>
+            </f:for>
+        </div>
+    </div>
+</f:section>
+
+</html>

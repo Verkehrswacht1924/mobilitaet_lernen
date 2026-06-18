@@ -1,0 +1,14 @@
+#####################
+#### TCAdefaults ####
+#####################
+TCAdefaults {
+    tt_content {
+        ##Download with filesize
+        filelink_size = 1
+        uploads_description = 1
+        uploads_type = 1
+        ##Layout for Download with icon
+        layout.types.uploads = 1
+        imagecols = 1
+    }
+}
