@@ -31,6 +31,10 @@
                     <span aria-hidden="true">&nbsp;|&nbsp;</span>
                     <span class="fw-light">{document.filesize_stringS}</span>
                 </a>
+                <label class="sw-zip-check d-inline-flex align-items-center mt-2">
+                    <input type="checkbox" name="tx_vmszip_pub[]" value="{document.uid}" class="sw-zip-item me-2" checked>
+                    <span class="small fw-light"><f:translate extensionName="vms_sitepackage" key="filter.download.include"/></span>
+                </label>
             </f:if>
         </div>
     </div>

@@ -5,3 +5,6 @@
 # siteHash-Filter: aktuelle Site (apache-solr 13.x hasht die Site-Identität).
 # Muss zur Indexierung passen; explizite Domains führten zu Mismatch -> 0 Treffer.
 plugin.tx_solr.search.query.allowedSites = __solr_current_site
+
+# Sammeldownload-Auswahl (JS für "Alle auswählen"; CSP-konform, externes File).
+page.includeJSFooter.swzip = EXT:vms_sitepackage/Resources/Public/JavaScripts/swzip.js

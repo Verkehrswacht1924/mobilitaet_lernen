@@ -24,6 +24,12 @@
             <trans-unit id="filter.download.selection" xml:space="preserve">
                 <target>Auswahl herunterladen</target>
             </trans-unit>
+            <trans-unit id="filter.download.selectall" xml:space="preserve">
+                <target>Alle auswählen</target>
+            </trans-unit>
+            <trans-unit id="filter.download.include" xml:space="preserve">
+                <target>Für Sammeldownload auswählen</target>
+            </trans-unit>
             <trans-unit id="filter.download.resetFilter" xml:space="preserve">
                 <target>Filter zurücksetzen</target>
             </trans-unit>
