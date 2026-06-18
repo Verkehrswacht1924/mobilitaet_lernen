@@ -2,5 +2,6 @@
 @import 'EXT:vms_sitepackage/Configuration/Extensions/solr/TypoScript/Setup/Queue/'
 @import 'EXT:vms_sitepackage/Configuration/Extensions/solr/TypoScript/Setup/View/'
 
-# Test auf .eu: Treffer aus geteiltem Core unabhängig vom siteHash zulassen
-plugin.tx_solr.search.query.allowedSites = www.xn--mobilitt-lernen-6kb.de,mobilität-lernen.de,www.mobilität-lernen.de
+# siteHash-Filter: aktuelle Site (apache-solr 13.x hasht die Site-Identität).
+# Muss zur Indexierung passen; explizite Domains führten zu Mismatch -> 0 Treffer.
+plugin.tx_solr.search.query.allowedSites = __solr_current_site

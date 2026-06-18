@@ -24,7 +24,7 @@ plugin.tx_solr {
             tx_dpxtemplate_domain_model_publication = 1
             tx_dpxtemplate_domain_model_publication {
                 additionalWhereClause =  deleted = 0 AND hidden = 0
-                additionalPageIds = 75
+                additionalPageIds = 77
                 initialization = ApacheSolrForTypo3\Solr\IndexQueue\Initializer\Record
                 indexingPriority = 0
                 table = tx_dpxtemplate_domain_model_publication
@@ -36,16 +36,16 @@ plugin.tx_solr {
                     }
 
                     file_stringS = USER
-                    file_stringS.userFunc = DPX\DpxTemplate\Solr\UserFunc\IndexUserFunc->getFileLink
+                    file_stringS.userFunc = VMS\Sitepackage\Solr\PublicationIndexer->getFileLink
 
                     relativefile_stringS = USER
-                    relativefile_stringS.userFunc = DPX\DpxTemplate\Solr\UserFunc\IndexUserFunc->getRelativeFileLink
+                    relativefile_stringS.userFunc = VMS\Sitepackage\Solr\PublicationIndexer->getRelativeFileLink
 
                     filext_stringS = USER
-                    filext_stringS.userFunc = DPX\DpxTemplate\Solr\UserFunc\IndexUserFunc->getFileExtensionForFileUid
+                    filext_stringS.userFunc = VMS\Sitepackage\Solr\PublicationIndexer->getFileExtensionForFileUid
 
                     filesize_stringS = USER
-                    filesize_stringS.userFunc = DPX\DpxTemplate\Solr\UserFunc\IndexUserFunc->getFileSizeForFileUid
+                    filesize_stringS.userFunc = VMS\Sitepackage\Solr\PublicationIndexer->getFileSizeForFileUid
 
                     image_intS = SOLR_RELATION
                     image_intS {
