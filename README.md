@@ -34,3 +34,8 @@ Nach Änderungen: Dateien dorthin übertragen, dann
 - **Kanonik-Redirect:** Regel in `public/.htaccess` (alle Hosts → `www.mobilität-lernen.de`).
 - **Redis-Caching:** `config/system/settings.php` (pages/hash/rootline/pagesection/imagesizes → Redis db3–7).
 - **trustedHostsPattern**, **Site-Config** (`config/sites/dev-typo3/config.yaml`), **DB-Zugang** liegen ebenfalls außerhalb dieses Pakets.
+- **CSS-Minifizierung:** Das aus dem dpx-Setup importierte Root-Template (`sys_template`
+  uid 1, DB) setzt im Config-Block hart `compressCss = 0` und überschreibt damit die
+  Sitepackage-Einstellung. Daher ist im DB-Config-Feld am Ende `config.compressCss = 1`
+  angehängt (Override). `config/.../95.SeoSecurity.typoscript` enthält die gleiche
+  Einstellung als dokumentierte Absicht; effektiv wirkt der DB-Override.

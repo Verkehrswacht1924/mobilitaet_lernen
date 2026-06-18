@@ -1,5 +1,8 @@
 # === Abschnitt 1: Sicherheit & SEO (additiv, vms_sitepackage) ===
 
+# Performance: CSS minifizieren (TYPO3-Kompressor; gleiche Optik, kleinere/parsefreundliche Datei).
+config.compressCss = 1
+
 # Permissions-Policy: restriktiv. Videos sind click-to-play (kein Autoplay nötig),
 # daher kein Funktionsverlust.
 config.additionalHeaders.209.header = Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
