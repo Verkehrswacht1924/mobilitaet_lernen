@@ -44,6 +44,13 @@ Nach Änderungen: Dateien dorthin übertragen, dann
   die Site-Identität – explizite Domains erzeugen einen siteHash-Mismatch → 0 Treffer).
   Solr ist ein **geteilter** Core auf `localhost:8983` (core_de/core_en) – NICHT pauschal
   per `*:*` löschen.
+- **Wartung/Cronjobs (KAS-Panel):** Zwei Cronjobs halten die Seite wartungsarm.
+  (1) alle 5 Min `/usr/bin/php83 /www/htdocs/w021b5d5/neu13/vendor/bin/typo3 scheduler:run`
+  → TYPO3-Scheduler (Solr-Index aktuell halten = Task „IndexQueueWorker", IP-Anonymisierung).
+  (2) täglich `/bin/sh /www/htdocs/w021b5d5/neu13/bin/vms-maintenance.sh` → kürzt
+  `sys_log` (90 T) / `sys_history` (30 T) / abgelaufene Sessions und deckelt Log-Dateien
+  > 50 MB. Das Skript liegt versioniert unter `Scripts/vms-maintenance.sh` (Deploy nach
+  `neu13/bin/`), liest die DB-Zugangsdaten aus `settings.php` und verlässt den Server nicht.
 - **Neue Frontend-Assets (CSS/JS):** `public/_assets/<hash>` ist eine reale Kopie –
   neue Dateien in `Resources/Public/` müssen **manuell** dorthin kopiert werden
   (z. B. `swzip.js`), Composer fasst die bestehende Kopie nicht an.
