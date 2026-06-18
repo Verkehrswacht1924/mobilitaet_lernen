@@ -28,3 +28,7 @@ page.headerData.1701.value (
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Mobilität lernen","alternateName":"MobiLe","url":"https://www.xn--mobilitt-lernen-6kb.de/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Mobilität lernen","url":"https://www.xn--mobilitt-lernen-6kb.de/"}</script>
 )
+
+# Strukturierte Daten (JSON-LD): BreadcrumbList aus der Rootline (automatisch je Seite, via PHP)
+page.headerData.1702 = USER
+page.headerData.1702.userFunc = VMS\Sitepackage\Frontend\BreadcrumbJsonLd->render
