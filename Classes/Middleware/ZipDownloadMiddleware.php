@@ -11,6 +11,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Http\RedirectResponse;
 use TYPO3\CMS\Core\Http\Response;
 use TYPO3\CMS\Core\Http\Stream;
 use TYPO3\CMS\Core\Resource\File;
@@ -37,6 +38,13 @@ final class ZipDownloadMiddleware implements MiddlewareInterface
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
+        // Legacy: alte "ZipResults"-Links (aus Seiten-Cache, Bookmarks, Suchmaschinen,
+        // Crawlern) würden sonst eine Extbase-Exception werfen und das Log fluten.
+        // Sauber per 301 auf die Seite selbst umleiten (Crawler verlernen die toten URLs).
+        if ($this->isLegacyZipResultsRequest($request)) {
+            return new RedirectResponse($request->getUri()->getPath(), 301);
+        }
+
         $body = $request->getParsedBody();
         if (
             $request->getMethod() !== 'POST'
@@ -58,6 +66,22 @@ final class ZipDownloadMiddleware implements MiddlewareInterface
         }
 
         return $this->streamZip($files);
+    }
+
+    /**
+     * Erkennt Aufrufe der alten DPX-ZipResults-Plugin-Action (Extbase-Routing
+     * über tx_solr[controller]/[action] bzw. den rohen Query-String).
+     */
+    private function isLegacyZipResultsRequest(ServerRequestInterface $request): bool
+    {
+        $solr = $request->getQueryParams()['tx_solr'] ?? null;
+        if (is_array($solr)) {
+            if (($solr['controller'] ?? '') === 'ZipResults' || ($solr['action'] ?? '') === 'downloadeZip') {
+                return true;
+            }
+        }
+        $rawQuery = $request->getUri()->getQuery();
+        return $rawQuery !== '' && (str_contains($rawQuery, 'ZipResults') || str_contains($rawQuery, 'downloadeZip'));
     }
 
     /**
